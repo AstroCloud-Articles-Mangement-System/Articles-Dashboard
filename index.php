@@ -1,3 +1,3 @@
 <?php 
-require_once('views');
+require_once('views/index.php');
 ?>
