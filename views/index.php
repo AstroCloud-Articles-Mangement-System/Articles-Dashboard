@@ -37,7 +37,7 @@
       <!-- Main content -->
       <section class="content" style="margin-top: 7.5%">
         <div class="container-fluid">
-          <?php include 'views/pages/users/index.php'; ?>
+          <?php include 'views/pages/groups/index.php'; ?>
         </div>
       </section>
     </div>
