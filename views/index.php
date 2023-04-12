@@ -38,7 +38,6 @@
       <section class="content" style="margin-top: 7.5%">
         <div class="container-fluid">
           <?php include 'pages/groups/index.php'; ?>
-          <?php include 'pages/users/index.php'; ?>
         </div>
       </section>
     </div>
