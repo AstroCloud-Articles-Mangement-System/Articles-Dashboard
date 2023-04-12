@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <?php include 'views/partials/preloader.php'; ?>
 
   <!-- Navbar -->
