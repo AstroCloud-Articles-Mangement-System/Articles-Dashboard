@@ -14,11 +14,15 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="view/plugins/fontawesome-free/css/all.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="view/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="views/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="views/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="views/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
+
 </head>
 
 <body class=" hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -80,6 +84,11 @@
   <script src="views/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="views/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="views/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="views/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="views/dist/js/demo.js"></script>
+  <!-- Page specific script -->
   <!-- AdminLTE App -->
   <script src="views/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
