@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row my-5">
+    <div class="my-5">
         <div class="col-12 d-flex justify-content-end">
             <div class="form-inline">
                 <div class="input-group" data-widget="group-search">
@@ -13,9 +13,9 @@
             </div>
         </div>
     </div>
-    <div class="row my-5">
-        <div class="groupCard col-md-4">
-            <div class="alert card p-0 h-100">
+    <div class="my-5 d-flex flex-wrap justify-content-between">
+        <div class="d-block groupCard col-md-4 mb-2">
+            <div class="alert card p-0" style="height:30vh;">
                 <div class=" card-body">
                     <div class="user-panel group-info d-flex mt-1">
                         <div class=" image">
@@ -41,8 +41,8 @@
                 </div>
             </div>
         </div>
-        <div class="groupCard col-md-4">
-            <div class="alert card p-0 h-100">
+        <div class="d-block groupCard col-md-4 mb-2">
+            <div class="alert card p-0" style="height:30vh;">
                 <div class=" card-body">
                     <div class="user-panel group-info d-flex mt-1">
                         <div class=" image">
@@ -69,8 +69,8 @@
             </div>
         </div>
         <!--Create New Group-->
-        <div class="col-md-4">
-            <div class="alert card p-0 h-100">
+        <div class="d-block col-md-4 mb-2">
+            <div class="alert card p-0" style="height:30vh;">
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
                         <div class="bg-info p-3 img-circle group-info">
