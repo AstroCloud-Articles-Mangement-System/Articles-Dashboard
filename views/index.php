@@ -39,53 +39,58 @@
             <!-- Main content -->
             <section class="content" style="margin-top: 7.5%">
                 <div class="container-fluid">
-                    <?php include 'views/pages/groups/index.php'; ?>
+                    <?php
+          if ($page == "groups") {
+            include 'views/pages/groups/index.php';
+          } else if ($page == "article") {
+            include 'views/pages/articles/index.php';
+          }
+          ?>
+
                 </div>
-            </section>
+
+                <!-- Control Sidebar -->
+                <aside class="control-sidebar control-sidebar-dark">
+                </aside>
+
+                <!-- Main Footer -->
+                <?php include 'partials/footer.php'; ?>
         </div>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-        </aside>
-
-        <!-- Main Footer -->
-        <?php include 'partials/footer.php'; ?>
-    </div>
-
-    <!-- REQUIRED SCRIPTS -->
-    <script src="views/plugins/jquery/jquery.min.js"></script>
-    <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="views/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="views/dist/js/adminlte.js"></script>
-    <script src="views/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-    <script src="views/plugins/raphael/raphael.min.js"></script>
-    <script src="views/views/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-    <script src="views/plugins/jquery-mapael/maps/usa_states.min.js"></script>
-    <script src="views/plugins/chart.js/Chart.min.js"></script>
-    <script src="views/dist/js/demo.js"></script>
-    <script src="views/dist/js/pages/dashboard2.js"></script>
+        <!-- REQUIRED SCRIPTS -->
+        <script src="views/plugins/jquery/jquery.min.js"></script>
+        <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="views/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <script src="views/dist/js/adminlte.js"></script>
+        <script src="views/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+        <script src="views/plugins/raphael/raphael.min.js"></script>
+        <script src="views/views/plugins/jquery-mapael/jquery.mapael.min.js"></script>
+        <script src="views/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+        <script src="views/plugins/chart.js/Chart.min.js"></script>
+        <script src="views/dist/js/demo.js"></script>
+        <script src="views/dist/js/pages/dashboard2.js"></script>
 
 
-    <script src="views/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables  & Plugins -->
-    <script src="views/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="views/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="views/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="views/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="views/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="views/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="views/plugins/jszip/jszip.min.js"></script>
-    <script src="views/plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="views/plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="views/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="views/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="views/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="views/dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="views/dist/js/demo.js"></script>
+        <script src="views/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- DataTables  & Plugins -->
+        <script src="views/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="views/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="views/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="views/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="views/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="views/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+        <script src="views/plugins/jszip/jszip.min.js"></script>
+        <script src="views/plugins/pdfmake/pdfmake.min.js"></script>
+        <script src="views/plugins/pdfmake/vfs_fonts.js"></script>
+        <script src="views/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+        <script src="views/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+        <script src="views/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="views/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="views/dist/js/demo.js"></script>
 </body>
 
 </html>
