@@ -1,3 +1,3 @@
 <?php
-$page="article";
+$page="articles";
 require 'views/index.php';

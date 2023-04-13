@@ -13,13 +13,10 @@
     <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="view/plugins/fontawesome-free/css/all.min.css">
-    <!-- DataTables -->
     <link rel="stylesheet" href="view/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="views/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="views/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <!-- Theme style -->
     <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
 </head>
 
@@ -40,12 +37,14 @@
             <section class="content" style="margin-top: 7.5%">
                 <div class="container-fluid">
                     <?php
-          if ($page == "groups") {
-            include 'views/pages/groups/index.php';
-          } else if ($page == "article") {
-            include 'views/pages/articles/index.php';
-          }
-          ?>
+                        if ($page == "users") {
+                          include 'views/pages/users/index.php';
+                        }else if ($page == "groups") {
+                          include 'views/pages/groups/index.php';
+                        }else if ($page == "articles") {
+                          include 'views/pages/articles/index.php';
+                        }
+                      ?>
 
                 </div>
 
@@ -55,6 +54,7 @@
 
                 <!-- Main Footer -->
                 <?php include 'partials/footer.php'; ?>
+            </section>
         </div>
 
         <!-- REQUIRED SCRIPTS -->
@@ -69,12 +69,8 @@
         <script src="views/plugins/chart.js/Chart.min.js"></script>
         <script src="views/dist/js/demo.js"></script>
         <script src="views/dist/js/pages/dashboard2.js"></script>
-
-
         <script src="views/plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
         <script src="views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- DataTables  & Plugins -->
         <script src="views/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="views/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
         <script src="views/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -87,9 +83,7 @@
         <script src="views/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
         <script src="views/plugins/datatables-buttons/js/buttons.print.min.js"></script>
         <script src="views/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-        <!-- AdminLTE App -->
         <script src="views/dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
         <script src="views/dist/js/demo.js"></script>
 </body>
 

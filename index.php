@@ -3,11 +3,11 @@ require_once('config.php');
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $routes = [
-    '/' => 'controllers/index.php',
-    '/login' => 'controllers/login.php',
-    '/users' => 'controllers/user.php',
-    '/groups' => 'controllers/group.php',
-    '/articles'=>'controllers/article.php'
+    '/' => 'Controllers/index.php',
+    '/login' => 'Controllers/login.php',
+    '/users' => 'Controllers/user.php',
+    '/groups' => 'Controllers/group.php',
+    '/articles'=>'Controllers/article.php'
 ];
 
 function routeToController($uri,$routes){

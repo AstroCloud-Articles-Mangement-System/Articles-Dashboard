@@ -1,3 +1,3 @@
 <?php
-
-require 'views/pages/groups/index.php';
+$page="groups";
+require 'views/index.php';
