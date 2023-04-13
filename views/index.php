@@ -38,7 +38,11 @@
       <section class="content" style="margin-top: 7.5%">
         <div class="container-fluid">
           <?php
-          if ($page == "profile") {
+          if ($page == "groups") {
+            include 'views/pages/groups/index.php';
+          } else if ($page == "article") {
+            include 'views/pages/articles/index.php';
+          } elseif ($page == "profile") {
             include 'views/pages/profile/index.php';
           }
           ?>

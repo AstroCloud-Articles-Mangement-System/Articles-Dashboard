@@ -15,7 +15,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = [
     '/' => 'controllers/index.php',
     '/users' => 'controllers/user.php',
-    '/profile' =>  'controllers/profile.php'
+    '/profile' =>  'controllers/profile.php',
+    '/articles' => 'controllers/article.php',
+    '/login' => 'controllers/login.php',
 ];
 
 function routeToController($uri, $routes)

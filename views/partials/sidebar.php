@@ -107,6 +107,14 @@
         </li>
 
         <li class="nav-item">
+          <a href="/login" class="nav-link">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+             Login
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="/users" class="nav-link">
             <i class="nav-icon fas fa-table"></i>
             <p>
