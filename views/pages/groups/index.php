@@ -74,7 +74,7 @@
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
                         <div class="bg-info p-3 img-circle group-info">
-                            <a href=""><i class="fa fa-plus" style="font-size:24px"></i></a>
+                            <a href=""><i class="fa fa-plus align-middle" style="font-size:24px"></i></a>
                         </div>
                     </div>
                 </div>
