@@ -36,7 +36,7 @@
                     <td>Admin</td>
                     <td>2023-5-10</td>
                     <td class="d-flex justify-content-around">
-                      <a href="#" class="btn btn-warning btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                      <a href="#" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
                       <a href="#" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
