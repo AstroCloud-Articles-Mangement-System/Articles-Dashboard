@@ -8,13 +8,13 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel -->
+        <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <img src="views/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="/profile" class="d-block">User Name</a>
             </div>
         </div>
 
@@ -27,46 +27,161 @@
                         <i class="fas fa-search fa-fw"></i>
                     </button>
                 </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Login
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/users" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/groups" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Groups
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/articles" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Articles
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <<<<<<< HEAD </nav>
             </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Login
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/users" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Users
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/groups" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Groups
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/articles" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Articles
-                        </p>
-                    </a>
-                </li>
-
+            =======
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                        Login & Register v2
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="pages/examples/login-v2.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Login v2</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/examples/register-v2.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Register v2</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/examples/forgot-password-v2.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Forgot Password v2</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/examples/recover-password-v2.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Recover Password v2</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/lockscreen.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lockscreen</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Legacy User Menu</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/language-menu.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Language Menu</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/404.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Error 404</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/500.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Error 500</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/pace.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pace</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pages/examples/blank.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Blank Page</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="starter.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Starter Page</p>
+                </a>
+            </li>
             </ul>
-        </nav>
-    </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-search"></i>
+                    <p>
+                        Search
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="pages/search/simple.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Simple Search</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/search/enhanced.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Enhanced</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+        >>>>>>> d868cd8d0d65b9717a256d7430404b665a345007
 </aside>

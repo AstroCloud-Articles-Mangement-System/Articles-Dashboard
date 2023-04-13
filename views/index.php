@@ -39,6 +39,8 @@
                     <?php
                         if ($page == "users") {
                           include 'views/pages/users/index.php';
+                        } elseif ($page == "profile") {
+                          include 'views/pages/profile/index.php';
                         }else if ($page == "groups") {
                           include 'views/pages/groups/index.php';
                         }else if ($page == "articles") {
