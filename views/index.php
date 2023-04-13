@@ -41,12 +41,12 @@
       <!-- Main content -->
       <section class="content" style="margin-top: 7.5%">
         <div class="container-fluid">
-        <?php
+          <?php
           if ($page == "groups") {
             include 'views/pages/groups/index.php';
           } else if ($page == "article") {
             include 'views/pages/articles/index.php';
-          } else if($page == "users"){
+          } else if ($page == "users") {
             include 'views/pages/users/index.php';
           }
           ?>
