@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once('config.php');
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
@@ -15,20 +15,22 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = [
     '/' => 'controllers/index.php',
     '/users' => 'controllers/user.php',
+    '/profile' =>  'controllers/profile.php'
 ];
 
-function routeToController($uri,$routes){
-    if(array_key_exists($uri,$routes)){
+function routeToController($uri, $routes)
+{
+    if (array_key_exists($uri, $routes)) {
         require $routes[$uri];
-    } else{
+    } else {
         abort();
     }
 }
 
-function abort($code=404){
+function abort($code = 404)
+{
     http_response_code($code);
     var_dump('not found');
 }
 
-routeToController($uri,$routes);
-?>
+routeToController($uri, $routes);
