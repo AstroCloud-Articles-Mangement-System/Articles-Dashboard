@@ -1,3 +1,3 @@
 <?php
-
-require 'views/pages/users/index.php';
+$page="users";
+require 'views/index.php';
