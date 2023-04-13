@@ -1,3 +1,3 @@
 <?php
-$page="articles";
+$page="groups";
 require 'views/index.php';
