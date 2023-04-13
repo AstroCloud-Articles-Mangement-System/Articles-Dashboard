@@ -1,41 +1,29 @@
-<?php 
+<?php
 require_once('config.php');
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-// // Remove the folder path if it exists
-// $uri = str_replace(URL_BASE, '/', $uri);
-
-
-// $uri = $_SERVER['REQUEST_URI'];
-
-// // Remove the base URL path if it exists
-// $uri = str_replace(URL_BASE, '', $uri);
-// die($uri);
-
 $routes = [
-    '/' => 'controllers/index.php',
-    '/users' => 'controllers/user.php',
-    '/charts' => 'controllers/chart.php',
-
-
-
-
-
-    '/login' => 'controllers/login.php',
+    '/' => 'Controllers/index.php',
+    '/login' => 'Controllers/login.php',
+    '/profile' =>  'Controllers/profile.php',
+    '/users' => 'Controllers/user.php',
+    '/groups' => 'Controllers/group.php',
+    '/articles'=>'Controllers/article.php'
 ];
 
-function routeToController($uri,$routes){
-    if(array_key_exists($uri,$routes)){
+function routeToController($uri, $routes)
+{
+    if (array_key_exists($uri, $routes)) {
         require $routes[$uri];
-    } else{
+    } else {
         abort();
     }
 }
 
-function abort($code=404){
+function abort($code = 404)
+{
     http_response_code($code);
-    var_dump('not found');
+    var_dump('NOT FOUND');
 }
 
-routeToController($uri,$routes);
-?>
+routeToController($uri, $routes);

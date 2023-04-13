@@ -1,5 +1,4 @@
 <div class="wrapper">
-  <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -13,7 +12,6 @@
                     <i class="fas fa-plus mr-2"></i>Add new User
                   </button>
                 </div>
-
               </div>
             </div>
             <div class="card-body">
@@ -45,19 +43,13 @@
                 </tbody>
               </table>
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
     </div>
-    <!-- /.container-fluid -->
   </section>
-  <!-- /.content -->
 </div>
-<!-- ./wrapper -->
+
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
