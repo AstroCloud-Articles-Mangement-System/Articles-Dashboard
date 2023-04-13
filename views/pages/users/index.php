@@ -6,12 +6,20 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Users DataTable</h3>
+              <h2 class="card-title text-bold">Users DataTable</h2>
+              <div class="row mb-2">
+                <div class="col-sm-12">
+                  <button class="btn btn-info float-right" data-toggle="modal" data-target="#addUserModal">
+                    <i class="fas fa-plus mr-2"></i>Add new User
+                  </button>
+                </div>
+
+              </div>
             </div>
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped table-hover">
                 <thead>
-                  <tr>
+                  <tr class="text-center">
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile</th>
@@ -21,7 +29,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                   <tr>
                     <td>Radwa Hassan</td>
                     <td>radwa@gmail.com</td>
@@ -29,7 +37,10 @@
                     <td>Radwa</td>
                     <td>Admin</td>
                     <td>2023-5-10</td>
-                    <td>edit-delete-create</td>
+                    <td class="d-flex justify-content-around">
+                      <a href="#" class="btn btn-warning btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                      <a href="#" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -45,9 +56,6 @@
     <!-- /.container-fluid -->
   </section>
   <!-- /.content -->
-</div>
-
-<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
