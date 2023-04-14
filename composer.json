@@ -3,7 +3,7 @@
       "endroid/qr-code": "*"
   },
   "autoload": {
-      "classmap": ["Models"],
+      "classmap": ["Models","Core/Router.php"],
       "files": ["config.php"]
   }  
 }
