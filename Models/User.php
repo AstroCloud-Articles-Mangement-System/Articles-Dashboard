@@ -9,7 +9,7 @@ class User
         $this->db = new MySQLHandler('users');
     }
 
-    public function get_users()
+    public function get_all_users()
     {
         return $this->db->get_all_records();
     }
