@@ -1,5 +1,4 @@
 <?php
-define("URL_BASE","/PHPproject/PHP-Project/");
 define("__HOST__","localhost");
 define("__USER__","root");
 define("__PASS__","12345");
