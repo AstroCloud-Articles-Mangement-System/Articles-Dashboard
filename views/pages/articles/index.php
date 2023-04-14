@@ -1,13 +1,3 @@
-<style>
-.text-truncate--2{
-  text-overflow:ellipsis;
-  overflow:hidden;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  white-space: normal;
-}
-</style>
 <div class="container">
     <div class="my-5">
         <div class="col-12 d-flex justify-content-end">
@@ -25,7 +15,7 @@
     </div>
     <div class="my-5 d-flex flex-wrap justify-content-between">
         <div class="d-block groupCard col-md-4 mb-2">
-        <div class="alert card p-0" style="height:530px;">
+            <div class="alert card p-0" style="height:530px;">
                 <img class="card-img-top rounded" src="https://image.ibb.co/nNFg4a/polar.jpg" alt="Card image cap">
                 <div class="card-body">
                     <div class="user-panel group-info mt-1">
@@ -36,7 +26,8 @@
                     </div>
                     <hr class="border-info">
                     <span class="text-uppercase font-weight-bold font-italic text-secondary">Summary</span>
-                    <p class="d-block card-text text-secondary text-truncate--2 ">Some quick example text to build on the card title and make
+                    <p class="d-block card-text text-secondary text-truncate--2 ">Some quick example text to build on
+                        the card title and make
                         upSome quick example text to build on the card title and make
                         upSome quick example text to build on the card title and make
                         upSome quick example text to build on the card title and make
@@ -64,7 +55,8 @@
                     </div>
                     <hr class="border-info">
                     <span class="text-uppercase font-weight-bold font-italic text-secondary">Summary</span>
-                    <p class="d-block card-text text-secondary text-truncate--2 ">Some quick example text to build on the card title and make
+                    <p class="d-block card-text text-secondary text-truncate--2 ">Some quick example text to build on
+                        the card title and make
                         upSome quick example text to build on the card title and make
                         upSome quick example text to build on the card title and make
                         upSome quick example text to build on the card title and make
