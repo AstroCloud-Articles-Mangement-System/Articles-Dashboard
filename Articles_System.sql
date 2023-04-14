@@ -4,8 +4,7 @@ USE Articles_System;
 
 CREATE TABLE Groups (
   id INT AUTO_INCREMENT  PRIMARY KEY,
-  group_icon VARCHAR(50),
-  group_Gname VARCHAR(50),
+  group_name VARCHAR(50),
   group_description VARCHAR(255)
 );
 

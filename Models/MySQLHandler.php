@@ -1,43 +1,90 @@
 <?php
-class MySQLHandler implements DbHandler
-{
+class MySQLHandler implements DbHandler {
+
     private $_db_handler;
     private $_table;
-    public function __construct($table)
-    {
-        $this->_table = $table;
-        $this->connect();
+    private $_primary_key;
+
+    public function __construct($table) {
+        
+        $this -> _table = $table;
+        $this -> connect();
+        
     }
 
-    public function connect()
-    {
-        try {
+    public function connect() {
+        
+        try{
             $handler = mysqli_connect(__HOST__, __USER__, __PASS__, __DB__);
-            if ($handler) {
-                $this->_db_handler = $handler;
-                return true;
-            } else {
-                return false;
+        if ($handler) {
+            $this -> _db_handler = $handler;
+            return true;
+        } else {
+            return false;
+        }
+        }catch(Exception $e){
+            die("Something Went Wrong, Please Come Back Later");
+        }
+        
+    }
+
+    public function disconnect() {
+        
+        if ($this -> _db_handler)
+            mysqli_close($this -> _db_handler);
+            
+    }
+
+    public function get_all_records_paginated($fields = array(), $start = 0) {
+        
+        $table = $this -> _table;
+        if (empty($fields)) {
+            $sql = "select * from `$table`";
+        } else {
+            $sql = "select ";
+            foreach ($fields as $f) {
+                $sql .= " `$f`, ";
             }
-        } catch (Exception $e) {
-            die("Something went wrong!");
+            $sql .= "from  `$table` ";
+            $sql = str_replace(", from", "from", $sql);
         }
+        $sql .= "limit $start," . __RECORDS_PER_PAGE__;
+        return $this -> get_results($sql);
+        
     }
 
-    public function disconnect()
-    {
-        if ($this->_db_handler) {
-            mysqli_close($this->_db_handler);
-        }
+    public function get_all_records(){    
+        $table = $this -> _table;
+        $sql = "select * from `$table`";
+        return $this -> get_results($sql);    
+}
+
+    public function get_record_by_id($id, $primary_key = "id") {
+        
+        $table = $this -> _table;
+        $sql = "select * from `$table` where `$primary_key` = $id ";
+
+        return $this -> get_results($sql);
+        
     }
 
-    private function getResults($sql)
-    {
-        if (__Debug__Mode__ === 1) {
-            echo "<h5>Sent Query:</h5>" . $sql . "<br/><br/>";
+    public function get_number_of_records() {
+        
+        $table = $this -> _table;
+        $sql = "SELECT COUNT(*) FROM `$table`";
+
+        return ($this -> get_results($sql))[0]['count(*)'];
+        
+    }
+
+    private function get_results($sql) {
+        
+        if(__Debug__Mode__ === 1){
+            echo "<h5>Sent Query: $sql</h5>";
         }
-        $_handler_results = mysqli_query($this->_db_handler, $sql);
+        $_handler_results = mysqli_query($this -> _db_handler, $sql);
         $_arr_results = array();
+
         if ($_handler_results) {
             while ($row = mysqli_fetch_array($_handler_results, MYSQLI_ASSOC)) {
                 $_arr_results[] = array_change_key_case($row);
@@ -46,60 +93,87 @@ class MySQLHandler implements DbHandler
         } else {
             return false;
         }
+        
     }
 
-    public function get_data($fields = array(), $start = 0)
-    {
-        $table = $this->_table;
-        if (empty($fields)) {
-            $sql = "SELECT * FROM `$table`";
-        } else {
-            $sql = "select";
-            foreach ($fields as $field) {
-                $sql .= "`$field` ,";
+    public function save($new_values = array()) {
+        if (is_array($new_values)) {
+            $table = $this->_table;
+            $sql1 = "insert into `$table` (";
+            $sql2 = " values (";
+            foreach ($new_values as $key => $value) {
+                $sql1 .= "`$key` ,";
+                if (is_numeric($value))
+                    $sql2 .= " $value ,";
+                else
+                    $sql2 .= " '" . $value . "' ,";
             }
-            $sql .= "form `$table`";
-            $sql = str_replace(", from", "from", $sql);
+            $sql1 = $sql1 . ") ";
+            $sql2 = $sql2 . ") ";
+            $sql1 = str_replace(",)", ")", $sql1);
+            $sql2 = str_replace(",)", ")", $sql2);
+            $sql = $sql1 . $sql2;
+
+        
+            if (mysqli_query($this->_db_handler, $sql)) {
+                return true;
+            } else {
+                return false;
+            }
+            $this->debug($sql);
         }
-        $sql .= " limit $start," . __RECORDS_PER_PAGE__;
-        return $this->getResults($sql);
     }
 
-
-
-    public function get_record_by_id($id, $primary_key = "id")
-    {
+    public function update($edited_values, $id) {
         $table = $this->_table;
-        $sql = "SELECT * FROM `$table` WHERE `$primary_key`=$id";
-        return $this->getResults($sql);
-    }
-/*
-    public function save_or_update($fields, $record)
-    {
-        $sql = "INSERT INTO" . $this->_table . "VALUES(";
-        foreach ($record as $value) {
-            $sql .= "?,";
+        $primary_key = $this->_primary_key;
+        $sql = "update  `" . $table . "` set  ";
+        foreach ($edited_values as $key => $value) {
+            if ($key != $primary_key) {
+                if (!is_numeric($value))
+                    $sql .= " `$key` = '$value'  ,";
+                else
+                    $sql .= " `$key` = $value ,";
+            }
         }
-    }*/
 
-    public function save_or_update($fields, $record)
-    {
-        $sql = "INSERT INTO `" . $this->_table . "` (";
-        foreach ($fields as $field) {
-            $sql .= "`$field`,";
-        }
-        $sql = rtrim($sql, ",") . ") VALUES (";
-        foreach ($record as $value) {
-            $sql .= "'" . mysqli_real_escape_string($this->_db_handler, $value) . "',";
-        }
-        $sql = rtrim($sql, ",") . ")";
+        $sql .= "where `" . $primary_key . "` = $id";
+        $sql = str_replace(",where", "where", $sql);
+ 
         if (mysqli_query($this->_db_handler, $sql)) {
-            return mysqli_insert_id($this->_db_handler);
+            $this->disconnect();
+            return true;
         } else {
+            $this->disconnect();
+            return false;
+        }
+    }
+
+    public function delete($id) {
+        $table = $this->_table;
+        $primary_key = $this->_primary_key;
+        $sql = "delete  from `" . $table . "` where `" . $primary_key . "` = $id";
+        $this->debug($sql);
+        if (mysqli_query($this->_db_handler, $sql)) {
+            $this->disconnect();
+            return true;
+        } else {
+            $this->disconnect();
             return false;
         }
     }
     
-       
+    public function filter($search,$filter_type) {
+        $filter = new $filter_type($search);
+        $where = $filter -> get_sql();
+        $table = $this -> _table;
+        $sql = "select * from `$table` where $where";
+        return $this -> get_results($sql);
+    }
+
+    private function debug($sql) {
+        if (__Debug__Mode__ === 1)
+            echo "<h5>Sent Query: </h5>" . $sql . "<br/> <br/>";
+    }
 
 }
