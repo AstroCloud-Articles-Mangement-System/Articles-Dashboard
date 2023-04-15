@@ -1,4 +1,4 @@
-<div class="wrapper" style="z-index: 5;">
+<div class="wrapper">
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -64,7 +64,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(function() {
-    $("#user-table").DataTable({
+    $("#example1").DataTable({
         "responsive": true,
         "autoWidth": true,
         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
