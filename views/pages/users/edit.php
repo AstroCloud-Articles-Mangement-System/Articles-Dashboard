@@ -31,7 +31,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" fdprocessedid="7re2y6" value="<?php echo $user[0]['user_email']; ?>">
+                        <input type="email" class="form-control" id="email" placeholder="example@gmail.com" fdprocessedid="7re2y6" value="<?php echo $user[0]['user_email']; ?>">
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-info">Update</button>
+                <button type="submit" class="btn btn-info btn-block">Update</button>
             </div>
         </form>
     </div>

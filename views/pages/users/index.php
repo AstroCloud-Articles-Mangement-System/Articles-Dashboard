@@ -1,6 +1,6 @@
 <div class="wrapper">
   <?php
-  if (isset($_SESSION['success_message'])) {
+  if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
     echo '<div id="alert-success" class="alert alert-success" role="alert">';
     echo $_SESSION['success_message'];
     echo '</div>';

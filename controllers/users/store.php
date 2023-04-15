@@ -3,6 +3,7 @@ require('Models/User.php');
 $page = "users";
 $user = new User;
 $errors = [];
+$_SESSION['success_message'] = "";
 if (isset($_POST['submit'])) {
     $data = [
         $_POST['name'],
