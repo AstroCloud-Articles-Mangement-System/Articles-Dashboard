@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="my-5">
-        <div class="col-12 d-flex justify-content-end">
+<div class="container" style="z-index: 100;">
+    <div class="my-5" style="z-index: 100;">
+        <div class="col-12 d-flex justify-content-end" >
             <div class="form-inline">
                 <div class="input-group" data-widget="group-search">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="my-5 d-flex flex-wrap justify-content-between">
-        <div class="d-block groupCard col-md-4 mb-2">
+        <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:30vh;">
                 <div class=" card-body">
                     <div class="user-panel group-info d-flex mt-1">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-block groupCard col-md-4 mb-2">
+        <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:30vh;">
                 <div class=" card-body">
                     <div class="user-panel group-info d-flex mt-1">
@@ -69,7 +69,7 @@
             </div>
         </div>
         <!--Create New Group-->
-        <div class="d-block col-md-4 mb-2">
+        <div class="d-block col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:30vh;">
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">

@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="views/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
-
-    =======
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="views/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="views/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
@@ -37,7 +35,7 @@
 </head>
 
 <body class=" hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-  <div class="wrapper">
+  <div class="wrapper" >
     <!-- Preloader -->
     <?php include 'partials/preloader.php'; ?>
 
@@ -61,13 +59,19 @@
             include 'views/pages/groups/index.php';
           } else if ($page == "articles") {
             include 'views/pages/articles/index.php';
+          } else if ($page == "user_edit") {
+            include 'views/pages/users/edit.php';
           }
           ?>
 
         </div>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
+    
+      </section>
+    </div>
+
+       <!-- Control Sidebar -->
+       <aside class="control-sidebar control-sidebar-dark">
         </aside>
 
         <!-- Main Footer -->
