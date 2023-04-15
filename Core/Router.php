@@ -50,32 +50,44 @@ class Router
         return $this;
     }
 
+    // public function route($uri, $method)
+    // {
+    //     // Extract path and query string from URI
+    //     $uri_parts = parse_url($uri);
+    //     $path = $uri_parts['path'];
+    //     $query = $uri_parts['query'] ?? '';
+
+    
+    //     foreach ($this->routes as $route) {
+    //         // Match on path and method only
+    //         if ($route['uri'] === $path && $route['method'] === strtoupper($method)) {
+    //             // Pass query string parameters as an associative array
+    //             parse_str($query, $params);
+    
+    //             // Pass route parameters and query string parameters to controller
+    //             $controller_path = base_path('controllers/' . $route['controller']);
+    //             $controller = require $controller_path;
+           
+    //             return $controller;
+
+    //         }
+    //     }
+    
+    //     $this->abort();
+    // }
+    
     public function route($uri, $method)
     {
-        // Extract path and query string from URI
-        $uri_parts = parse_url($uri);
-        $path = $uri_parts['path'];
-        $query = $uri_parts['query'] ?? '';
-
-    
         foreach ($this->routes as $route) {
-            // Match on path and method only
-            if ($route['uri'] === $path && $route['method'] === strtoupper($method)) {
-                // Pass query string parameters as an associative array
-                parse_str($query, $params);
-    
-                // Pass route parameters and query string parameters to controller
-                $controller_path = base_path('controllers/' . $route['controller']);
-                $controller = require $controller_path;
-           
-                return $controller;
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                // Middleware::resolve($route['middleware']);
 
+                return require base_path('controllers/' . $route['controller']);
             }
         }
-    
+
         $this->abort();
     }
-    
     
 
     protected function abort($code = 404)

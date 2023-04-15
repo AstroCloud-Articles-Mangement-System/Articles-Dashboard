@@ -1,10 +1,11 @@
-<!-- Registration form -->
+<!-- Edit form -->
 <div class="container w-50">
     <div class="card card-primary" style="z-index:5;">
         <div class="card-header">
             <h3 class="card-title">User Edit Form</h3>
         </div>
-        <form action="#" method="post" style="z-index: 5;">
+        <form action="/user" method="post" style="z-index: 5;">
+            <input type="hidden" name="user_id" value="<?php echo $user[0]['id']; ?>">
             <div class="card-body row">
                 <div class="form-group col-6">
                     <div class="input-group mb-3">
@@ -28,7 +29,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="email" class="form-control" id="email" placeholder="example@gmail.com" fdprocessedid="7re2y6" value="<?php echo $user[0]['user_email']; ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" fdprocessedid="7re2y6" value="<?php echo $user[0]['user_email']; ?>">
                     </div>
                 </div>
 
@@ -57,12 +58,13 @@
                         </div>
                         <select id="group" name="group" class="form-control">
                             <option value="" hidden>Select User Group</option>
-                            <option>Admins</option>
-                            <option>Editors</option>
+                            <?php foreach ($allGroups as $group) { ?>
+                                <option value="<?php echo $group['id']; ?>"><?php echo $group['group_name']; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-info btn-block">Update</button>
+                <button type="submit" name="_method" value="PATCH" class="btn btn-info btn-block">Update</button>
             </div>
         </form>
     </div>

@@ -1,7 +1,9 @@
 <?php
 $page = "user_edit";
-$user_id = intval($_GET['id']); // cast the id parameter to an integer
-$var = new User();
-$user = $var->get_user_by_id($user_id);
-//var_dump($user);
+$user_id = intval($_GET['id']); 
+$userData = new User();
+$user = $userData->get_user_by_id($user_id);
+
+$group = new Group();
+$allGroups = $group->get_all_groups();
 require 'views/index.php';
