@@ -10,11 +10,16 @@
   <link rel="stylesheet" href="views/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="views/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
+  <style>
+    strong{
+      margin-right: 260px !important;
+    }
+  </style>
 </head>
 
 <body class="hold-transition login-page dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper" style="z-index: 5;">
-  <div class="login-box" style="margin-top:15%">
+  <div class="login-box" style="margin-top:40%">
     <!-- /.login-logo -->
     <div class="card" style="z-index: 5;">
       <div class="card-body login-card-body">
@@ -53,7 +58,7 @@
         </form>
       </div>
     </div>
-  </div> 
+  </div>
   <section class="content">
   <?php include 'views/partials/footer.php'; ?>
   </section>
