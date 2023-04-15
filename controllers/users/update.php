@@ -1,7 +1,7 @@
 <?php
 require('Core/validation.php');
-$user = new User;
 
+$user = new User;
 $errors;
 $_SESSION['success_message'] = "";
 $_SESSION['error_message'] = "";

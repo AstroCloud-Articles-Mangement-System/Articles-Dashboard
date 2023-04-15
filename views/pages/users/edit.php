@@ -50,7 +50,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-lock'></i></span>
                         </div>
-                        <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Password" value="<?php echo $user[0]['user_password']; ?>">
+                        <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Password" value="">
                     </div>
                 </div>
 
