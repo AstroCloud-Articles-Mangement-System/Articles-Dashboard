@@ -12,9 +12,5 @@ $router->get('/profile', 'profile/index.php');
 $router->get('/groups', 'groups/index.php');
 $router->get('/articles', 'articles/index.php');
 
-
-
-
-
-// $router->get('/edit', 'users/edit.php');
-//$router->patch('/user', 'users/update.php');
+$router->get('/user/edit', 'users/edit.php');
+$router->delete('/user/delete', 'users/delete.php');

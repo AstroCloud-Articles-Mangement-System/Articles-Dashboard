@@ -1,6 +1,6 @@
 <!-- Registration form -->
 <div class="container w-50">
-    <div class="card card-primary" style="z-index: 1000;">
+    <div class="card card-primary" style="z-index:5;">
         <div class="card-header">
             <h3 class="card-title">User Edit Form</h3>
         </div>

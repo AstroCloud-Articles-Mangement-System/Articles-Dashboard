@@ -149,9 +149,8 @@ class MySQLHandler implements DbHandler {
         }
     }
 
-    public function delete($id) {
+    public function delete($id,$primary_key = "id") {
         $table = $this->_table;
-        $primary_key = $this->_primary_key;
         $sql = "delete  from `" . $table . "` where `" . $primary_key . "` = $id";
         $this->debug($sql);
         if (mysqli_query($this->_db_handler, $sql)) {
