@@ -1,12 +1,4 @@
 <div class="wrapper">
-  <?php
-  if (isset($_SESSION['success_message'])) {
-    echo '<div id="alert-success" class="alert alert-success" role="alert">';
-    echo $_SESSION['success_message'];
-    echo '</div>';
-    unset($_SESSION['success_message']);
-  }
-  ?>
   <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -16,9 +8,9 @@
               <h2 class="card-title text-bold mt-3">Users DataTable</h2>
               <div class="row mb-2">
                 <div class="col-sm-12">
-                  <a href="\userscreate" class="btn btn-info bg-info float-right">
+                  <button class="btn btn-info bg-info float-right" data-toggle="modal" data-target="#addUserModal">
                     <i class="fas fa-plus mr-2"></i>Add New User
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -49,7 +41,7 @@
                       <td><?php echo $user['subscription_date']; ?></td>
                       <td><?php echo $user['group_id']; ?></td>
                       <td class="d-flex justify-content-around">
-                        <a href="#" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                        <a href="/user/edit?id=<?php echo $user['id']; ?>" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
                         <a href="#" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
@@ -80,7 +72,6 @@
       "info": true,
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
-
   setTimeout(() => {
     const sucess = document.getElementById('alert-success');
     sucess.style.display = 'none';
