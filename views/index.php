@@ -71,6 +71,15 @@
       </section>
     </div>
 
+       <!-- Control Sidebar -->
+       <aside class="control-sidebar control-sidebar-dark">
+        </aside>
+
+        <!-- Main Footer -->
+        <?php include 'partials/footer.php'; ?>
+        </div>
+
+
     <!-- REQUIRED SCRIPTS -->
     <script src="../views/plugins/jquery/jquery.min.js"></script>
     <script src="../views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
