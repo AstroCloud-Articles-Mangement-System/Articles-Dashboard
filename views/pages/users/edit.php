@@ -16,7 +16,7 @@
         <div class="card-header">
             <h3 class="card-title">User Edit Form</h3>
         </div>
-        <form action="/user" method="post" style="z-index: 5;">
+        <form action="/users" method="post" style="z-index: 5;">
             <input type="hidden" name="user_id" value="<?php echo $user[0]['id']; ?>">
             <div class="card-body row">
                 <div class="form-group col-6">
