@@ -59,9 +59,10 @@
                         <select id="group" name="group" class="form-control">
                             <option value="" hidden>Select User Group</option>
                             <?php foreach ($allGroups as $group) { ?>
-                                <option value="<?php echo $group['id']; ?>"><?php echo $group['group_name']; ?></option>
+                                <option value="<?php echo $group['id']; ?>" <?php if ($user[0]['group_id'] == $group['id']) echo 'selected'; ?>><?php echo $group['group_name']; ?></option>
                             <?php } ?>
                         </select>
+
                     </div>
                 </div>
                 <button type="submit" name="_method" value="PATCH" class="btn btn-info btn-block">Update</button>

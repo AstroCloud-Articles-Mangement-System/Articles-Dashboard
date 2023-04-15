@@ -1,6 +1,4 @@
 <?php
-require('Models/User.php');
-
 $page = "users";
 $user = new User;
 $errors = [];
