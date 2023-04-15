@@ -23,7 +23,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
 
-    =======
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="views/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="views/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
@@ -61,6 +60,8 @@
             include 'views/pages/groups/index.php';
           } else if ($page == "articles") {
             include 'views/pages/articles/index.php';
+          } else if ($page == "user_edit") {
+            include 'views/pages/users/edit.php';
           }
           ?>
 
