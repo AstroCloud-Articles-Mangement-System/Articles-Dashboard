@@ -16,61 +16,94 @@
         <div class="card-header">
             <h3 class="card-title">User Create Form</h3>
         </div>
-        <form action="/users" method="post">
+        <form action="/users" method="post" id="create_user_form">
             <div class="card-body row">
-
                 <div class="form-group col-6">
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-user-alt'></i></span>
                         </div>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Full Name">
+                        <input type="text" id="name" name="name" class="form-control vaildate_input" placeholder="Full Name" required>
+                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="name-alert" style="font-size: 12px;">
+                            <i class="bi bi-x-lg me-1"></i>
+                            Username must be and contain 5 - 12 characters
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="form-group col-6">
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-user-check'></i></span>
                         </div>
-                        <input type="text" id="user_name" name="user_name" class="form-control" placeholder="Username">
+                        <input type="text" id="user_name" name="user_name" class="form-control vaildate_input" placeholder="Username" required>
+                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="user_name-alert" style="font-size: 12px;">
+                            <i class="bi bi-x-lg me-1"></i>
+                            Username must be and contain 5 - 12 characters
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group col-6">
-                    <div class="input-group mb-3">
+                    <div class="input-group ">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" fdprocessedid="7re2y6">
-                    </div>
-                </div>
-
-                <div class="form-group col-6">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class='fas fa-lock'></i></span>
+                        <input type="email" class="form-control vaildate_input" id="email" name="email" placeholder="example@gmail.com" fdprocessedid="7re2y6" required>
+                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="password-alert" style="font-size: 12px;">
+                            <i class="bi bi-x-lg me-1"></i>
+                            Invalid email address e.g xxx@yyy.zzz
                         </div>
-                        <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Password">
                     </div>
                 </div>
-
-                <div class="form-group col-12">
-                    <div class="input-group mb-3">
+                <div class="form-group col-6">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-phone'></i></span>
                         </div>
-                        <input type="phone" id="phone" name="phone" class="form-control" placeholder="Phone Number">
+                        <input type="phone" id="phone" name="phone" class="form-control vaildate_input" placeholder="Phone Number" required>
+                        <div class="alert alert-danger px-3 py-2 mt-2 d-none w-100" role="alert" data-mdb-color="warning" id="password-alert" style="font-size: 12px;">
+                            <i class="bi bi-x-lg me-1"></i>
+                            Invalid phone number
+                        </div>
                     </div>
                 </div>
-
+                <div class="form-group col-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class='fas fa-lock'></i></span>
+                        </div>
+                        <input type="password" id="user_password" name="user_password" class="form-control vaildate_input" placeholder="Password" required>
+                        <div class="alert alert-dark border-secondary px-3 py-2 mt-2 d-none col-12" role="alert" data-mdb-color="warning" id="password-alert" style="font-size: 12px;">
+                            <ul class="list-unstyled mb-0">
+                                <li class="leng text-danger">
+                                    <i class="bi bi-x-lg me-1"></i>
+                                    Your password must have at least 8 chars.
+                                </li>
+                                <li class="big-letter text-danger">
+                                    <i class="bi bi-x-lg me-1"></i>
+                                    Your password must have at least 1 captial char.
+                                </li>
+                                <li class="num text-danger">
+                                    <i class="bi bi-x-lg  me-1"></i>
+                                    Your password must have at least 1 number.
+                                </li>
+                                <li class="special-char text-danger">
+                                    <i class="bi bi-x-lg me-1"></i>
+                                    Your password must have at least 1 special char [@ ! # % & _].
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group col-12">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-user-friends'></i></span>
                         </div>
-                        <select id="group" name="group" class="form-control">
-                            <option value="" hidden>Select User Group</option>
+                        <select id="group" name="group" class="form-control" required >
+                            <option value="">Select User Group</option>
                             <?php foreach ($allGroups as $group) { ?>
                                 <option value="<?php echo $group['id']; ?>"><?php echo $group['group_name']; ?></option>
                             <?php } ?>
@@ -82,3 +115,5 @@
         </form>
     </div>
 </div>
+
+<script src="/views/dist/js/user_vaildation.js"></script>
