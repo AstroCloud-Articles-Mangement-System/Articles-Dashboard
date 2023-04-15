@@ -1,4 +1,4 @@
-<!-- Registration form -->
+<!-- Create form -->
 <div class="container w-50">
     <div class="card card-primary" style="z-index: 1000;">
         <div class="card-header">
@@ -15,7 +15,6 @@
                         <input type="text" id="name" name="name" class="form-control" placeholder="Full Name">
                     </div>
                 </div>
-
 
                 <div class="form-group col-6">
                     <div class="input-group mb-3">
@@ -59,7 +58,7 @@
                             <span class="input-group-text"><i class='fas fa-user-friends'></i></span>
                         </div>
                         <select id="group" name="group" class="form-control">
-                            <option value="">Select User Group</option>
+                            <option value="" hidden>Select User Group</option>
                             <?php foreach ($allGroups as $group) { ?>
                                 <option value="<?php echo $group['id']; ?>"><?php echo $group['group_name']; ?></option>
                             <?php } ?>
