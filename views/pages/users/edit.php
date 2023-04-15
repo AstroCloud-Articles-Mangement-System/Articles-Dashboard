@@ -1,13 +1,12 @@
 
 <!-- Registration form -->
-<div class="container w-50">
+<div class="container w-50" >
     <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">User Edit Form</h3>
         </div>
-        <form action="#" method="post">
+        <form action="#" method="post" style="z-index: 5;">
             <div class="card-body row">
-
                 <div class="form-group col-6">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -16,8 +15,6 @@
                         <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" value="<?php echo $user[0]['user_name']; ?>">
                     </div>
                 </div>
-
-
                 <div class="form-group col-6">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

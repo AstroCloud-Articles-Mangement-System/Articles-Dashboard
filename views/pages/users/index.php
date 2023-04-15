@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" style="z-index: 5;">
   <section class="content">
     <div class="container-fluid">
       <div class="row">
