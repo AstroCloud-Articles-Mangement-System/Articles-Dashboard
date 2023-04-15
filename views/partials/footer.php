@@ -1,5 +1,5 @@
-<footer class="main-footer text-center">
-    <strong style="letter-spacing:10px;">Made With Love <i class="fa fa-heart text-info"></i></strong>
+<footer class="main-footer text-center bg-transparent" style="border:solid thin transparent;">
+    <strong style=" letter-spacing:10px;">Made With Love <i class="fa fa-heart text-info"></i></strong>
     <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
         viewBox="0 0 2611.084 485.677">
         <title>Gray Clouds Background</title>
