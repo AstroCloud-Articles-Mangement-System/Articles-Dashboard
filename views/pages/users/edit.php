@@ -71,5 +71,5 @@
         </form>
     </div>
 </div>
-<?php var_dump($user_id) ?>
+
 

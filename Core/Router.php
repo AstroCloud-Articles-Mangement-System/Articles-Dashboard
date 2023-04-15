@@ -56,6 +56,7 @@ class Router
         $uri_parts = parse_url($uri);
         $path = $uri_parts['path'];
         $query = $uri_parts['query'] ?? '';
+
     
         foreach ($this->routes as $route) {
             // Match on path and method only
@@ -66,7 +67,9 @@ class Router
                 // Pass route parameters and query string parameters to controller
                 $controller_path = base_path('controllers/' . $route['controller']);
                 $controller = require $controller_path;
-                return $controller($route['params'], $params);
+           
+                return $controller;
+
             }
         }
     
