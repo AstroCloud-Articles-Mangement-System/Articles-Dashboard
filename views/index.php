@@ -81,8 +81,8 @@
     <aside class="control-sidebar control-sidebar-dark">
     </aside>
 
-    <!-- Main Footer -->
-    <?php include 'partials/footer.php'; ?>
+    <<<<<<< HEAD <!-- Main Footer -->
+      <?php include 'partials/footer.php'; ?>
   </div>
 
 
@@ -114,6 +114,41 @@
   <script src="../views/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <script src="../views/dist/js/adminlte.min.js"></script>
   <script src="../views/dist/js/demo.js"></script>
+  =======
+  <!-- Main Footer -->
+  <?php include 'partials/footer.php'; ?>
+  </section>
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  <script src="../views/plugins/jquery/jquery.min.js"></script>
+  <script src="../views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../views/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="../views/dist/js/adminlte.js"></script>
+  <script src="../views/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="../views/plugins/raphael/raphael.min.js"></script>
+  <script src="../views/views/plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="../views/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <script src="../views/plugins/chart.js/Chart.min.js"></script>
+  <script src="../views/dist/js/demo.js"></script>
+  <script src="../views/dist/js/pages/dashboard2.js"></script>
+  <script src="../views/plugins/jquery/jquery.min.js"></script>
+  <script src="../views/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../views/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="../views/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="../views/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="../views/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="../views/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="../views/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="../views/plugins/jszip/jszip.min.js"></script>
+  <script src="../views/plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="../views/plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="../views/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="../views/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="../views/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script src="../views/dist/js/adminlte.min.js"></script>
+  <script src="../views/dist/js/demo.js"></script>
+  >>>>>>> b8c0d018970253f6c8bd24edfd37c81fbf4a9371
 </body>
 
 </html>

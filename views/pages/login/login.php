@@ -13,10 +13,10 @@
 </head>
 
 <body class="hold-transition login-page dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-  <div class="wrapper">
+  <div class="wrapper" style="z-index: 5;">
   <div class="login-box" style="margin-top:15%">
     <!-- /.login-logo -->
-    <div class="card">
+    <div class="card" style="z-index: 5;">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
