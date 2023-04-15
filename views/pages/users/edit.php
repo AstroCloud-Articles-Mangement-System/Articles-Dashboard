@@ -1,5 +1,17 @@
 <!-- Edit form -->
 <div class="container w-50">
+<?php
+    if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
+        echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
+        echo '<ul></ul>';
+        foreach ($_SESSION['error_message'] as $error) {
+            echo '<li>' . $error . '</li>';
+        }
+        echo '</ul>';
+        echo '</div>';
+        unset($_SESSION['error_message']);
+    }
+    ?>
     <div class="card card-primary" style="z-index:5;">
         <div class="card-header">
             <h3 class="card-title">User Edit Form</h3>
