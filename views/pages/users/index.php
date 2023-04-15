@@ -64,7 +64,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(function() {
-    $("#example1").DataTable({
+    $("#user-table").DataTable({
         "responsive": true,
         "autoWidth": true,
         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
