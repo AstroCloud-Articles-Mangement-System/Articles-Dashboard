@@ -5,14 +5,21 @@ $user = new User;
 $errors = [];
 $_SESSION['success_message'] = "";
 if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $user_name = $_POST['user_name'];
+    $user_password =  password_hash($_POST['user_password'], PASSWORD_DEFAULT);
+    $date = date("Y-m-d");
+    $group_id = $_POST['group'];
     $data = [
-        $_POST['name'],
-        $_POST['email'],
-        $_POST['phone'],
-        $_POST['user_name'],
-        $_POST['user_password'],
-        date("Y-m-d"),
-        $_POST['group']
+        $name,
+        $email,
+        $phone,
+        $user_name,
+        $user_password,
+        $date,
+        $group_id
     ];
     if (empty($errors)) {
         $_SESSION['success_message'] = "User " . $_POST['name'] . " Created Successfully!!";
