@@ -58,14 +58,14 @@
             include 'views/pages/users/edit.php';
           } else if ($page == "users") {
             include 'views/pages/users/index.php';
-          } else if ($page = "userscreate") {
-            include 'views/pages/users/create.php';
           } elseif ($page == "profile") {
             include 'views/pages/profile/index.php';
           } else if ($page == "groups") {
             include 'views/pages/groups/index.php';
           } else if ($page == "articles") {
             include 'views/pages/articles/index.php';
+          } else if ($page = "userscreate") {
+            include 'views/pages/users/create.php';
           }
           ?>
         </div>
