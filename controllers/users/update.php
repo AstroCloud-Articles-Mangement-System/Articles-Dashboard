@@ -10,7 +10,7 @@ if (isset($_POST['_method']) && $_POST['_method'] === 'PATCH') {
     $_POST['email'],
     $_POST['phone'],
     $_POST['user_name'],
-    $_POST['user_password'],
+    password_hash($_POST['user_password'], PASSWORD_DEFAULT),
     $_POST['group']
   ];
 
