@@ -8,5 +8,9 @@ $router->get('/groups', 'groups/index.php');
 $router->get('/articles', 'articles/index.php');
 
 $router->get('/edit', 'users/edit.php');
+
+
+
+// $router->get('/edit', 'users/edit.php');
 //$router->patch('/user', 'users/update.php');
 

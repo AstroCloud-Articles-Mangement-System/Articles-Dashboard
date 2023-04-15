@@ -67,12 +67,7 @@
 
         </div>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-        </aside>
-
-        <!-- Main Footer -->
-        <?php include 'partials/footer.php'; ?>
+    
       </section>
     </div>
 
