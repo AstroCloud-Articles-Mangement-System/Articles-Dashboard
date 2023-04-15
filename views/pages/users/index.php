@@ -7,7 +7,7 @@
     unset($_SESSION['success_message']);
   }
   ?>
-   <section class="content" >
+  <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -16,9 +16,9 @@
               <h2 class="card-title text-bold mt-3">Users DataTable</h2>
               <div class="row mb-2">
                 <div class="col-sm-12">
-                  <button class="btn btn-info bg-info float-right" data-toggle="modal" data-target="#addUserModal">
+                  <a class="btn btn-info bg-info float-right" href="/users/create">
                     <i class="fas fa-plus mr-2"></i>Add New User
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -67,26 +67,26 @@
 
   </section>
 </div>
-    <!-- Modal -->
-    <div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h5>Are You Sure to Delete this User?</h5>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger" id="delete-user">Delete</button>
-          </div>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Are You Sure to Delete this User?</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="delete-user">Delete</button>
       </div>
     </div>
+  </div>
+</div>
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -102,6 +102,7 @@
       "info": true,
     }).buttons().container().appendTo('#user-table_wrapper .col-md-6:eq(0)');
   });
+
   function UserdeletemodalShow(event) {
     let deleteBtnModal = document.querySelector("#delete-user");
     deleteBtnModal.onclick = function() {
