@@ -1,36 +1,68 @@
 <?php
-function validate_form_()
+
+use Endroid\QrCode\Color\Color;
+
+$errors = [];
+function validate_user()
 {
-    $name = isset($_POST["name"]) ? $_POST["name"] : "";
-    $user_name = isset($_POST["user_name"]) ? $_POST["user_name"] : "";
-    $email = isset($_POST["email"]) ? $_POST["email"] : "";
-    $password = isset($_POST["password"]) ? $_POST["password"] : "";
-    $phone = isset($_POST["phone"]) ? $_POST["phone"] : "";
-    $group = isset($_POST["group"]) ? $_POST["group"] : "";
-    if (empty($name)) {
-        return "Name is required";
-    } else if (empty($user_name)) {
-        return "user name is required";
-    } else if (empty($password)) {
-        return "Password is required";
-    } else if (empty($phone)) {
-        return "Phone is required";
-    } else if (empty($group)) {
-        return "Group is required";
-    } else if (empty($email)) {
-        return "Email is required";
-    }else if (empty($name) && empty($email)) {
-        return "Name and Email are required";
-    } else if (empty($name) && empty($email) && empty($user_name) && empty($password) && empty($phone) && empty($group)) {
-        return "empty fields";
-    } else if (strlen($name) > MAX_NAME_LENGTH) {
-        return "Name must be less than 100 characters";
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return "Email is invalid";
-    } else {
-        return "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // Validate name field
+        if (empty($_POST["name"])) {
+            $errors["name"] = "Name is required";
+        } else {
+            $name = $_POST["name"];
+            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+                $errors["name"] = "Only letters and white space allowed";
+            }
+        }
+
+        // Validate username field
+        if (empty($_POST["user_name"])) {
+            $errors["user_name"] = "Username is required";
+        } else {
+            $username = $_POST["user_name"];
+            if (!preg_match("/^[a-zA-Z0-9_]*$/", $username)) {
+                $errors["user_name"] = "Only letters, numbers and underscore allowed";
+            }
+        }
+
+        // Validate email field
+        if (empty($_POST["email"])) {
+            $errors["email"] = "Email is required";
+        } else {
+            $email = $_POST["email"];
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors["email"] = "Invalid email format";
+            }
+        }
+
+        // Validate password field
+        if (empty($_POST["user_password"])) {
+            $errors["user_password"] = "Password is required";
+        } else {
+            $password = $_POST["user_password"];
+            if (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", $password)) {
+                $errors["user_password"] = "Password must be at least 8 characters long and contain at least one letter and one number";
+            }
+        }
+
+        // Validate phone field
+        if (empty($_POST["phone"])) {
+            $errors["phone"] = "Phone number is required";
+        } else {
+            $phone = $_POST["phone"];
+            if (!preg_match('/^(010|011|012|015)\d{8}$/', $phone)) {
+                $errors["phone"] = "Invalid phone number";
+            }
+        }
+
+        // Validate group field
+        $group = $_POST["group"];
+        if (empty($group)) {
+            $errors["group"] = "Group selection is required";
+        }
     }
+
+    return $errors ?? "";
 }
-
-
-?>
