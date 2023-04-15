@@ -37,7 +37,6 @@
                     <th>Email</th>
                     <th>Mobile Number</th>
                     <th>Username</th>
-                    <th>Password</th>
                     <th>Subscription Date</th>
                     <th>Assigned Group ID</th>
                     <th>Actions</th>
@@ -51,7 +50,6 @@
                       <td><?php echo $user['user_email']; ?></td>
                       <td><?php echo $user['user_mobile_number']; ?></td>
                       <td><?php echo $user['user_username']; ?></td>
-                      <td><?php echo $user['user_password']; ?></td>
                       <td><?php echo $user['subscription_date']; ?></td>
                       <td><?php echo $user['group_id']; ?></td>
                       <td class="d-flex justify-content-around">
