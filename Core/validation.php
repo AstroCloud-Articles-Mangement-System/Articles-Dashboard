@@ -12,7 +12,7 @@ function validate_user()
             $errors["name"] = "Name is required";
         } else {
             $name = $_POST["name"];
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            if (!preg_match("/^[a-zA-Z]{5,20}$/i", $name)) {
                 $errors["name"] = "Only letters and white space allowed";
             }
         }
@@ -22,7 +22,7 @@ function validate_user()
             $errors["user_name"] = "Username is required";
         } else {
             $username = $_POST["user_name"];
-            if (!preg_match("/^[a-zA-Z0-9_]*$/", $username)) {
+            if (!preg_match("/^[a-z\d]{5,20}$/i", $username)) {
                 $errors["user_name"] = "Only letters, numbers and underscore allowed";
             }
         }
@@ -42,7 +42,7 @@ function validate_user()
             $errors["user_password"] = "Password is required";
         } else {
             $password = $_POST["user_password"];
-            if (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", $password)) {
+            if (!preg_match("/^(?=.*[A-Z])(?=.*\d)(?=.*[@!#%&_])[\w@!#%&]{8,}$/", $password)) {
                 $errors["user_password"] = "Password must be at least 8 characters long and contain at least one letter and one number";
             }
         }
