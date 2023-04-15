@@ -61,7 +61,7 @@
                         <select id="group" name="group" class="form-control">
                             <option value="">Select User Group</option>
                             <?php foreach ($allGroups as $group) { ?>
-                                <option value="<?php echo $group['id']; ?>"><?php echo $group['group_icon']; ?></option>
+                                <option value="<?php echo $group['id']; ?>"><?php echo $group['group_name']; ?></option>
                             <?php } ?>
                         </select>
                     </div>
