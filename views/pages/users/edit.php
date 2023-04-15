@@ -1,4 +1,3 @@
-
 <!-- Registration form -->
 <div class="container w-50">
     <div class="card card-primary">
@@ -32,7 +31,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="email" class="form-control" id="email" placeholder="example@gmail.com" fdprocessedid="7re2y6"  value="<?php echo $user[0]['user_email']; ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" fdprocessedid="7re2y6" value="<?php echo $user[0]['user_email']; ?>">
                     </div>
                 </div>
 
@@ -41,7 +40,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-lock'></i></span>
                         </div>
-                        <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Password"  value="<?php echo $user[0]['user_password']; ?>">
+                        <input type="password" id="user_password" name="user_password" class="form-control" placeholder="Password" value="<?php echo $user[0]['user_password']; ?>">
                     </div>
                 </div>
 
@@ -50,7 +49,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-phone'></i></span>
                         </div>
-                        <input type="phone" id="phone" name="phone" class="form-control" placeholder="Phone Number"  value="<?php echo $user[0]['user_mobile_number']; ?>">
+                        <input type="phone" id="phone" name="phone" class="form-control" placeholder="Phone Number" value="<?php echo $user[0]['user_mobile_number']; ?>">
                     </div>
                 </div>
 
@@ -66,10 +65,8 @@
                         </select>
                     </div>
                 </div>
-              <button type="submit" class="btn btn-info">Update</button>
+                <button type="submit" class="btn btn-info">Update</button>
             </div>
         </form>
     </div>
 </div>
-
-

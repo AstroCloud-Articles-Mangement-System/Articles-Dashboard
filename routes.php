@@ -4,7 +4,7 @@ $router->get('/login', 'login/index.php');
 
 //users
 $router->get('/users', 'users/index.php');
-$router->get('/userscreate', 'users/create.php');
+$router->get('/users/create', 'users/create.php');
 $router->post('/users', 'users/store.php');
 
 $router->get('/profile', 'profile/index.php');
