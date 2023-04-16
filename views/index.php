@@ -87,9 +87,9 @@
             case "user_create":
               include 'views/pages/users/create.php';
               break;
-              case "articleCreate":
-                include 'views/pages/articles/create.php';
-                break;
+            case "articleCreate":
+              include 'views/pages/articles/create.php';
+              break;
           }
           ?>
                 </div>

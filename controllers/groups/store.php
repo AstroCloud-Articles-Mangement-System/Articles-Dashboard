@@ -1,9 +1,10 @@
 <?php
 $group = new Group;
-$errors="";
+$errors;
 $_SESSION['success_message'] = "";
 $_SESSION['error_message'] = "";
 if (isset($_POST['submit'])) {
+    $errors = validate_group();
     if ($errors == "") {
         $page = "groups";
         $name = $_POST['group_name'];
