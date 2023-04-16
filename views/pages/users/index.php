@@ -7,7 +7,7 @@
     unset($_SESSION['success_message']);
   }
   ?>
-  <section class="content">
+   <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -16,9 +16,9 @@
               <h2 class="card-title text-bold mt-3">Users DataTable</h2>
               <div class="row mb-2">
                 <div class="col-sm-12">
-                  <a class="btn btn-info bg-info float-right" href="/users/create">
+                  <button class="btn btn-info bg-info float-right" data-toggle="modal" data-target="#addUserModal">
                     <i class="fas fa-plus mr-2"></i>Add New User
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -87,12 +87,11 @@
   </section>
 </div>
 
-
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(function() {
-    $("#example1").DataTable({
+    $("#user-table").DataTable({
       "responsive": true,
       "autoWidth": true,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
@@ -101,9 +100,8 @@
       "searching": true,
       "ordering": true,
       "info": true,
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    }).buttons().container().appendTo('#user-table_wrapper .col-md-6:eq(0)');
   });
-
   function UserdeletemodalShow(event) {
     let deleteBtnModal = document.querySelector("#delete-user");
     deleteBtnModal.onclick = function() {
