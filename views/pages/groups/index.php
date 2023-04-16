@@ -15,32 +15,30 @@
     </div>
     <div class="my-5 d-flex flex-wrap justify-content-between">
         <?php foreach ($allGroups as $group) { ?>
-        <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
-            <div class="alert card p-0" style="height:30vh;">
-                <div class=" card-body">
-                    <div class="user-panel group-info d-flex mt-1">
-                        <div class=" image">
-                            <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
+            <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
+                <div class="alert card p-0" style="height:30vh;">
+                    <div class=" card-body">
+                        <div class="user-panel group-info d-flex mt-1">
+                            <div class=" image">
+                                <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
+                            </div>
+                            <div class="info">
+                                <a href="/users?group_id=<?php echo $group['id']; ?>" class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
+                            </div>
                         </div>
-                        <div class="info">
-                            <a href="#"
-                                class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
-                        </div>
+                        <hr class="border-info">
+                        <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
                     </div>
-                    <hr class="border-info">
-
-                    <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
-                </div>
-                <div class="card-footer bg-transparent">
-                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                        <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                    </button>
-                    <a href="/groups/edit?id=<?php echo $group['id']; ?>">
-                        <i class=" fas fa-edit text-info ml-3"></i>
-                    </a>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                        </button>
+                        <a href="/groups/edit?id=<?php echo $group['id']; ?>">
+                            <i class=" fas fa-edit text-info ml-3"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
         <?php } ?>
         <!--Create New Group-->
         <div class="d-block col-md-4 mb-2" style="z-index: 5;">
