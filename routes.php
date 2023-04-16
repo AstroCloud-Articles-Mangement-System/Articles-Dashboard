@@ -19,6 +19,7 @@ $router->put('/groups', 'groups/update.php');
 
 //Articles
 $router->get('/articles', 'articles/index.php');
+$router->get('/articles/create', 'articles/create.php');
 
 //Profile
 $router->get('/profile', 'profile/index.php');

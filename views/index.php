@@ -65,7 +65,9 @@
             include 'views/pages/groups/index.php';
           } else if ($page == "articles") {
             include 'views/pages/articles/index.php';
-          } else if ($page = "userscreate") {
+          }  else if ($page = "articleCreate") {
+            include 'views/pages/articles/create.php';
+          }else if ($page = "userscreate") {
             include 'views/pages/users/create.php';
           }
           ?>
