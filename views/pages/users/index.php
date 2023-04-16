@@ -42,36 +42,13 @@
                       <td><?php echo $user['group_id']; ?></td>
                       <td class="d-flex justify-content-around">
                         <a href="/user/edit?id=<?php echo $user['id']; ?>" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
-                        <form method="post" action="/user/delete?id=<?php echo $user['id']; ?>">
-                          <button type="button" data-toggle="modal" data-target="#deleteModel" onclick="UserdeletemodalShow(event)" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i> </button>
-                          <input type="hidden" name="_method" value="DELETE">
-                        </form>
+                        <a href="#" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                   <?php } ?>
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h5>Are You Sure to Delete this User?</h5>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger" id="delete-user">Delete</button>
           </div>
         </div>
       </div>
@@ -95,11 +72,4 @@
       "info": true,
     }).buttons().container().appendTo('#user-table_wrapper .col-md-6:eq(0)');
   });
-
-  function UserdeletemodalShow(event) {
-    let deleteBtnModal = document.querySelector("#delete-user");
-    deleteBtnModal.onclick = function() {
-      event.target.closest("form").submit();
-    }
-  }
 </script>

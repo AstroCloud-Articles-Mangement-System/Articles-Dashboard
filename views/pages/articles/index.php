@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="z-index: 5;">
     <div class="my-5">
         <div class="col-12 d-flex justify-content-end">
             <div class="form-inline">
@@ -13,8 +13,8 @@
             </div>
         </div>
     </div>
-    <div class="my-5 d-flex flex-wrap justify-content-between">
-        <div class="d-block groupCard col-md-4 mb-2">
+    <div class="my-5 d-flex flex-wrap justify-content-between" style="z-index: 5;">
+        <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:530px;">
                 <img class="card-img-top rounded" src="https://image.ibb.co/nNFg4a/polar.jpg" alt="Card image cap">
                 <div class="card-body">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-block groupCard col-md-4 mb-2 ">
+        <div class="d-block groupCard col-md-4 mb-2 " style="z-index: 5;">
             <div class="alert card p-0" style="height:530px;">
                 <img class="card-img-top rounded" src="https://image.ibb.co/nNFg4a/polar.jpg" alt="Card image cap">
                 <div class="card-body">
@@ -73,7 +73,7 @@
             </div>
         </div>
         <!--Create New Article-->
-        <div class="d-block col-md-4 mb-2">
+        <div class="d-block col-md-4 mb-2" style="z-index: 5;" >
             <div class="alert card p-0" style="height:530px;">
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
