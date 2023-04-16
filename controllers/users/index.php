@@ -1,6 +1,4 @@
 <?php
-require_once('Models/User.php');
-require_once('Models/Group.php');
 $page = "users";
 $user = new User;
 $group = new Group;
