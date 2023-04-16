@@ -13,14 +13,6 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 15px;
-}
-
-body {
-    background-color: #e1e7ed;
-}
-
 #article_container {
     width: 90%;
     max-width: 1000px;
@@ -52,7 +44,7 @@ body {
     justify-content: center;
 }
 
-h1 {
+.article_title {
     font-size: 3rem;
     font-weight: 600;
     color: #33363b;
@@ -75,7 +67,7 @@ h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-p {
+.article_body {
     font-family: 'PT Serif', serif;
     font-size: 1.125rem;
     color: #626a73;
@@ -83,24 +75,6 @@ p {
     line-height: 36px;
 }
 
-.btn {
-    padding: 20px 44px;
-    outline: none;
-    border: 1px solid #99a3b4;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #33363b;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 50px;
-}
-
-.btn:hover {
-    background-color: #f0f0f0;
-}
 
 .divider {
     width: 60px;
@@ -131,7 +105,7 @@ p {
     border-radius: 25px;
   }
   
-  h3 {
+  .publisher {
     font-weight: 700;
     font-size: 15px;
     color: var(--verydarkgrayishblue);
