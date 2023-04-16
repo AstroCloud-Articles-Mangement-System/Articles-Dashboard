@@ -26,7 +26,7 @@
                         <input type="text" id="name" name="name" class="form-control vaildate_input" placeholder="Full Name" required>
                         <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
-                            Username must be and contain 5 - 12 characters
+                            name must be and contain 5 - 20 characters only
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
                         <input type="text" id="user_name" name="user_name" class="form-control vaildate_input" placeholder="Username" required>
                         <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="user_name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
-                            Username must be and contain 5 - 12 characters
+                            Username must be and contain 5 - 20 characters
                         </div>
                     </div>
                 </div>
