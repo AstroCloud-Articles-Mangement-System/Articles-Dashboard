@@ -37,9 +37,9 @@
                     <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                         <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <a href="/articles/show?id=<?php echo 1 ?>"  class="btn btn-navbar" type="button" data-widget="navbar-search">
                         <i class="fa fa-duotone fa-eye text-info"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
