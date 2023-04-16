@@ -21,10 +21,8 @@ class User
 
     public function create_user($data)
     {
-        $keys = ['id', 'user_name', 'user_email', 'user_mobile_number', 'user_username', 'user_password', 'subscription_date', 'group_id'];
-        foreach ($data as $user) {
-            $user_details = array_combine($keys, $user);
-        }
+        $keys = ['user_name', 'user_email', 'user_mobile_number', 'user_username', 'user_password', 'subscription_date', 'group_id'];
+        $user_details = array_combine($keys, $data);
         return $this->db->save($user_details);
     }
 

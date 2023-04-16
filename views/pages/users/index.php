@@ -1,4 +1,12 @@
 <div class="wrapper">
+  <?php
+  if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
+    echo '<div id="alert-success" class="alert alert-success" role="alert">';
+    echo $_SESSION['success_message'];
+    echo '</div>';
+    unset($_SESSION['success_message']);
+  }
+  ?>
   <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -8,9 +16,9 @@
               <h2 class="card-title text-bold mt-3">Users DataTable</h2>
               <div class="row mb-2">
                 <div class="col-sm-12">
-                  <button class="btn btn-info bg-info float-right" data-toggle="modal" data-target="#addUserModal">
+                  <a class="btn btn-info bg-info float-right" href="/users/create">
                     <i class="fas fa-plus mr-2"></i>Add New User
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -84,7 +92,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(function() {
-    $("#user-table").DataTable({
+    $("#example1").DataTable({
       "responsive": true,
       "autoWidth": true,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
@@ -93,14 +101,17 @@
       "searching": true,
       "ordering": true,
       "info": true,
-    }).buttons().container().appendTo('#user-table_wrapper .col-md-6:eq(0)');
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
 
   function UserdeletemodalShow(event) {
-    console.log("zaft");
     let deleteBtnModal = document.querySelector("#delete-user");
     deleteBtnModal.onclick = function() {
       event.target.closest("form").submit();
     }
   }
+  setTimeout(() => {
+    const sucess = document.getElementById('alert-success');
+    sucess.style.display = 'none';
+  }, 3000);
 </script>
