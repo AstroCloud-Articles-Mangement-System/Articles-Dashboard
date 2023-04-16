@@ -13,6 +13,6 @@ $router->get('/groups', 'groups/index.php');
 $router->get('/articles', 'articles/index.php');
 
 $router->get('/user/edit', 'users/edit.php');
-$router->patch('/user', 'users/update.php');
+$router->put('/user', 'users/update.php');
 
 $router->delete('/user/delete', 'users/delete.php');

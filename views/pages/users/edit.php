@@ -76,7 +76,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" name="_method" value="PATCH" class="btn btn-info btn-block">Update</button>
+                <button type="submit" name="_method" value="PUT" class="btn btn-info btn-block">Update</button>
             </div>
         </form>
     </div>
