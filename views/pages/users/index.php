@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" style="z-index:5;">
   <?php
   if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
     echo '<div id="alert-success" class="alert alert-success" role="alert">';
@@ -7,7 +7,7 @@
     unset($_SESSION['success_message']);
   }
   ?>
-   <section class="content">
+   <section class="content" >
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -64,6 +64,9 @@
         </div>
       </div>
     </div>
+
+  </section>
+</div>
     <!-- Modal -->
     <div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -84,9 +87,6 @@
         </div>
       </div>
     </div>
-  </section>
-</div>
-
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
