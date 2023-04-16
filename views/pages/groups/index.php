@@ -35,9 +35,9 @@
                     <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                         <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                        <i class="fas fa-edit text-info"></i>
-                    </button>
+                    <a href="/groups/edit?id=<?php echo $group['id']; ?>">
+                        <i class=" fas fa-edit text-info ml-3"></i>
+                    </a>
                 </div>
             </div>
         </div>
