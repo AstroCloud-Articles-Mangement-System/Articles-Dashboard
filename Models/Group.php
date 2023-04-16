@@ -18,4 +18,8 @@ class Group
     {
         return $this->db->get_record_by_id($id);
     }
+    public function check_id_existence($id)
+    {
+        return $this->db->checkIdExistence($id);
+    }
 }
