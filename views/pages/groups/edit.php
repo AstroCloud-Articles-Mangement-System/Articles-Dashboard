@@ -24,14 +24,20 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-user-friends'></i></span>
                         </div>
-                        <input type="text" id="name" name="name" class="form-control vaildate_input"
+                        <?php if($group[0]['group_name'] === 'Admin' || $group[0]['group_name'] === 'Editor') {?>
+                        <input type="text" id="name" name="groupName" class="form-control vaildate_input"
+                            placeholder="Group Name" value="<?php echo $group[0]['group_name']; ?>" required readonly>
+                        <?php }else{?>
+                        <input type="text" id="name" name="groupName" class="form-control vaildate_input"
                             placeholder="Group Name" value="<?php echo $group[0]['group_name']; ?>" required>
+                        <?php }?>
                     </div>
                 </div>
                 <div class="form-group col-12">
                     <div class="mb-2" style="font-size: 18px;letter-spacing:1.5px;">Description</div>
                     <div>
-                        <textarea class="form-control vaildate_input" placeholder="Group Description" rows="6" required><?php echo $group[0]['group_description']; ?>
+                        <textarea class="form-control vaildate_input" placeholder="Group Description" name="groupDesc"
+                            rows=" 6" required><?php echo $group[0]['group_description']; ?>
                             </textarea>
                     </div>
                 </div>
