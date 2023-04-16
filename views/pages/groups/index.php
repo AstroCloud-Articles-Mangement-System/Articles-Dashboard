@@ -1,6 +1,6 @@
 <div class="container" style="z-index: 100;">
     <div class="my-5" style="z-index: 100;">
-        <div class="col-12 d-flex justify-content-end" >
+        <div class="col-12 d-flex justify-content-end">
             <div class="form-inline">
                 <div class="input-group" data-widget="group-search">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -14,6 +14,7 @@
         </div>
     </div>
     <div class="my-5 d-flex flex-wrap justify-content-between">
+        <?php foreach ($allGroups as $group) { ?>
         <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:30vh;">
                 <div class=" card-body">
@@ -22,14 +23,13 @@
                             <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block text-decoration-none card-title mb-2 fs-4 groupName">Group
-                                Name</a>
+                            <a href="#"
+                                class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
                         </div>
                     </div>
                     <hr class="border-info">
 
-                    <p class="card-text text-secondary">Some quick example text to build on the card title and make
-                        up </p>
+                    <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
                 </div>
                 <div class="card-footer bg-transparent">
                     <button class="btn btn-navbar" type="button" data-widget="navbar-search">
@@ -41,33 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
-            <div class="alert card p-0" style="height:30vh;">
-                <div class=" card-body">
-                    <div class="user-panel group-info d-flex mt-1">
-                        <div class=" image">
-                            <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
-                        </div>
-                        <div class="info">
-                            <a href="#" class="d-block text-decoration-none card-title mb-2 fs-4 groupName">Group
-                                Name</a>
-                        </div>
-                    </div>
-                    <hr class="border-info">
-
-                    <p class="card-text text-secondary">Some quick example text to build on the card title and make
-                        up </p>
-                </div>
-                <div class="card-footer bg-transparent">
-                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                        <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                        <i class="fas fa-edit text-info"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <?php } ?>
         <!--Create New Group-->
         <div class="d-block col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:30vh;">
