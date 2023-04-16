@@ -16,3 +16,4 @@ $router->get('/user/edit', 'users/edit.php');
 $router->put('/users', 'users/update.php');
 
 $router->delete('/user/delete', 'users/delete.php');
+$router->delete('/group/delete', 'groups/delete.php');
