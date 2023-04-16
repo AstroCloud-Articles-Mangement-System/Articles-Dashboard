@@ -4,6 +4,7 @@ $group_id = intval($_GET['id']); // cast the id parameter to an integer
 $_SESSION['error_message'] = "";
 $group = new group();
 if (($group->check_id_existence($group_id)) && (!$group->Is_Admins_or_Editors_group($group_id))) {
+    $groupType='ordinary';
     try {
         $group = $group->delete_group($group_id);
         $_SESSION['success_message'] = "";

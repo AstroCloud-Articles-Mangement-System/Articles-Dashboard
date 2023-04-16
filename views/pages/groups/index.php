@@ -45,13 +45,18 @@
                         <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
                     </div>
                     <div class="card-footer bg-transparent">
-                        <form method="post" action="/group/delete?id=<?php echo $group['id']; ?>" style="display: inline-block;">
-                            <button class="btn" type="button" data-toggle="modal" data-target="#deleteGroupModel" onclick="GroupdeletemodalShow(event)">
-                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                            </button> 
-                           
-                            <input type="hidden" name="_method" value="DELETE">
-                        </form>
+                        <?php
+                        if (($group['group_name'] != 'Admins') && ($group['group_name'] != 'Editors')) { ?>
+                            <form method="post" action="/group/delete?id=<?php echo $group['id']; ?>" style="display: inline-block;">
+                                <button class="btn" type="button" data-toggle="modal" data-target="#deleteGroupModel" onclick="GroupdeletemodalShow(event)">
+                                    <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                                </button>
+                                <input type="hidden" name="_method" value="DELETE">
+                            </form>
+                        <?php
+                        }
+                        ?>
+
                         <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                             <i class="fas fa-edit text-info"></i>
                         </button>
@@ -77,35 +82,35 @@
 
 <!-- Modal -->
 <div class="modal fade" id="deleteGroupModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h5>Are You Sure to Delete this Group?</h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" id="delete-group">Delete</button>
-      </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Are You Sure to Delete this Group?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="delete-group">Delete</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <script>
     function GroupdeletemodalShow(event) {
-    let deleteBtnModal = document.querySelector("#delete-group");
-    deleteBtnModal.onclick = function() {
-      event.target.closest("form").submit();
+        let deleteBtnModal = document.querySelector("#delete-group");
+        deleteBtnModal.onclick = function() {
+            event.target.closest("form").submit();
+        }
     }
-  }
-  setTimeout(() => {
-    const sucess = document.getElementById('alert-success');
-    sucess.style.display = 'none';
-  }, 3000);
+    setTimeout(() => {
+        const sucess = document.getElementById('alert-success');
+        sucess.style.display = 'none';
+    }, 3000);
 </script>
