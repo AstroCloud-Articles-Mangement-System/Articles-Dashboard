@@ -53,7 +53,7 @@ if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
                     <div class="card-footer bg-transparent">
                         <?php
                         if (($group['group_name'] != 'Admins') && ($group['group_name'] != 'Editors')) { ?>
-                            <form method="post" action="/group/delete?id=<?php echo $group['id']; ?>" style="display: inline-block;">
+                            <form method="post" action="/groups/delete?id=<?php echo $group['id']; ?>" style="display: inline-block;">
                                 <button class="btn" type="button" data-toggle="modal" data-target="#deleteGroupModel" onclick="GroupdeletemodalShow(event)">
                                     <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                                 </button>
