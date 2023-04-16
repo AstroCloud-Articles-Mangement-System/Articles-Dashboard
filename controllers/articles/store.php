@@ -17,6 +17,5 @@ if (isset($_POST['submit'])) {
         $user_id,
     ];
     $article->create_article($data);
-    // $allUsers = $user->get_all_users();
     require 'views/index.php';
 }
