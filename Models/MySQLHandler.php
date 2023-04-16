@@ -4,7 +4,7 @@ class MySQLHandler implements DbHandler
 
     private $_db_handler;
     private $_table;
-    private $_primary_key;
+    private $_primary_key= "id";
 
     public function __construct($table)
     {
@@ -145,10 +145,8 @@ class MySQLHandler implements DbHandler
         $sql = str_replace(",where", "where", $sql);
 
         if (mysqli_query($this->_db_handler, $sql)) {
-            $this->disconnect();
             return true;
         } else {
-            $this->disconnect();
             return false;
         }
     }

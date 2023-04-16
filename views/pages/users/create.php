@@ -1,5 +1,17 @@
-<!-- Registration form -->
+<!-- Create form -->
 <div class="container w-50">
+    <?php
+    if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
+        echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
+        echo '<ul></ul>';
+        foreach ($_SESSION['error_message'] as $error) {
+            echo '<li>' . $error . '</li>';
+        }
+        echo '</ul>';
+        echo '</div>';
+        unset($_SESSION['error_message']);
+    }
+    ?>
     <div class="card card-primary" style="z-index: 1000;">
         <div class="card-header">
             <h3 class="card-title">User Create Form</h3>
@@ -19,7 +31,6 @@
                     </div>
 
                 </div>
-
 
                 <div class="form-group col-6">
                     <div class="input-group">
