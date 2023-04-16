@@ -1,4 +1,18 @@
 <div class="container" style="z-index: 5;">
+    <?php
+    if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
+        echo '<div id="alert-success" class="alert alert-success" role="alert">';
+        echo $_SESSION['success_message'];
+        echo '</div>';
+        unset($_SESSION['success_message']);
+    }
+    if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
+        echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
+        echo $_SESSION['error_message'];
+        echo '</div>';
+        unset($_SESSION['error_message']);
+    }
+    ?>
     <div class="my-5">
         <div class="col-12 d-flex justify-content-end">
             <div class="form-inline">
@@ -63,9 +77,12 @@
                         up </p>
                 </div>
                 <div class="card-footer bg-transparent">
-                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                        <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                    </button>
+                    <!-- <form method="post" action="/articles/delete?id=<?php echo $article['id']; ?>" style="display: inline-block;">
+                        <button class="btn" type="button" data-toggle="modal" data-target="#deleteGroupModel" onclick="ArticledeletemodalShow(event)">
+                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                        </button>
+                        <input type="hidden" name="_method" value="DELETE">
+                    </form> -->
                     <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                         <i class="fa fa-duotone fa-eye text-info"></i>
                     </button>
@@ -73,7 +90,7 @@
             </div>
         </div>
         <!--Create New Article-->
-        <div class="d-block col-md-4 mb-2" style="z-index: 5;" >
+        <div class="d-block col-md-4 mb-2" style="z-index: 5;">
             <div class="alert card p-0" style="height:530px;">
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
@@ -86,3 +103,37 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteArticleModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Are You Sure to Delete this Article?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="delete-article">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ArticledeletemodalShow(event) {
+        let deleteBtnModal = document.querySelector("#delete-article");
+        deleteBtnModal.onclick = function() {
+            event.target.closest("form").submit();
+        }
+    }
+    setTimeout(() => {
+        const sucess = document.getElementById('alert-success');
+        sucess.style.display = 'none';
+    }, 3000);
+</script>
