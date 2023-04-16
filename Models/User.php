@@ -41,4 +41,9 @@ class User
     {
         return $this->db->checkIdExistence($id);
     }
+
+    public function get_users_by_any_sql($sql)
+    {
+        return $this->db->get_records_by_any_sql($sql);
+    }
 }
