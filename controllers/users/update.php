@@ -1,6 +1,4 @@
 <?php
-require('Core/validation.php');
-
 $user = new User;
 $errors;
 $_SESSION['success_message'] = "";

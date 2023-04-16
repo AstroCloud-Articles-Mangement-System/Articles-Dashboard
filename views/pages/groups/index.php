@@ -1,3 +1,10 @@
+<?php
+if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
+    echo '<div id="alert-success" class="alert alert-success" role="alert">';
+    echo $_SESSION['success_message'];
+    echo '</div>';
+    unset($_SESSION['success_message']);
+} ?>
 <div class="container" style="z-index: 100;">
     <?php
     if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
@@ -37,11 +44,10 @@
                                 <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
                             </div>
                             <div class="info">
-                                <a href="#" class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
+                                <a href="/users?group_id=<?php echo $group['id']; ?>" class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
                             </div>
                         </div>
                         <hr class="border-info">
-
                         <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
                     </div>
                     <div class="card-footer bg-transparent">
@@ -56,10 +62,9 @@
                         <?php
                         }
                         ?>
-
-                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                            <i class="fas fa-edit text-info"></i>
-                        </button>
+                        <a href="/groups/edit?id=<?php echo $group['id']; ?>">
+                            <i class=" fas fa-edit text-info ml-3"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -70,7 +75,7 @@
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
                         <div class="bg-info p-3 img-circle group-info">
-                            <a href=""><i class="fa fa-plus align-middle" style="font-size:24px"></i></a>
+                            <a href="/groups/create"><i class="fa fa-plus align-middle" style="font-size:24px"></i></a>
                         </div>
                     </div>
                 </div>

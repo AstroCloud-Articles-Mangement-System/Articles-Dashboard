@@ -16,7 +16,7 @@
         <div class="card-header">
             <h3 class="card-title">User Create Form</h3>
         </div>
-        <form action="/users" method="post" id="create_user_form">
+        <form action="/users" method="post" id="vaildate_user_form" data-form-type="create">
             <div class="card-body row">
                 <div class="form-group col-6">
                     <div class="input-group">
