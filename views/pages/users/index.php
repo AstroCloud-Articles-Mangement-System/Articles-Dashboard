@@ -51,26 +51,18 @@
                                         <td><?php echo $user['user_mobile_number']; ?></td>
                                         <td><?php echo $user['user_username']; ?></td>
                                         <td><?php echo $user['subscription_date']; ?></td>
-                                        <<<<<<< HEAD <td><?php echo $user["group_name"]; ?></td>
-                                            <td class="d-flex justify-content-around">
-                                                <a href="/user/edit?id=<?php echo $user['id']; ?>"
-                                                    class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
-                                                <form method="post" action="/user/delete?id=<?php echo $user['id']; ?>">
-                                                    =======
-                                            <td><?php echo $user['group_id']; ?></td>
-                                            <td class="d-flex justify-content-around">
-                                                <a href="/users/edit?id=<?php echo $user['id']; ?>"
-                                                    class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
-                                                <form method="post"
-                                                    action="/users/delete?id=<?php echo $user['id']; ?>">
-                                                    >>>>>>> e00b8c11b01088084fd1e8a70793b8d2cbf40bf8
-                                                    <button type="button" data-toggle="modal" data-target="#deleteModel"
-                                                        onclick="UserdeletemodalShow(event)"
-                                                        class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i>
-                                                    </button>
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                </form>
-                                            </td>
+                                        <td><?php echo $user["group_name"]; ?></td>
+                                        <td class="d-flex justify-content-around">
+                                            <a href="/users/edit?id=<?php echo $user['id']; ?>"
+                                                class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                                            <form method="post" action="/users/delete?id=<?php echo $user['id']; ?>">
+                                                <button type="button" data-toggle="modal" data-target="#deleteModel"
+                                                    onclick="UserdeletemodalShow(event)"
+                                                    class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i>
+                                                </button>
+                                                <input type="hidden" name="_method" value="DELETE">
+                                            </form>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
