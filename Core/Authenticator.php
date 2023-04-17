@@ -1,21 +1,21 @@
 <?php
 
 namespace Core;
-
+use User;
 class Authenticator
 {
     public function attempt($email, $password)
     {
+       
         $user = new User;
-        $sql = "SELECT * FROM users WHERE email = $email";
+        $sql = "SELECT * FROM users WHERE user_email = '$email'";
+   
         $foundedUser=$user->get_users_by_any_sql($sql);
-        var_dump($foundedUser);
         if ($foundedUser) {
-            if (password_verify($password, $foundedUser['password'])) {
+            if (password_verify($password, $foundedUser[0]['user_password'])) {
                 $this->login([
                     'email' => $email
                 ]);
-
                 return true;
             }
         }

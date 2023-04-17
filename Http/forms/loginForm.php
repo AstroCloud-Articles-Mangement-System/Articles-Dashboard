@@ -3,6 +3,7 @@
 namespace Http\forms;
 
 use Core\loginValidator;
+require_once('Core/loginValidator.php');
 
 class loginForm
 {
