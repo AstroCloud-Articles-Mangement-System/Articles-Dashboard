@@ -4,7 +4,7 @@ class MySQLHandler implements DbHandler
 
     private $_db_handler;
     private $_table;
-    private $_primary_key= "id";
+    private $_primary_key = "id";
 
     public function __construct($table)
     {
@@ -194,5 +194,10 @@ class MySQLHandler implements DbHandler
     {
         $sql = "SELECT u.*,g.group_name FROM `users` u ,`groups` g WHERE u.group_id=g.id";
         return $this->get_results($sql);
+    }
+    
+    public function get_records_by_any_sql($sql)
+    {
+        return ($this->get_results($sql));
     }
 }

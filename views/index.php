@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="../views/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../views/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="../views/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../views/dist/css/showarticle.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 </head>
 
@@ -53,20 +54,40 @@
       <section class="content" style="margin-top: 7.5%">
         <div class="container-fluid">
           <?php
-          if ($page == "/") {
-            include 'views/pages/home/index.php';
-          } else if ($page == "user_edit") {
-            include 'views/pages/users/edit.php';
-          } else if ($page == "users") {
-            include 'views/pages/users/index.php';
-          } elseif ($page == "profile") {
-            include 'views/pages/profile/index.php';
-          } else if ($page == "groups") {
-            include 'views/pages/groups/index.php';
-          } else if ($page == "articles") {
-            include 'views/pages/articles/index.php';
-          } else if ($page = "userscreate") {
-            include 'views/pages/users/create.php';
+          switch ($page) {
+            case "/":
+              include 'views/pages/home/index.php';
+              break;
+            case "user_edit":
+              include 'views/pages/users/edit.php';
+              break;
+            case "users":
+              include 'views/pages/users/index.php';
+              break;
+            case "profile":
+              include 'views/pages/profile/index.php';
+              break;
+            case "groups":
+              include 'views/pages/groups/index.php';
+              break;
+            case "articles":
+              include 'views/pages/articles/index.php';
+              break;
+            case "group_create":
+              include 'views/pages/groups/create.php';
+              break;
+            case "group_edit":
+              include 'views/pages/groups/edit.php';
+              break;
+            case "user_create":
+              include 'views/pages/users/create.php';
+              break;
+            case "articleCreate":
+              include 'views/pages/articles/create.php';
+              break;
+            case "articleShow":
+              include 'views/pages/articles/show.php';
+              break;
           }
           ?>
         </div>
