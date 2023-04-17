@@ -53,22 +53,34 @@
       <section class="content" style="margin-top: 7.5%">
         <div class="container-fluid">
           <?php
-          if ($page == "/") {
-            include 'views/pages/home/index.php';
-          } else if ($page == "user_edit") {
-            include 'views/pages/users/edit.php';
-          } else if ($page == "users") {
-            include 'views/pages/users/index.php';
-          } elseif ($page == "profile") {
-            include 'views/pages/profile/index.php';
-          } else if ($page == "groups") {
-            include 'views/pages/groups/index.php';
-          } else if ($page == "articles") {
-            include 'views/pages/articles/index.php';
-          } else if ($page = "groupcreate") {
-            include 'views/pages/groups/create.php';
-          } else if ($page = "userscreate") {
-            include 'views/pages/users/create.php';
+          switch ($page) {
+            case "/":
+              include 'views/pages/home/index.php';
+              break;
+            case "user_edit":
+              include 'views/pages/users/edit.php';
+              break;
+            case "users":
+              include 'views/pages/users/index.php';
+              break;
+            case "profile":
+              include 'views/pages/profile/index.php';
+              break;
+            case "groups":
+              include 'views/pages/groups/index.php';
+              break;
+            case "articles":
+              include 'views/pages/articles/index.php';
+              break;
+            case "groupcreate":
+              include 'views/pages/groups/create.php';
+              break;
+            case "group_edit":
+              include 'views/pages/groups/edit.php';
+              break;
+            case "userscreate":
+              include 'views/pages/users/create.php';
+              break;
           }
           ?>
         </div>

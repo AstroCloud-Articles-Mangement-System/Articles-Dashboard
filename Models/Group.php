@@ -25,4 +25,15 @@ class Group
         return $this->db->save($group_details);
     }
 
+    public function update_user($id, $data)
+    {
+        $keys = ['group_name', 'group_description'];
+        $group_details = array_combine($keys, $data);
+        return $this->db->update($group_details, $id);
+    }
+    
+    public function check_id_existence($id)
+    {
+        return $this->db->checkIdExistence($id);
+    }
 }

@@ -30,11 +30,10 @@ if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
                                 <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
                             </div>
                             <div class="info">
-                                <a href="#" class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
+                                <a href="/users?group_id=<?php echo $group['id']; ?>" class="d-block text-decoration-none card-title mb-2 fs-4 groupName"><?php echo $group['group_name']; ?></a>
                             </div>
                         </div>
                         <hr class="border-info">
-
                         <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
                     </div>
                     <div class="card-footer bg-transparent">
