@@ -1,10 +1,3 @@
-<?php
-if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
-    echo '<div id="alert-success" class="alert alert-success" role="alert">';
-    echo $_SESSION['success_message'];
-    echo '</div>';
-    unset($_SESSION['success_message']);
-} ?>
 <div class="container" style="z-index: 100;">
     <?php
     if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {

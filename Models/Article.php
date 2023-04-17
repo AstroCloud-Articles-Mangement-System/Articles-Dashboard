@@ -1,5 +1,6 @@
 <?php
-class Article{
+class Article
+{
     private $db;
 
     public function __construct()
@@ -20,12 +21,18 @@ class Article{
         $article_details = array_combine($keys, $data);
         return $this->db->save($article_details);
     }
-    public function get_article_publisher($id){
+    public function get_article_publisher($id)
+    {
         return $this->get_article_by_id($id)[0]['user_id'];
     }
 
     public function check_id_existence($id)
     {
         return $this->db->checkIdExistence($id);
+    }
+
+    public function delete_article($id)
+    {
+        return $this->db->delete($id);
     }
 }
