@@ -8,7 +8,6 @@ class MySQLHandler implements DbHandler
 
     public function __construct($table)
     {
-
         $this->_table = $table;
         $this->connect();
     }
@@ -165,10 +164,8 @@ class MySQLHandler implements DbHandler
         }
     }
 
-    public function filter($search, $filter_type)
+    public function filter($search, $where)
     {
-        $filter = new $filter_type($search);
-        $where = $filter->get_sql();
         $table = $this->_table;
         $sql = "select * from `$table` where $where";
         return $this->get_results($sql);
@@ -189,7 +186,7 @@ class MySQLHandler implements DbHandler
             return false;
         }
     }
-
+    
     public function get_records_by_any_sql($sql)
     {
         return ($this->get_results($sql));

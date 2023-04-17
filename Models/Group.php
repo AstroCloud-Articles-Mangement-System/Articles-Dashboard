@@ -1,7 +1,6 @@
 <?php
-class Group
+class Group 
 {
-
     private $db;
 
     public function __construct()
@@ -56,4 +55,11 @@ class Group
         }
         
     }
+
+    public function filter_groups($search)
+    {
+        $where = " `group_name` like '" . $search. "%' or `group_description` like '%" . $search . "%' ";
+        return $this->db->filter($search, $where);
+    }  
 }
+    

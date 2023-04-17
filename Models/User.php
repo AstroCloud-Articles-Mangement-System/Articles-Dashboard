@@ -37,6 +37,7 @@ class User
     {
         return $this->db->delete($id);
     }
+    
     public function check_id_existence($id)
     {
         return $this->db->checkIdExistence($id);
@@ -46,5 +47,4 @@ class User
     {
         return $this->db->get_records_by_any_sql($sql);
     }
-   
 }

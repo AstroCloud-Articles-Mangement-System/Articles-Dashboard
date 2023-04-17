@@ -11,6 +11,7 @@ $router->delete('/users/delete', 'users/delete.php');
 
 //Groups
 $router->get('/groups', 'groups/index.php');
+$router->post('/groups', 'groups/index.php');
 $router->get('/groups/create', 'groups/create.php');
 $router->post('/groups', 'groups/store.php');
 $router->get('/groups/edit', 'groups/edit.php');
@@ -20,7 +21,9 @@ $router->delete('/groups/delete', 'groups/delete.php');
 //Articles
 $router->get('/articles', 'articles/index.php');
 $router->get('/articles/create', 'articles/create.php');
+$router->delete('/articles/delete', 'articles/delete.php');
 $router->post('/articles', 'articles/store.php');
+$router->get('/articles/show', 'articles/show.php');
 
 //Profile
 $router->get('/profile', 'profile/index.php');

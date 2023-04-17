@@ -23,5 +23,7 @@ if (isset($_POST['_method']) && $_POST['_method'] === 'PUT') {
             $group = $group->get_group_by_id($group_id);
             $_SESSION['error_message'] = $errors;
         }
+    $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
+    header('Location: ' . $redirect_url);
+    exit; 
 }
-require 'views/index.php';

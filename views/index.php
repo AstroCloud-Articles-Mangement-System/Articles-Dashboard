@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="../views/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../views/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="../views/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../views/dist/css/showarticle.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 </head>
 
@@ -72,17 +73,20 @@
             case "articles":
               include 'views/pages/articles/index.php';
               break;
-            case "groupcreate":
+            case "group_create":
               include 'views/pages/groups/create.php';
               break;
             case "group_edit":
               include 'views/pages/groups/edit.php';
               break;
-            case "userscreate":
+            case "user_create":
               include 'views/pages/users/create.php';
               break;
             case "articleCreate":
               include 'views/pages/articles/create.php';
+              break;
+            case "articleShow":
+              include 'views/pages/articles/show.php';
               break;
           }
           ?>
