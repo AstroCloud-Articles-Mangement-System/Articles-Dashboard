@@ -84,8 +84,8 @@ function validate_group()
             $errors["group_desc"] = "Group Description is required";
         } else {
             $groupDesc = $_POST["group_desc"];
-            if (!preg_match('/^[A-Za-z0-9\-_.,!?;:()\'"\s]{1,1500}+$/i', $groupDesc)) {
-                $errors["group_desc"] = "Only letters, numbers and -_.,!?;:()\'\" allowed and must be less than 1500 letter";
+            if (!preg_match('/^[A-Za-z0-9\-_.,!?;:()\[\]\'"\s]{1,1500}$/i', $groupDesc)) {
+                $errors["group_desc"] = "Only letters, numbers and -_.,!?;:()[]\'\" allowed and must be less than 1500 letter";
             }
         }
     }
