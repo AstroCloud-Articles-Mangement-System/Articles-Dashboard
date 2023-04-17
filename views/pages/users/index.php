@@ -51,7 +51,7 @@
                                         <td><?php echo $user['user_mobile_number']; ?></td>
                                         <td><?php echo $user['user_username']; ?></td>
                                         <td><?php echo $user['subscription_date']; ?></td>
-                                        <td><?php echo $allGroups[$user['group_id']-1]["group_name"]; ?></td>
+                                        <td><?php echo $user["group_name"]; ?></td>
                                         <td class="d-flex justify-content-around">
                                             <a href="/user/edit?id=<?php echo $user['id']; ?>"
                                                 class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
@@ -123,5 +123,3 @@ setTimeout(() => {
     sucess.style.display = 'none';
 }, 3000);
 </script>
-
-<?php var_dump($allGroups) ;?>

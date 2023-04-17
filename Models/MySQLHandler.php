@@ -189,4 +189,10 @@ class MySQLHandler implements DbHandler
             return false;
         }
     }
+
+    public function join()
+    {
+        $sql = "SELECT u.*,g.group_name FROM `users` u ,`groups` g WHERE u.group_id=g.id";
+        return $this->get_results($sql);
+    }
 }

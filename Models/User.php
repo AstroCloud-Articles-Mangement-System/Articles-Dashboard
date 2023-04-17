@@ -37,8 +37,14 @@ class User
     {
         return $this->db->delete($id);
     }
+    
     public function check_id_existence($id)
     {
         return $this->db->checkIdExistence($id);
     }
+
+    public function get_all_users_with_groups()
+    {
+        return $this->db->join();
+    }  
 }
