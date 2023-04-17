@@ -1,4 +1,5 @@
 <?php
+
 class MySQLHandler implements DbHandler
 {
 

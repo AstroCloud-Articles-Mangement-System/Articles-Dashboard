@@ -1,12 +1,13 @@
 <?php
 
 namespace Core;
+use \Models;
 
 class Authenticator
 {
     public function attempt($email, $password)
     {
-        $user = new User;
+        $user = new \Models\User;
         $sql = "SELECT * FROM users WHERE email = $email";
         $foundedUser=$user->get_users_by_any_sql($sql);
         var_dump($foundedUser);
@@ -15,10 +16,13 @@ class Authenticator
                 $this->login([
                     'email' => $email
                 ]);
+                var_dump("verify");
 
                 return true;
             }
-        }
+        }                var_dump("not verify");
+
+
         return false;
     }
 
