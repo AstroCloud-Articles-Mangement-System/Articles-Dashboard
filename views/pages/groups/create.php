@@ -1,5 +1,5 @@
 <!-- Create form -->
-<div class="container w-50">
+<div class="container" style="width:35% ;">
     <?php
     if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
         echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
