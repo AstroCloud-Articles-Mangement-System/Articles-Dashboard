@@ -2,8 +2,8 @@ var inputs = document.getElementsByClassName("vaildate_input");
 var form = document.getElementById("vaildate_user_form");
 var inputsArray = Object.values(inputs);
 var patterns = {
-    name: /^[a-zA-Z]{5,20}$/i,
-    user_name: /^[a-z\d]{5,20}$/i,
+    name: /^[a-zA-z\s]{5,20}$/i,
+    user_name: /^[a-zA-z\s\d_-]{5,20}$/i,
     phone: /^(010|011|012|015)\d{8}$/,
     email: /^([\w\.-]+)@([a-z\d]+)\.([a-z]{3,5})(\.[a-z]{2,5})?$/, //yourname @ domain.com(.uk)
     user_password: /^(?=.*[A-Z])(?=.*\d)(?=.*[@!#%&_])[\w@!#%&]{8,}$/

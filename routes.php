@@ -23,6 +23,7 @@ $router->delete('/groups/delete', 'groups/delete.php');
 //Articles
 $router->get('/articles', 'articles/index.php');
 $router->get('/articles/create', 'articles/create.php');
+$router->post('/articles', 'articles/store.php');
 $router->get('/articles/show', 'articles/show.php');
 
 //Profile

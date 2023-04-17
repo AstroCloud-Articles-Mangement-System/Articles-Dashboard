@@ -73,21 +73,21 @@
             case "articles":
               include 'views/pages/articles/index.php';
               break;
-            case "groupcreate":
+            case "group_create":
               include 'views/pages/groups/create.php';
               break;
             case "group_edit":
               include 'views/pages/groups/edit.php';
               break;
-            case "userscreate":
+            case "user_create":
               include 'views/pages/users/create.php';
               break;
-              case "articleCreate":
-                include 'views/pages/articles/create.php';
-                break;
-              case "articleShow":
-                include 'views/pages/articles/show.php';
-                break;
+            case "articleCreate":
+              include 'views/pages/articles/create.php';
+              break;
+            case "articleShow":
+              include 'views/pages/articles/show.php';
+              break;
           }
           ?>
         </div>

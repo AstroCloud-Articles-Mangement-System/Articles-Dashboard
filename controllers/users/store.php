@@ -33,5 +33,7 @@ if (isset($_POST['submit'])) {
         $allGroups = $group->get_all_groups();
         $_SESSION['error_message'] = $errors;
     }
-    require 'views/index.php';
+    $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
+    header('Location: ' . $redirect_url);
+    exit;
 }

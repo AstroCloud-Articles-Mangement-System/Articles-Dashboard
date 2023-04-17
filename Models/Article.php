@@ -1,5 +1,5 @@
 <?php
-class article{
+class Article{
     private $db;
 
     public function __construct()
@@ -16,9 +16,9 @@ class article{
     }
     public function create_article($data)
     {
-        $keys = ['user_name', 'user_email', 'user_mobile_number', 'user_username', 'user_password', 'subscription_date', 'group_id'];
-        $user_details = array_combine($keys, $data);
-        return $this->db->save($user_details);
+        $keys = ['article_title', 'article_summary', 'article_image', 'article_content', 'publishing_date', 'user_id'];
+        $article_details = array_combine($keys, $data);
+        return $this->db->save($article_details);
     }
     public function get_article_publisher($id){
         return $this->get_article_by_id($id)[0]['user_id'];
@@ -29,10 +29,3 @@ class article{
         return $this->db->checkIdExistence($id);
     }
 }
-
-
-
-
-
-
-?>
