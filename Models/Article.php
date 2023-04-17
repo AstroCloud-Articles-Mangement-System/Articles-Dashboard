@@ -20,6 +20,14 @@ class article{
         $user_details = array_combine($keys, $data);
         return $this->db->save($user_details);
     }
+    public function get_article_publisher($id){
+        return $this->get_article_by_id($id)[0]['user_id'];
+    }
+
+    public function check_id_existence($id)
+    {
+        return $this->db->checkIdExistence($id);
+    }
 }
 
 
