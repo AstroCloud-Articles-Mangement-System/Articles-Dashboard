@@ -12,7 +12,7 @@ function validate_user()
             $errors["name"] = "Name is required";
         } else {
             $name = $_POST["name"];
-            if (!preg_match("/^[a-zA-Z]{5,20}$/i", $name)) {
+            if (!preg_match("/^[a-zA-z\s]{5,20}$/i", $name)) {
                 $errors["name"] = "Only letters and white space allowed";
             }
         }
@@ -22,7 +22,7 @@ function validate_user()
             $errors["user_name"] = "Username is required";
         } else {
             $username = $_POST["user_name"];
-            if (!preg_match("/^[a-z\d]{5,20}$/i", $username)) {
+            if (!preg_match("/^[a-zA-z\s\d_-]{5,20}$/i", $username)) {
                 $errors["user_name"] = "Only letters, numbers and underscore allowed";
             }
         }
@@ -64,5 +64,30 @@ function validate_user()
         }
     }
 
+    return $errors ?? "";
+}
+function validate_group()
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // Validate name field
+        if (empty($_POST["group_name"])) {
+            $errors["group_name"] = "Group Name is required";
+        } else {
+            $name = $_POST["group_name"];
+            if (!preg_match("/^[a-zA-z\s_-]{5,20}$/i", $name)) {
+                $errors["group_name"] = "Only letters,-,_ and white space allowed";
+            }
+        }
+        // Validate description field
+        if (empty($_POST["group_desc"])) {
+            $errors["group_desc"] = "Group Description is required";
+        } else {
+            $groupDesc = $_POST["group_desc"];
+            if (!preg_match('/^[A-Za-z0-9\-_.,!?;:()\[\]\'"\s]{1,1500}$/i', $groupDesc)) {
+                $errors["group_desc"] = "Only letters, numbers and -_.,!?;:()[]\'\" allowed and must be less than 1500 letter";
+            }
+        }
+    }
     return $errors ?? "";
 }

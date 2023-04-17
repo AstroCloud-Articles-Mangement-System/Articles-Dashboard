@@ -1,11 +1,10 @@
 <?php
-require('Models/Group.php');
-
 $group = new Group;
-$errors="";
+$errors;
 $_SESSION['success_message'] = "";
 $_SESSION['error_message'] = "";
 if (isset($_POST['submit'])) {
+    $errors = validate_group();
     if ($errors == "") {
         $page = "groups";
         $name = $_POST['group_name'];
@@ -21,5 +20,7 @@ if (isset($_POST['submit'])) {
         $page = "groupcreate";
         $_SESSION['error_message'] = $errors;
     }
-    require 'views/index.php';
+    $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
+    header('Location: ' . $redirect_url);
+    exit;       
 }

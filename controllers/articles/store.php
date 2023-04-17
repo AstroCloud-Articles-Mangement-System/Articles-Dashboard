@@ -1,5 +1,6 @@
 <?php
-$article = new article;
+$article = new Article;
+
 if (isset($_POST['submit'])) {
     $page = "articles";
     $article_title = $_POST['article_title'];
@@ -17,5 +18,9 @@ if (isset($_POST['submit'])) {
         $user_id,
     ];
     $article->create_article($data);
-    require 'views/index.php';
+    $file = new uploadImageInArticle();
+    $allArticles = $article->get_all_articles();
+    // $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
+    // header('Location: ' . $redirect_url);
+    // exit;
 }
