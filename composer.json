@@ -1,10 +1,10 @@
 {
   "require": {
       "endroid/qr-code": "*",
-    "aws/aws-sdk-php": "^3.263"
+    "aws/aws-sdk-php": "*"
   },
   "autoload": {
-      "classmap": ["Models","Core/Router.php","Core/validation.php"],
+      "classmap": ["Models","Core/Router.php","Core/validation.php","Models/uploadImageInArticle.php"],
       "files": ["config.php"]
   }  
 }
