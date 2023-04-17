@@ -12,6 +12,8 @@ $router->delete('/users/delete', 'users/delete.php');
 
 //Groups
 $router->get('/groups', 'groups/index.php');
+$router->get('/groups/create', 'groups/create.php');
+$router->post('/groups', 'groups/store.php');
 $router->get('/groups/edit', 'groups/edit.php');
 $router->put('/groups', 'groups/update.php');
 

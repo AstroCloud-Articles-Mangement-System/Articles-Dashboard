@@ -18,4 +18,11 @@ class Group
     {
         return $this->db->get_record_by_id($id);
     }
+    public function create_group($data)
+    {
+        $keys = ['group_name', 'group_description'];
+        $group_details = array_combine($keys, $data);
+        return $this->db->save($group_details);
+    }
+
 }
