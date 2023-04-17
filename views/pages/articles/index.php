@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="my-5 d-flex flex-wrap justify-content-between" style="z-index: 5;">
+    <div class="my-5 d-flex flex-wrap justify-content-center" style="z-index: 5;">
         <?php foreach ($allArticles as $article) { ?>
             <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
                 <div class="alert card p-0" style="height:530px;">
@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <div class="user-panel group-info mt-1">
                             <div class="info d-flex flex-column">
-                                <a href="#" class="d-block text-decoration-none card-title fs-4 groupName"><?php echo $article['article_title']; ?></a>
+                                <a href="/articles/show?id=<?php echo $article['id'] ?>" class="d-block text-decoration-none card-title fs-4 groupName"><?php echo $article['article_title']; ?></a>
                                 <span class="d-block text-secondary samp">Publishing Date: <?php echo $article['publishing_date']; ?></span>
                             </div>
                         </div>
