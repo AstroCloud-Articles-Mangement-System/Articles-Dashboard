@@ -189,7 +189,7 @@ class MySQLHandler implements DbHandler
             return false;
         }
     }
-
+    
     public function get_records_by_any_sql($sql)
     {
         return ($this->get_results($sql));
