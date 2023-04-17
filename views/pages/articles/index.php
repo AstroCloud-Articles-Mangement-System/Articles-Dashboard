@@ -44,9 +44,12 @@
                         <p class="d-block card-text text-secondary text-truncate--2 "><?php echo $article['article_summary']; ?></p>
                     </div>
                     <div class="card-footer bg-transparent">
-                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                        </button>
+                        <form method="post" action="/articles/delete?id=<?php echo $article['id']; ?>" style="display: inline-block;">
+                            <button class="btn btn-navbar" type="button" data-toggle="modal" data-target="#deleteArticleModel" onclick="ArticledeletemodalShow(event)">
+                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                            </button>
+                            <input type="hidden" name="_method" value="DELETE">
+                        </form>
                         <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                             <i class="fa fa-duotone fa-eye text-info"></i>
                         </button>
