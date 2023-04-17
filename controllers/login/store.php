@@ -5,9 +5,11 @@ use controllers\login;
 use Http\forms\loginForm;
 use Core\Session;
 
+
 require_once('Http/forms/loginForm.php');
 require_once('Core/Authenticator.php');
 require_once('Core/Session.php');
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 

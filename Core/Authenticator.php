@@ -18,7 +18,9 @@ class Authenticator
                 ]);
                 return true;
             }
-        }
+        }                var_dump("not verify");
+
+
         return false;
     }
 
