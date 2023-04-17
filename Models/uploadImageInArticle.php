@@ -37,36 +37,34 @@ class uploadImageInArticle
         );
     }
 
-    // public function upload()
-    // {
-    //     $result = $this->_s3->putObject([
-    //         'Bucket' => 'articlesysbucket',
-    //         'Key' => uniqid(),
-    //         'SourceFile' => $_FILES["article_image"]["tmp_name"]
-    //     ]);
-    //     echo $result['Body'];
-    // }
-    public function __construct()
+    public function upload($object_key)
+    {
+    //     $file_name = $_FILES["article_image"]["name"];
+    //     $file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
+    //     $object_key = uniqid() . "." . $file_extension;
+        $result = $this->_s3->putObject([
+            'Bucket' => 'articlesysbucket',
+            'Key' => $object_key,
+            'SourceFile' => $_FILES["article_image"]["tmp_name"],
+        ]);
+        return $result;
+    }
+
+    public function __construct($object_key)
     {
         if (!empty($_FILES)) {
             if ($this->fileType($_FILES["article_image"]["type"], "image") && $this->fileSize($_FILES["article_image"]["size"])) {
                 $this->set_credentials(__KEY__, __SECRET__, __REGION__, __VERSION__);
                 try {
-                    $result = $this->_s3->putObject([
-                        'Bucket' => 'articlesysbucket',
-                        'Key' => uniqid(),
-                        'SourceFile' => $_FILES["article_image"]["tmp_name"]
-                    ]);
-
+                    $result = $this->upload($object_key);
+                    header('Content-Disposition: inline');
                     $object_url = $result['ObjectURL'];
-                    $object_key = substr($object_url, strpos($object_url, '/') + 1);
+                    $object_key = ltrim(parse_url($object_url)['path'], '/');
                     $bucket = 'articlesysbucket';
-                    $url = $this->_s3->getObjectUrl($bucket,  $object_key);
-
-                    // output image to browser
-                    echo "<img src='{$url}' />";
+                    $url = $this->_s3->getObjectUrl($bucket, $object_key);
+                    echo $url;
                     echo "File Uploaded successfully ^_^";
-
+                    echo "<img src='{$url}' />";
                 } catch (Aws\S3\Exception\S3Exception $e) {
                     echo $e->getMessage();
                     echo "Can't Upload this file.";
