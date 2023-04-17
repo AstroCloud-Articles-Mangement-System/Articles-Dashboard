@@ -1,7 +1,7 @@
 <div class="article_section">
     <div id="article_container">
         <div class="article_container_img">
-        <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article_data[0]['article_image']); ?>" alt="Card image cap">
+        <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article_data[0]['article_image']); ?>" alt="Card image cap" style="z-index: 10000;">
         </div>
         <div class="article_container_content">
             <div class="the">
