@@ -36,12 +36,12 @@
                         <div class="user-panel group-info mt-1">
                             <div class="info d-flex flex-column">
                                 <a href="#" class="d-block text-decoration-none card-title fs-4 groupName"><?php echo $article['article_title']; ?></a>
-                                <span class="d-block text-secondary samp">Publishing Date : <?php echo $article['publishing_date']; ?></span>
+                                <span class="d-block text-secondary samp">Publishing Date: <?php echo $article['publishing_date']; ?></span>
                             </div>
                         </div>
                         <hr class="border-info">
                         <span class="text-uppercase font-weight-bold font-italic text-secondary">Summary</span>
-                        <p class="d-block card-text text-secondary text-truncate--2 "><?php echo $article['article_summary']; ?></p>
+                        <p class="d-block card-text text-secondary text-truncate--2 "><?php echo $article['article_summary']; ?>...</p>
                     </div>
                     <div class="card-footer bg-transparent">
                         <form method="post" action="/articles/delete?id=<?php echo $article['id']; ?>" style="display: inline-block;">
@@ -50,9 +50,9 @@
                             </button>
                             <input type="hidden" name="_method" value="DELETE">
                         </form>
-                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                        <a href="/articles/show?id=<?php echo $article['id'] ?>" class="btn btn-navbar" type="button">
                             <i class="fa fa-duotone fa-eye text-info"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

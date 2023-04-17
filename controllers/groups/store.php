@@ -1,6 +1,4 @@
 <?php
-require('Core/validation.php');
-
 $group = new Group;
 $errors;
 $_SESSION['success_message'] = "";
@@ -22,5 +20,7 @@ if (isset($_POST['submit'])) {
         $page = "groupcreate";
         $_SESSION['error_message'] = $errors;
     }
-    require 'views/index.php';
+    $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
+    header('Location: ' . $redirect_url);
+    exit;       
 }

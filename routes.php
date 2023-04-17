@@ -25,6 +25,7 @@ $router->get('/articles', 'articles/index.php');
 $router->get('/articles/create', 'articles/create.php');
 $router->delete('/articles/delete', 'articles/delete.php');
 $router->post('/articles', 'articles/store.php');
+$router->get('/articles/show', 'articles/show.php');
 
 //Profile
 $router->get('/profile', 'profile/index.php');

@@ -12,7 +12,7 @@ function validate_user()
             $errors["name"] = "Name is required";
         } else {
             $name = $_POST["name"];
-            if (!preg_match("/^[a-zA-Z]{5,20}$/i", $name)) {
+            if (!preg_match("/^[a-zA-z\s]{5,20}$/i", $name)) {
                 $errors["name"] = "Only letters and white space allowed";
             }
         }
@@ -22,7 +22,7 @@ function validate_user()
             $errors["user_name"] = "Username is required";
         } else {
             $username = $_POST["user_name"];
-            if (!preg_match("/^[a-z\d]{5,20}$/i", $username)) {
+            if (!preg_match("/^[a-zA-z\s\d_-]{5,20}$/i", $username)) {
                 $errors["user_name"] = "Only letters, numbers and underscore allowed";
             }
         }
