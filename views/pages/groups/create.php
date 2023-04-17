@@ -1,5 +1,5 @@
 <!-- Create form -->
-<div class="container w-50">
+<div class="container" style="width:35% ;">
     <?php
     if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
         echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
@@ -24,21 +24,19 @@
                             <span class="input-group-text"><i class='fas fa-user-alt'></i></span>
                         </div>
                         <input type="text" id="group_name" name="group_name" class="form-control vaildate_input" placeholder="Group Name" required>
-                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="name-alert" style="font-size: 12px;">
+                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none w-100" role="alert" data-mdb-color="warning" id="name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
-                            name must be and contain 5 - 20 characters only
+                            Group Name must be and contain 5 - 20 characters, -, _ and white space only
                         </div>
                     </div>
-
                 </div>
-
                 <div class="form-group col-12">
                     <div class="form-outline ">
                         <label class="form-label" for="group_desc">Description</label>
-                        <textarea class="form-control" id="group_desc" name="group_desc" rows="4"></textarea>
-                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning" id="user_name-alert" style="font-size: 12px;">
+                        <textarea class="form-control vaildate_input" id="group_desc" name="group_desc" rows="4"></textarea>
+                        <div class="alert alert-danger  px-3 py-2 mt-2 d-none w-100" role="alert" data-mdb-color="warning" id="user_name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
-                            Username must be and contain 5 - 20 characters
+                            Only letters, numbers and -_.,!?;:()\'\" allowed and must be less than 1500 letter
                         </div>
                     </div>
                 </div>
@@ -47,3 +45,4 @@
         </form>
     </div>
 </div>
+<script src="/views/dist/js/group_vaildation.js"></script>
