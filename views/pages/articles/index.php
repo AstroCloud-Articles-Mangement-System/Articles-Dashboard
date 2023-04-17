@@ -8,7 +8,11 @@
     }
     if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
         echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
-        echo $_SESSION['error_message'];
+        echo '<ul>';
+        foreach ($_SESSION['error_message'] as $error) {
+            echo '<li>' . $error . '</li>';
+        }
+        echo '</ul>';
         echo '</div>';
         unset($_SESSION['error_message']);
     }

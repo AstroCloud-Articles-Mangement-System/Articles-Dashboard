@@ -37,7 +37,6 @@
                         <div class="input-group-prepend">
                         </div>
                         <input type="file" name="article_image" id="fileToUpload" class="form-control-file">
-                        
                     </div>
                 </div>
                 <button type="submit" name="submit" class="btn btn-info btn-block create-btn create">Create</button>
