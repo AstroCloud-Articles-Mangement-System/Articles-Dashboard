@@ -1,9 +1,8 @@
 <div class="article_section">
     <div id="article_container">
         <div class="article_container_img">
-            <img src="https://images.pexels.com/photos/1761282/pexels-photo-1761282.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Great Adventure" style="width: 100%; height: 100%;">
+        <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article_data[0]['article_image']); ?>" alt="Card image cap" style="z-index: 10000;">
         </div>
-
         <div class="article_container_content">
             <div class="the">
                 <div class="line"></div>
