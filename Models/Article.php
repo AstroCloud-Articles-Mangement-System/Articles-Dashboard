@@ -1,5 +1,5 @@
 <?php
-class article{
+class Article{
     private $db;
 
     public function __construct()
@@ -21,10 +21,3 @@ class article{
         return $this->db->save($article_details);
     }
 }
-
-
-
-
-
-
-?>
