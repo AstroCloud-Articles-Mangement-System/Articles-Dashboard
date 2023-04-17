@@ -1,6 +1,5 @@
 <?php
 $router->get('/', 'home/index.php');
-$router->get('/login', 'login/index.php');
 
 //Users
 $router->get('/users', 'users/index.php');
@@ -18,8 +17,6 @@ $router->get('/groups/edit', 'groups/edit.php');
 $router->put('/groups', 'groups/update.php');
 $router->delete('/groups/delete', 'groups/delete.php');
 
-
-
 //Articles
 $router->get('/articles', 'articles/index.php');
 $router->get('/articles/create', 'articles/create.php');
@@ -27,3 +24,7 @@ $router->post('/articles', 'articles/store.php');
 
 //Profile
 $router->get('/profile', 'profile/index.php');
+
+//login 
+$router->get('/login', 'login/index.php');
+$router->post('/login','login/store.php'); 
