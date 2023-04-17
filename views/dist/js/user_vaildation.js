@@ -1,5 +1,5 @@
 var inputs = document.getElementsByClassName("vaildate_input");
-var form = document.getElementById("create_user_form");
+var form = document.getElementById("vaildate_user_form");
 var inputsArray = Object.values(inputs);
 var patterns = {
     name: /^[a-zA-Z]{5,20}$/i,
@@ -22,6 +22,10 @@ function validate(field, pattern) {
     }
 }
 for (var input of inputs) {
+    if(form.getAttribute('data-form-type')=="edit" && input.attributes.name.value!="user_password")
+    {
+        validate(input, patterns[input.attributes.name.value]);
+    }
     input.addEventListener('keyup', (e) => {
         validate(e.target, patterns[e.target.attributes.name.value]);
         if (e.target.attributes.name.value == "user_password") {
