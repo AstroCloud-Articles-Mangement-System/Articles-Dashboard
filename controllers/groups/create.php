@@ -1,3 +1,3 @@
 <?php
-$page = "groupcreate";
+$page = "group_create";
 require 'views/index.php';

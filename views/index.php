@@ -78,7 +78,7 @@
             case "articles":
               include 'views/pages/articles/index.php';
               break;
-            case "groupcreate":
+            case "group_create":
               include 'views/pages/groups/create.php';
               break;
             case "group_edit":
