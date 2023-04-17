@@ -36,6 +36,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 1000;
 }
 
 .article_container_content {

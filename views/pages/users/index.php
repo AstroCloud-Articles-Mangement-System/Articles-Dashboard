@@ -38,7 +38,7 @@
                                         <th>Mobile Number</th>
                                         <th>Username</th>
                                         <th>Subscription Date</th>
-                                        <th>Assigned Group ID</th>
+                                        <th>Assigned Group</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -51,7 +51,7 @@
                                         <td><?php echo $user['user_mobile_number']; ?></td>
                                         <td><?php echo $user['user_username']; ?></td>
                                         <td><?php echo $user['subscription_date']; ?></td>
-                                        <td><?php echo $user['group_id']; ?></td>
+                                        <td><?php echo $user["group_name"]; ?></td>
                                         <td class="d-flex justify-content-around">
                                             <a href="/users/edit?id=<?php echo $user['id']; ?>"
                                                 class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
