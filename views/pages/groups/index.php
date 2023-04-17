@@ -19,7 +19,7 @@
                 <form class='col-12' method="post">
                     <div class="input-group" data-widget="group-search">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                            name="searchOnGroup">
+                            name="searchOnGroup" id="searchOnGroup">
                         <div class="input-group-append">
                             <button class="btn btn-info bg-info" type="submit">
                                 <i class="fas fa-search fa-fw"></i>
@@ -32,8 +32,8 @@
     </div>
     <div class="my-5 d-flex flex-wrap justify-content-between">
         <?php foreach ($allGroups as $group) { ?>
-        <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
-            <div class="alert card p-0" style="height:30vh;">
+        <div class=" d-block groupCard col-md-4 mb-2" style="z-index: 5;">
+            <div class="alert card p-0" style="height:240px;">
                 <div class=" card-body">
                     <div class="user-panel group-info d-flex mt-1">
                         <div class=" image">
@@ -70,7 +70,7 @@
         <?php } ?>
         <!--Create New Group-->
         <div class="d-block col-md-4 mb-2" style="z-index: 5;">
-            <div class="alert card p-0" style="height:30vh;">
+            <div class="alert card p-0" style="height:240px;">
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
                         <div class="bg-info p-3 img-circle group-info">
