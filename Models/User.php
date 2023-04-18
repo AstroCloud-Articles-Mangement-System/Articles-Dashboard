@@ -47,4 +47,9 @@ class User
     {
         return $this->db->get_records_by_any_sql($sql);
     }
+    public function get_email_by_any_sql($sql)
+    {
+        return $this->db->get_records_by_any_sql($sql);
+    }
+  
 }
