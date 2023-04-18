@@ -1,10 +1,10 @@
 <?php
 $router->get('/', 'home/index.php')->only('auth');
 
-//Users
+
 if (isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin') {
 
-    //Users routes
+    //Users 
     $router->get('/users', 'users/index.php');
     $router->get('/users/create', 'users/create.php');
     $router->post('/users', 'users/store.php');
