@@ -57,16 +57,20 @@ class Router
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 Middleware::resolve($route['middleware']);
-
                 return require base_path('controllers/' . $route['controller']);
             }
         }
 
-        $this->abort();
+        if (! $_SESSION['user']) {
+            $this->abort(403);
+        }else{
+            $this->abort();
+        }
+
     }
 
 
-    protected function abort($code = 404)
+    public function abort($code = 404)
     {
         http_response_code($code);
 
