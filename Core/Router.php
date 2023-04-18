@@ -62,11 +62,10 @@ class Router
                
             }
         }
-
-        if (! $_SESSION['user']) {
-            $this->abort(403);
-        }else{
+        if (isset($_SESSION['user'])) {
             $this->abort();
+        }else{
+            $this->abort(403);
         }
 
     }
