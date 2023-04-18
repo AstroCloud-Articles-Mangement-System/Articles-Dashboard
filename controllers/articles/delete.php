@@ -11,8 +11,6 @@ if (isset($_GET['id'])  && $article->check_id_existence(intval($_GET['id']))) {
     $sql = "SELECT article_image FROM `articles` WHERE id = $article_id";
     $article_image =$article->get_article_by_any_sql($sql);
     $image_key=$article_image[0]["article_image"];
-    // var_dump($image_key);
-    // die();
     try {
         //delete from s3
         $s3 = new uploadImageInArticle($image_key);
