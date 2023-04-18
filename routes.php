@@ -2,7 +2,9 @@
 $router->get('/', 'home/index.php');
 
 //Users
-$router->get('/users', 'users/index.php');
+if($_SESSION['user']['role'] === 'admin') {
+    $router->get('/users', 'users/index.php');
+}
 $router->get('/users/create', 'users/create.php');
 $router->post('/users', 'users/store.php');
 $router->get('/users/edit', 'users/edit.php');

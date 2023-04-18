@@ -13,8 +13,8 @@ require_once('Core/Session.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$form = new loginForm(); // vaildation -->call login-Vaildator file
 
+$form = new loginForm(); // vaildation -->call login-Vaildator file
 if ($form->validate($email, $password)) {
     if ((new Authenticator)->attempt($email, $password)) {
         $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
