@@ -4,7 +4,15 @@
     "aws/aws-sdk-php": "*"
   },
   "autoload": {
-      "classmap": ["Models","Core/Router.php","Core/validation.php","Models/uploadImageInArticle.php","Core/Session.php"],
+      "classmap": ["Models",
+      "Core/Router.php",
+      "Core/validation.php",
+      "Models/uploadImageInArticle.php",
+      "Core/Session.php",
+      "Core/Middleware/Middleware.php",
+      "Core/Middleware/Guest.php",
+      "Core/Middleware/Authenticated.php"
+    ],
       "files": ["config.php"]
   }  
 }

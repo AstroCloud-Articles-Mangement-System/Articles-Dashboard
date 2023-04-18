@@ -29,5 +29,6 @@ $router->get('/articles/show', 'articles/show.php');
 $router->get('/profile', 'profile/index.php');
 
 //login 
-$router->get('/login', 'login/index.php');
-$router->post('/login','login/store.php'); 
+$router->get('/login', 'login/index.php')->only('guest');
+$router->post('/login', 'login/store.php')->only('guest');
+$router->get('/logout', 'login/logout.php');
