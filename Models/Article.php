@@ -35,4 +35,9 @@ class Article
     {
         return $this->db->delete($id);
     }
+
+    public function get_articles_by_any_sql($sql)
+    {
+        return $this->db->get_records_by_any_sql($sql);
+    }
 }
