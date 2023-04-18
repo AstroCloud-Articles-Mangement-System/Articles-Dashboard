@@ -1,16 +1,7 @@
 <?php
 session_start();
-require_once('vendor/autoload.php');
-// $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+require_once('vendor/autoload.php');;
 
-// $routes = [
-//     '/' => 'Controllers/index.php',
-//     '/login' => 'Controllers/login.php',
-//     '/profile' =>  'Controllers/profile.php',
-//     '/users' => 'Controllers/user.php',
-//     '/groups' => 'Controllers/group.php',
-//     '/articles'=>'Controllers/article.php'
-// ];
 
 // function routeToController($uri, $routes)
 // {
@@ -24,7 +15,7 @@ require_once('vendor/autoload.php');
 // function abort($code = 404)
 // {
 //     http_response_code($code);
-//     var_dump('NOT FOUND');
+//     require('./views/pages/errors/404.php');
 // }
 
 // routeToController($uri, $routes);
