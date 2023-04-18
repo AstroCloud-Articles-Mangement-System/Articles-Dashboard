@@ -1,12 +1,24 @@
 <?php
 require('Models/Article.php');
+require('Models/uploadImageInArticle.php');
 
 $_SESSION['error_message'] = "";
 $_SESSION['success_message'] = "";
 $article = new Article;
+
 if (isset($_GET['id'])  && $article->check_id_existence(intval($_GET['id']))) {
     $article_id = intval($_GET['id']);
+    $sql = "SELECT article_image FROM `articles` WHERE id = $article_id";
+    $article_image =$article->get_article_by_any_sql($sql);
+    $image_key=$article_image[0]["article_image"];
+    // var_dump($image_key);
+    // die();
     try {
+        //delete from s3
+        $s3 = new uploadImageInArticle($image_key);
+        $s3->set_credentials(__KEY__, __SECRET__, __REGION__, __VERSION__);
+        $s3->deleteImage($image_key);
+        //delete from db
         $article->delete_article($article_id);
         $_SESSION['success_message'] = "";
         $_SESSION['success_message'] = "This Article Deleted Successfully!!";
