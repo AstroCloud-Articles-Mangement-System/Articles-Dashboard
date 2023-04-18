@@ -192,4 +192,6 @@ class MySQLHandler implements DbHandler
     {
         return ($this->get_results($sql));
     }
+
+
 }

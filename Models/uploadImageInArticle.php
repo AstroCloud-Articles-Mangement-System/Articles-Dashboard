@@ -39,15 +39,25 @@ class uploadImageInArticle
 
     public function upload($object_key)
     {
-    //     $file_name = $_FILES["article_image"]["name"];
-    //     $file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
-    //     $object_key = uniqid() . "." . $file_extension;
         $result = $this->_s3->putObject([
             'Bucket' => 'articlesysbucket',
             'Key' => $object_key,
             'SourceFile' => $_FILES["article_image"]["tmp_name"],
         ]);
         return $result;
+    }
+    public function deleteImage($object_key)
+    {
+        try {
+             $this->_s3->deleteObject([
+                'Bucket' => 'articlesysbucket',
+                'Key' => $object_key,
+            ]);
+            echo "File Deleted Successfully ^_^";
+        } catch (Aws\S3\Exception\S3Exception $e) {
+            echo $e->getMessage();
+            echo "Can't Delete this file.";
+        }
     }
 
     public function __construct($object_key)
