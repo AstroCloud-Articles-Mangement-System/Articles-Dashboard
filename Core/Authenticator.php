@@ -22,12 +22,12 @@ class Authenticator
 
         if ($foundedUser) {
             if (password_verify($password, $foundedUser[0]['user_password'])) {
-                if ($foundedUser[0]['id'] == 1) { //admin group
+                if ($foundedUser[0]['group_id'] == 1) { //admin group
                     $this->login([
                         'email' => $email,
                         'role' => $this->role[0],
                     ]);
-                } elseif ($foundedUser[0]['id'] == 2) { //editor group
+                } elseif ($foundedUser[0]['group_id'] == 2) { //editor group
                     $this->login([
                         'email' => $email,
                         'role' =>  $this->role[1],
