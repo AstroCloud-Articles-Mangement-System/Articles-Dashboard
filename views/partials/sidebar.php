@@ -40,32 +40,37 @@
             </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="/users" class="nav-link">
-            <i class="nav-icon fas fa-table"></i>
-            <p>
-              Users
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/groups" class="nav-link">
-            <i class="nav-icon fas fa-table"></i>
-            <p>
-              Groups
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/articles" class="nav-link">
-            <i class="nav-icon fas fa-table"></i>
-            <p>
-              Articles
-            </p>
-          </a>
-        </li>
+        <?php if ($_SESSION['user']['role'] === 'admin') { ?>
+          <li class="nav-item">
+            <a href="/users" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Users
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/groups" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Groups
+              </p>
+            </a>
+          </li>
+          <?php } ?>
+          <?php if (in_array($_SESSION['user']['role'], array('admin', 'editor'))) { ?>
+          <li class="nav-item">
+            <a href="/articles" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Articles
+              </p>
+            </a>
+          </li>
+        <?php }?>
 
       </ul>
     </nav>
   </div>
 </aside>
+
