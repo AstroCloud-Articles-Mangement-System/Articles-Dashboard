@@ -2,7 +2,7 @@
 $router->get('/', 'home/index.php')->only('auth');
 
 //Users
-if ($_SESSION['user']['role'] === 'admin') {
+if (isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin') {
 
     //Users routes
     $router->get('/users', 'users/index.php');
@@ -32,7 +32,7 @@ if ($_SESSION['user']['role'] === 'admin') {
     $router->get('/profile', 'profile/index.php');
 }
 
-elseif ($_SESSION['user']['role'] === 'editor') {
+elseif (isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'editor') {
     //Articles
     $router->get('/articles', 'articles/index.php');
     $router->get('/articles/create', 'articles/create.php');
@@ -44,7 +44,7 @@ elseif ($_SESSION['user']['role'] === 'editor') {
     $router->get('/profile', 'profile/index.php');
 }
 
-elseif($_SESSION['user']['role'] === 'user'){
+elseif(isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'user'){
     //Profile
     $router->get('/profile', 'profile/index.php');
 }
