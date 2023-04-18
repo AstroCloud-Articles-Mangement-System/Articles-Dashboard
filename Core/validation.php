@@ -91,3 +91,53 @@ function validate_group()
     }
     return $errors ?? "";
 }
+
+
+function validate_article()
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // Validate article title field
+        if (empty($_POST["article_title"])) {
+            $errors["article_title"] = "Article Title is required";
+        } else {
+            $name = $_POST["article_title"];
+            if (!preg_match("/^[a-zA-Z ]{3,20}$/", $name)) {
+                $errors["article_title"] = "Title Only letters and  characters between 3 and 20";
+            }
+        }
+        // Validate article summary
+        if (empty($_POST["article_summary"])) {
+            $errors["article_summary"] = "Article Summary is required";
+        } else {
+            $artSummary = $_POST["article_summary"];
+            if (!preg_match('/^[\w\W ]{3,50}$/', $artSummary)) {
+                $errors["article_summary"] = "Summary contain characters between 3 and 50";
+            }
+        }
+        // Validate article content
+        if (empty($_POST["article_content"])) {
+            $errors["article_content"] = "Article Content is required";
+        } else {
+            $artContent = $_POST["article_content"];
+            if (!preg_match('/^[\w\W ]{3,5000}$/', $artContent)) {
+                $errors["article_content"] = "Content contain characters between 3 and 5000";
+            }
+        }
+        // Check if file has been uploaded
+        if (!empty($_FILES)) {
+            // Check file size
+            if ($_FILES["article_image"]["size"] > 3000000) {
+                $errors["article_image"] = "File Size is too large please upload another file";
+            }
+
+            // Check file type
+            if (!strstr($_FILES["article_image"]["type"], "image")) {
+                $errors["article_image"] = "please enter file with image extension like .png .jpg .jpeg";
+            }
+        } else {
+            $errors["article_image"] = "Image file is required";
+        }
+    }
+    return $errors ?? "";
+}

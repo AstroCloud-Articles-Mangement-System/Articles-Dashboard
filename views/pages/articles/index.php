@@ -8,7 +8,11 @@
     }
     if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
         echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
-        echo $_SESSION['error_message'];
+        echo '<ul>';
+        foreach ($_SESSION['error_message'] as $error) {
+            echo '<li>' . $error . '</li>';
+        }
+        echo '</ul>';
         echo '</div>';
         unset($_SESSION['error_message']);
     }
@@ -31,7 +35,9 @@
         <?php foreach ($allArticles as $article) { ?>
             <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
                 <div class="alert card p-0" style="height:530px;">
-                    <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article['article_image']); ?>" alt="Card image cap" style="max-height:300px;">
+                <div style="height:315px;">
+                    <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article['article_image']); ?>" alt="Card image cap" style="max-height: 100%; max-width:100%;">
+                    </div>
                     <div class="card-body">
                         <div class="user-panel group-info mt-1">
                             <div class="info d-flex flex-column">
