@@ -37,7 +37,7 @@
                     <a href="/login" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Login<?php var_dump($_SESSION['user']['role'])?>
+                            Login
                         </p>
                     </a>
                 </li>
