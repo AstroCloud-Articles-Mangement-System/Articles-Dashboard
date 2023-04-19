@@ -165,6 +165,34 @@ class MySQLHandler implements DbHandler
         }
     }
 
+    public function soft_delete($id, $primary_key = "id")
+    {
+        $table = $this->_table;
+        $sql = "UPDATE $table SET `deleted_at` ='". date('d-m-y h:i:s'). "' WHERE `" . $primary_key . "` = $id";
+        $this->debug($sql);
+        if (mysqli_query($this->_db_handler, $sql)) {
+            $this->disconnect();
+            return true;
+        } else {
+            $this->disconnect();
+            return false;
+        }
+    }
+
+    public function restore($id, $primary_key = "id")
+    {
+        $table = $this->_table;
+        $sql = "UPDATE $table SET `deleted_at` ='". NULL. "' WHERE `" . $primary_key . "` = $id";
+        $this->debug($sql);
+        if (mysqli_query($this->_db_handler, $sql)) {
+            $this->disconnect();
+            return true;
+        } else {
+            $this->disconnect();
+            return false;
+        }
+    }
+
     public function filter($search, $where)
     {
         $table = $this->_table;
@@ -202,5 +230,3 @@ class MySQLHandler implements DbHandler
         }
     }
 }
-
-
