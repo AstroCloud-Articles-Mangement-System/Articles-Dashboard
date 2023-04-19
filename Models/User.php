@@ -35,7 +35,12 @@ class User
 
     public function delete_user($id)
     {
-        return $this->db->delete($id);
+        return $this->db->soft_delete($id);
+    }
+
+    public function restore_user($id)
+    {
+        return $this->db->restore($id);
     }
 
     public function check_id_existence($id)

@@ -53,8 +53,9 @@
                                         <td><?php echo $user['subscription_date']; ?></td>
                                         <td><?php echo $user["group_name"]; ?></td>
                                         <td class="d-flex justify-content-around">
+                                            <?php if(!($user['deleted_at'])) { ?>
                                             <a href="/users/edit?id=<?php echo $user['id']; ?>"
-                                                class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                                                class="btn btn-info bg-info btn-sm mr-1"><i class="fas fa-edit"></i></a>
                                             <form method="post" action="/users/delete?id=<?php echo $user['id']; ?>">
                                                 <button type="button" data-toggle="modal" data-target="#deleteModel"
                                                     onclick="UserdeletemodalShow(event)"
@@ -62,6 +63,11 @@
                                                 </button>
                                                 <input type="hidden" name="_method" value="DELETE">
                                             </form>
+                                            <?php }else{?>
+                                            <a href="/users/restore?id=<?php echo $user['id']; ?>"
+                                                class="btn btn-success btn-sm mr-1"><i
+                                                    class='fas fa-trash-restore-alt'></i></a>
+                                            <?php }?>
                                         </td>
                                     </tr>
                                     <?php } ?>

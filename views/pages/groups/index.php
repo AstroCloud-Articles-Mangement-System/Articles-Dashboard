@@ -48,7 +48,7 @@
                     <p class="card-text text-secondary"><?php echo $group['group_description']; ?></p>
                 </div>
                 <div class="card-footer bg-transparent">
-                    <?php
+                    <?php if(!($group['deleted_at'])){
                         if (($group['group_name'] != 'Admins') && ($group['group_name'] != 'Editors')) { ?>
                     <form method="post" action="/groups/delete?id=<?php echo $group['id']; ?>"
                         style="display: inline-block;">
@@ -64,6 +64,11 @@
                     <a href="/groups/edit?id=<?php echo $group['id']; ?>">
                         <i class=" fas fa-edit text-info ml-3"></i>
                     </a>
+                    <?php }else{?>
+                    <a href="/groups/restore?id=<?php echo $group['id']; ?>">
+                        <i class="fas fa-trash-restore-alt text-success ml-3"></i>
+                    </a>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -90,7 +95,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning</h5>
+                <i class="bi bi-exclamation-triangle" style="color: #e74c3c;margin-right:5px;"></i>Warning
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

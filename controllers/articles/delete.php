@@ -1,7 +1,4 @@
 <?php
-require('Models/Article.php');
-require('Models/uploadImageInArticle.php');
-
 $_SESSION['error_message'] = "";
 $_SESSION['success_message'] = "";
 $article = new Article;
