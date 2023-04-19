@@ -6,7 +6,22 @@ use Core\Middleware\Middleware;
 
 class Router
 {
-    protected $routes = [];
+    public $routes = [];
+        // Define the allowed roles for each route
+    protected  $allowedRoles = [
+            '/' => [],
+            '/users' => ['admin'],
+            '/users/create' => ['admin'],
+            '/users/edit' => ['admin'],
+            '/groups' => ['admin'],
+            '/groups/create' => ['admin'],
+            '/groups/edit' => ['admin'],
+            '/articles' => ['admin', 'editor'],
+            '/articles/create' => ['admin', 'editor'],
+            '/articles/show' => ['admin', 'editor', 'user'],
+            '/profile' => ['admin', 'editor', 'user'],
+            '/login' => ['admin', 'editor', 'user'],
+        ];
 
     public function add($method, $uri, $controller)
     {
@@ -53,20 +68,23 @@ class Router
     }
 
     public function route($uri, $method)
-    {
+    {    
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                
+                if (!(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
+                    $this->abort(403);
+                }
                 Middleware::resolve($route['middleware']);
                 return require base_path('controllers/' . $route['controller']);
             }else{
                
             }
         }
-        if (isset($_SESSION['user'])) {
-            $this->abort();
-        }else{
-            $this->abort(403);
-        }
+       
+        
+            $this->abort(404);
+        
 
     }
 
