@@ -2,12 +2,12 @@
 $router->get('/', 'home/index.php');
 
 //Users 
-$router->get('/users', 'users/index.php')->only('admin')->only('remember');
-$router->get('/users/create', 'users/create.php')->only('admin')->only('remember');
-$router->post('/users', 'users/store.php')->only('admin')->only('remember');
-$router->get('/users/edit', 'users/edit.php')->only('admin')->only('remember');
-$router->put('/users', 'users/update.php')->only('admin')->only('remember');
-$router->delete('/users/delete', 'users/delete.php')->only('admin')->only('remember');
+$router->get('/users', 'users/index.php')->only('remember')->only('auth')->only('admin');
+$router->get('/users/create', 'users/create.php')->only('remember')->only('auth')->only('admin');
+$router->post('/users', 'users/store.php')->only('remember')->only('auth')->only('admin');
+$router->get('/users/edit', 'users/edit.php')->only('remember')->only('auth')->only('admin');
+$router->put('/users', 'users/update.php')->only('remember')->only('auth')->only('admin');
+$router->delete('/users/delete', 'users/delete.php')->only('remember')->only('auth')->only('admin');
 
 //Groups
 $router->get('/groups', 'groups/index.php')->only('admin')->only('remember');

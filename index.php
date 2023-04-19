@@ -1,34 +1,8 @@
 <?php
 session_start();
 require_once('vendor/autoload.php');;
-
-
-// function routeToController($uri, $routes)
-// {
-//     if (array_key_exists($uri, $routes)) {
-//         require $routes[$uri];
-//     } else {
-//         abort();
-//     }
-// }
-
-// function abort($code = 404)
-// {
-//     http_response_code($code);
-//     require('./views/pages/errors/404.php');
-// }
-
-// routeToController($uri, $routes);
-
-// $_DB = new MySQLHandler("users");
-// $_connect = $_DB->connect();
-// $_DB -> save(['id'=>'2','user_name'=>'Rowan','user_email'=>'Rowan@gmail.com','user_mobile_number'=>'01001234024','user_username'=>'Rowan','user_password'=>'123456','subscription_date'=>'2022-11-11','group_id'=>'1']);
-// $_DB -> get_all_records();
-// var_dump($_DB -> get_all_records());
-
-
-
 require_once 'Core/functions.php';
+
 $router = new \Core\Router();
 
 $routes = require base_path('routes.php');
