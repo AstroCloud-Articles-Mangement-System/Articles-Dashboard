@@ -6,6 +6,12 @@ use User;
 
 class Authenticator
 {
+    private $role;
+
+    public function __construct()
+    {
+        $this->role =  ['admin', 'editor', 'user'];
+    }
     public function attempt($email, $password)
     {
 
@@ -13,11 +19,25 @@ class Authenticator
         $sql = "SELECT * FROM users WHERE user_email = '$email'";
 
         $foundedUser = $user->get_users_by_any_sql($sql);
+
         if ($foundedUser) {
             if (password_verify($password, $foundedUser[0]['user_password'])) {
-                $this->login([
-                    'email' => $email
-                ]);
+                if ($foundedUser[0]['group_id'] == 1) { //admin group
+                    $this->login([
+                        'email' => $email,
+                        'role' => $this->role[0],
+                    ]);
+                } elseif ($foundedUser[0]['group_id'] == 2) { //editor group
+                    $this->login([
+                        'email' => $email,
+                        'role' =>  $this->role[1],
+                    ]);
+                } else {
+                    $this->login([ //ordinary user
+                        'email' => $email,
+                        'role' =>  $this->role[2],
+                    ]);
+                }
 
                 return true;
             }
@@ -28,7 +48,8 @@ class Authenticator
     public function login($user)
     {
         $_SESSION['user'] = [
-            'email' => $user['email']
+            'email' => $user['email'],
+            'role' => $user['role'],
         ];
         session_regenerate_id(true);
     }

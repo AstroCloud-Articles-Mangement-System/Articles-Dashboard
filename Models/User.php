@@ -56,4 +56,9 @@ class User
         $obj = new self;
         return $obj->db->update_single_field_by_any_sql($sql);
     }
+    public function get_email_by_any_sql($sql)
+    {
+        return $this->db->get_records_by_any_sql($sql);
+    }
+  
 }
