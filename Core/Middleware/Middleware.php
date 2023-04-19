@@ -7,6 +7,7 @@ use Core\Middleware\Authenticated;
 use Core\Middleware\Admin;
 use Core\Middleware\Editor;
 use Core\Middleware\User;
+use Core\Middleware\AdminOrEditor;
 use User as GlobalUser;
 
 class Middleware
@@ -17,6 +18,7 @@ class Middleware
         'admin' => Admin::class,
         'editor' => Editor::class,
         'user' => User::class,
+        'admin|editor' => AdminOrEditor::class
     ];
 
     public static function resolve($key)
