@@ -33,7 +33,12 @@ class Group
 
     public function delete_group($id)
     {
-        return $this->db->delete($id);
+        return $this->db->soft_delete($id);
+    }
+
+    public function restore_group($id)
+    {
+        return $this->db->restore($id);
     }
     
     public function check_id_existence($id)
