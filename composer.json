@@ -11,7 +11,8 @@
       "Core/Session.php",
       "Core/Middleware/Middleware.php",
       "Core/Middleware/Guest.php",
-      "Core/Middleware/Authenticated.php"
+      "Core/Middleware/Authenticated.php",
+      "Core/RoutesPemissions.php"
     ],
       "files": ["config.php"]
   }  
