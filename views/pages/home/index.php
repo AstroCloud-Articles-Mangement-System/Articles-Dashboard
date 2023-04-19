@@ -1,3 +1,40 @@
+<div class="wrapper col-md-10 mx-auto" style="z-index: 1000; padding: 0; ">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-alt"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text font-weight-bolder">Users</span>
+                    <span class="info-box-number">
+                     <?php echo count($users)?>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-users"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text font-weight-bolder">Groups</span>
+                    <span class="info-box-number"><?php echo count($groups) ?></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-success elevation-1"><ion-icon name="newspaper-outline" size="large"></ion-icon></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text font-weight-bolder">Articles</span>
+                    <span class="info-box-number"><?php echo count($articles) ?></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="wrapper card card-primary col-md-10 mx-auto" style="z-index: 1000; padding: 0; ">
     <section class="content">
         <div class="container-fluid">
@@ -13,43 +50,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: <?php echo json_encode($labels); ?>,
-            datasets: [{
-                label: 'Number of Users',
-                data: <?php echo json_encode($data); ?>,
-                backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(255, 205, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(201, 203, 207, 0.2)'
-    ],
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 159, 64)',
-                    'rgb(255, 205, 86)',
-                    'rgb(75, 192, 192)',
-                    'rgb(54, 162, 235)',
-                    'rgb(153, 102, 255)',
-                    'rgb(201, 203, 207)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
+<?php
+require 'views/pages/home/chart.php';
+?>
