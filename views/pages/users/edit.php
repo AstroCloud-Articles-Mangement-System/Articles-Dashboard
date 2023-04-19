@@ -17,7 +17,7 @@
             <h3 class="card-title">Update User</h3>
         </div>
         <form action="/users" method="post" style="z-index: 5;" id="vaildate_user_form" data-form-type="edit">
-            <input type="hidden" name="user_id" value="<?php echo $user[0]['id']; ?>">
+            <input type="hidden" name="user_id" value="<?php echo $editedUser[0]['id']; ?>">
             <div class="card-body row">
                 <div class="form-group col-6">
                     <div class="input-group mb-3">
@@ -25,7 +25,7 @@
                             <span class="input-group-text"><i class='fas fa-user-alt'></i></span>
                         </div>
                         <input type="text" id="name" name="name" class="form-control vaildate_input"
-                            placeholder="Full Name" value="<?php echo $user[0]['user_name']; ?>" required>
+                            placeholder="Full Name" value="<?php echo $editedUser[0]['user_name']; ?>" required>
                         <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning"
                             id="name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
@@ -39,7 +39,7 @@
                             <span class="input-group-text"><i class='fas fa-user-check'></i></span>
                         </div>
                         <input type="text" id="user_name" name="user_name" class="form-control vaildate_input"
-                            placeholder="Username" value="<?php echo $user[0]['user_username']; ?>" required>
+                            placeholder="Username" value="<?php echo $editedUser[0]['user_username']; ?>" required>
                         <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning"
                             id="user_name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
@@ -55,7 +55,7 @@
                         </div>
                         <input type="email" class="form-control vaildate_input" id="email" name="email"
                             placeholder="example@gmail.com" fdprocessedid="7re2y6"
-                            value="<?php echo $user[0]['user_email']; ?>" required>
+                            value="<?php echo $editedUser[0]['user_email']; ?>" required>
                         <div class="alert alert-danger  px-3 py-2 mt-2 d-none" role="alert" data-mdb-color="warning"
                             id="password-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
@@ -69,7 +69,7 @@
                             <span class="input-group-text"><i class='fas fa-phone'></i></span>
                         </div>
                         <input type="phone" id="phone" name="phone" class="form-control vaildate_input"
-                            placeholder="Phone Number" value="<?php echo '0'.$user[0]['user_mobile_number']; ?>"
+                            placeholder="Phone Number" value="<?php echo '0'.$editedUser[0]['user_mobile_number']; ?>"
                             required>
                         <div class="alert alert-danger px-3 py-2 mt-2 d-none w-100" role="alert"
                             data-mdb-color="warning" id="password-alert" style="font-size: 12px;">
@@ -117,7 +117,7 @@
                             <option value="" hidden>Select User Group</option>
                             <?php foreach ($allGroups as $group) { ?>
                             <option value="<?php echo $group['id']; ?>"
-                                <?php if ($user[0]['group_id'] == $group['id']) echo 'selected'; ?>>
+                                <?php if ($editedUser[0]['group_id'] == $group['id']) echo 'selected'; ?>>
                                 <?php echo $group['group_name']; ?></option>
                             <?php } ?>
                         </select>

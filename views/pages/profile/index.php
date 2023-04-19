@@ -27,7 +27,7 @@
                             <img class="profile-user-img img-fluid img-circle" src="./views/dist/img/user2-160x160.jpg" alt="User profile picture">
                         </div>
                         <h3 class="profile-username text-center text-capitalize"><?php echo $loggedInUser['user_name']; ?></h3>
-                        <p class="text-muted text-center"><?php echo $loggedInUser['group_name']; ?></p>
+                        <p class="text-muted text-center"><?php echo $user_group_name;?></p>
                         <div class="p-4">
                             <strong><i class="fas fa-book mr-1"></i>About me</strong>
                             <p class="text-muted">

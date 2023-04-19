@@ -22,29 +22,26 @@ class Authenticator
 
         if ($foundedUser) {
             if (password_verify($password, $foundedUser[0]['user_password'])) {
-                if ($foundedUser[0]['group_id'] == 1) { //admin group
-                    $this->login([
-                        'email' => $email,
-                        'role' => $this->role[0],
-                    ]);
-                } elseif ($foundedUser[0]['group_id'] == 2) { //editor group
-                    $this->login([
-                        'email' => $email,
-                        'role' =>  $this->role[1],
-                    ]);
-                } else {
-                    $this->login([ //ordinary user
-                        'email' => $email,
-                        'role' =>  $this->role[2],
-                    ]);
-                }
-
+                $this->login([
+                            'email' => $email,
+                            'role' =>  $this->get_role($foundedUser[0]['group_id']),
+                 ]);
                 return true;
             }
         }
         return false;
     }
 
+    private function get_role($group_id)
+    {
+        if ($group_id == 1) { //admin group
+            return $this->role[0];
+        } elseif ($group_id == 2) { //editor group
+            return $this->role[1];
+        } else {
+            return $this->role[2];
+        }
+    }
     public function login($user)
     {
         $_SESSION['user'] = [
@@ -53,7 +50,7 @@ class Authenticator
         ];
         session_regenerate_id(true);
     }
-    
+
     public static function rememberMe($email)
     {
         $token = bin2hex(random_bytes(16)) . "|" . md5($email);
@@ -63,20 +60,21 @@ class Authenticator
         ]);
         User::update_user_remember_token($email, $token);
     }
-    
+
     public static function checkToken($token)
     {
-        $sql = "SELECT user_email FROM users WHERE remember_me = '$token'";
+        $sql = "SELECT user_email,group_id FROM users WHERE remember_me = '$token'";
         $remembered_user = (new user)->get_users_by_any_sql($sql);
         if ($remembered_user) {
-            return $remembered_user[0]['user_email'];
+            $obj = new self;
+            return ["email"=>$remembered_user[0]['user_email'],"role"=>$obj->get_role($remembered_user[0]['group_id'])];
         }
         return false;
     }
 
     public static function logout()
-    {     
-        $email=$_SESSION['user']['email'];
+    {
+        $email = $_SESSION['user']['email'];
         Session::destroy();
         User::update_user_remember_token($email);
     }
