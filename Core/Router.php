@@ -7,22 +7,6 @@ use Core\Middleware\Middleware;
 class Router extends RoutesPermissions
 {
     public $routes = [];
-        // Define the allowed roles for each route
-    // protected  $allowedRoles = [
-    //         '/' => ['admin','editor','user'],
-    //         '/users' => ['admin'],
-    //         '/users/create' => ['admin'],
-    //         '/users/edit' => ['admin'],
-    //         '/groups' => ['admin'],
-    //         '/groups/create' => ['admin'],
-    //         '/groups/edit' => ['admin'],
-    //         '/articles' => ['admin', 'editor'],
-    //         '/articles/create' => ['admin', 'editor'],
-    //         '/articles/show' => ['admin', 'editor', 'user'],
-    //         '/profile' => ['admin', 'editor', 'user'],
-    //         '/login' => ['admin', 'editor', 'user'],
-    //         '/logout' => ['admin', 'editor', 'user'],
-    //     ];
 
     public function add($method, $uri, $controller)
     {

@@ -10,6 +10,7 @@
       "Core/validation.php",
       "Models/uploadImageInArticle.php",
       "Core/Session.php",
+      "Core/Middleware/Remembered.php",
       "Core/Middleware/Middleware.php",
       "Core/Middleware/Guest.php",
       "Core/Middleware/Authenticated.php",

@@ -53,6 +53,7 @@ class Authenticator
         ];
         session_regenerate_id(true);
     }
+    
     public static function rememberMe($email)
     {
         $token = bin2hex(random_bytes(16)) . "|" . md5($email);
@@ -61,19 +62,14 @@ class Authenticator
             'httponly' => true //Httponly flag is a security measure that prevents client-side scripts from accessing the cookie value.
         ]);
         User::update_user_remember_token($email, $token);
-        // if(!User::update_user_remember_token($email,$token))  // must handle if an error occur 
-        // {
-        //     var_dump("Error in update");
-        // }
-        // var_dump("updated");
-        // die();
     }
+    
     public static function checkToken($token)
     {
         $sql = "SELECT user_email FROM users WHERE remember_me = '$token'";
         $remembered_user = (new user)->get_users_by_any_sql($sql);
         if ($remembered_user) {
-            return $remembered_user['user_email'];
+            return $remembered_user[0]['user_email'];
         }
         return false;
     }
