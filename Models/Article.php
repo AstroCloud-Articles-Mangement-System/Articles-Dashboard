@@ -39,5 +39,4 @@ class Article
     {
         return $this->db->get_records_by_any_sql($sql);
     }
-
 }

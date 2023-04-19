@@ -20,29 +20,36 @@
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="far fa-user"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <?php
-                            if (isset($_SESSION['user'])) {
-                                echo '<li><a class="dropdown-item" href="/profile">Profile</a></li>';
-                                echo '<li><a class="dropdown-item" href="/logout">Log Out</a></li>';
-                            } else {
-                                echo '<li><a class="dropdown-item" href="/login">Log In</a></li>';
-                            }
-                            ?>
-                        </ul>
+                        <?php
+                        if (isset($_SESSION['user'])) {
+                            $user = new User;
+                            $email = $_SESSION['user']['email'];
+                            $sql = "SELECT * FROM `users` WHERE `user_email` = '$email'";
+                            $loggedInUser = $user->get_users_by_any_sql($sql)[0];
+                            echo '
+                            <a class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="far fa-user" style="margin-right: 5px;"> </i>
+                                ' . $loggedInUser["user_name"] . '
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                            </ul>';
+                        } else {
+                            echo '<a class="nav-link text-capitalize" href="/login" style="margin-right:25px">Log In</a>';
+                        }
+                        ?>
+
                     </li>
                 </ul>
             </div>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                 <i class="fas fa-th-large"></i>
             </a>
-        </li>
+        </li> -->
     </ul>
 
 </nav>
