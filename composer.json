@@ -6,6 +6,7 @@
   "autoload": {
       "classmap": ["Models",
       "Core/Router.php",
+      "Core/Authenticator.php",
       "Core/validation.php",
       "Models/uploadImageInArticle.php",
       "Core/Session.php",

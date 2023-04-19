@@ -1,9 +1,10 @@
 <?php
 
 use Core\Session;
+use Core\Authenticator;
 
 if (isset($_SESSION['user'])) {
-    Session::destroy();
+    Authenticator::logout();
     header('Location: /login');
     exit;
 }
