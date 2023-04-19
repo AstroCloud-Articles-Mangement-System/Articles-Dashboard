@@ -67,26 +67,26 @@ class Router extends RoutesPermissions
 
         return $this;
     }
-
+   
+ 
     public function route($uri, $method)
     {    
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 Middleware::resolve($route['middleware']);
-                if (isset($_SESSION['user']) && !(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
-                    $this->abort(403);
-                }else{
-                    return require base_path('controllers/' . $route['controller']);
-                }
+                // var_dump(Middleware::resolve($route['middleware']));
+                // if (isset($_SESSION['user']) && !(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
+                //     $this->abort(403);
+                // }else{
+                //     return require base_path('controllers/' . $route['controller']);
+                // }
+                return require base_path('controllers/' . $route['controller']);
+
             }else{
                
             }
         }
-       
-        
             $this->abort(404);
-        
-
     }
 
 

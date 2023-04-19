@@ -10,6 +10,9 @@
       "Models/uploadImageInArticle.php",
       "Core/Session.php",
       "Core/Middleware/Middleware.php",
+      "Core/Middleware/Admin.php",
+      "Core/Middleware/Editor.php",
+      "Core/Middleware/User.php",
       "Core/Middleware/Guest.php",
       "Core/Middleware/Authenticated.php",
       "Core/RoutesPemissions.php"

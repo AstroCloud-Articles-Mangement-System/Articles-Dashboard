@@ -7,7 +7,7 @@ class Authenticated
     public function handle()
     {
         if (!$_SESSION['user'] ?? false) {
-            header('location: /');
+            header('location: /users');
             exit();
         }
     }
