@@ -41,7 +41,7 @@
                         </p>
                     </a>
                 </li>
-                <?php if ($_SESSION['user']['role'] === 'admin') { ?>
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') { ?>
                 <li class="nav-item">
                     <a href="/users" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -66,7 +66,7 @@
                         </p>
                     </a>
                 </li>
-                <?php }elseif ($_SESSION['user']['role'] === 'editor') { ?>
+                <?php }elseif (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'editor') { ?>
                 <li class="nav-item">
                     <a href="/articles" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
