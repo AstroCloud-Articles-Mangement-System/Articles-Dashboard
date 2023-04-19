@@ -40,7 +40,7 @@
                             <span class="input-group-text"><i class='fas fa-user-check'></i></span>
                         </div>
                         <input type="text" id="user_name" name="user_name" class="form-control vaildate_input"
-                            placeholder="Username" required>
+                            placeholder="Username" value="" required>
                         <div class="alert alert-danger px-3 py-2 mt-2 d-none w-100" role="alert"
                             data-mdb-color="warning" id="user_name-alert" style="font-size: 12px;">
                             <i class="bi bi-x-lg me-1"></i>
@@ -83,7 +83,7 @@
                             <span class="input-group-text"><i class='fas fa-lock'></i></span>
                         </div>
                         <input type="password" id="user_password" name="user_password"
-                            class="form-control vaildate_input" placeholder="Password" required>
+                            class="form-control vaildate_input" placeholder="Password" value="" required>
                         <div class="alert alert-dark border-secondary px-3 py-2 mt-2 d-none col-12 w-100" role="alert"
                             data-mdb-color="warning" id="password-alert" style="font-size: 12px;">
                             <ul class="list-unstyled mb-0">

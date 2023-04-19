@@ -5,7 +5,8 @@ USE Articles_System;
 CREATE TABLE Groups (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   group_name VARCHAR(50),
-  group_description VARCHAR(255)
+  group_description VARCHAR(255),
+  deleted_at VARCHAR(255)
 );
 
 CREATE TABLE Users (
@@ -15,6 +16,8 @@ CREATE TABLE Users (
   user_mobile_number VARCHAR(15),
   user_username VARCHAR(50),
   user_password VARCHAR(255),
+  remember_me VARCHAR(255),
+  deleted_at VARCHAR(255),
   subscription_date DATE,
   group_id INT,
   remember_me varchar(255) accept null,

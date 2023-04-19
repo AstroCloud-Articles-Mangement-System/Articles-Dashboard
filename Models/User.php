@@ -35,9 +35,14 @@ class User
 
     public function delete_user($id)
     {
-        return $this->db->delete($id);
+        return $this->db->soft_delete($id);
     }
-    
+
+    public function restore_user($id)
+    {
+        return $this->db->restore($id);
+    }
+
     public function check_id_existence($id)
     {
         return $this->db->checkIdExistence($id);
@@ -46,6 +51,15 @@ class User
     public function get_users_by_any_sql($sql)
     {
         return $this->db->get_records_by_any_sql($sql);
+    }
+    public static function update_user_remember_token($email, $token = NULL)
+    {
+        $sql = "UPDATE users SET remember_me =NULL WHERE user_email = '$email'";
+        if ($token != NULL) {
+            $sql = "UPDATE users SET remember_me ='$token' WHERE user_email = '$email'";
+        }
+        $obj = new self;
+        return $obj->db->update_single_field_by_any_sql($sql);
     }
     public function get_email_by_any_sql($sql)
     {

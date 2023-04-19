@@ -4,12 +4,22 @@ namespace Core\Middleware;
 
 use Core\Middleware\Guest;
 use Core\Middleware\Authenticated;
+use Core\Middleware\Admin;
+use Core\Middleware\Editor;
+use Core\Middleware\User;
+use Core\Middleware\AdminOrEditor;
+use User as GlobalUser;
 
 class Middleware
 {
     public const MAP = [
         'guest' => Guest::class,
-        'auth' => Authenticated::class
+        'auth' => Authenticated::class,
+        'admin' => Admin::class,
+        'editor' => Editor::class,
+        'user' => User::class,
+        'admin|editor' => AdminOrEditor::class,
+        'remember'=>Remembered::class
     ];
 
     public static function resolve($key)

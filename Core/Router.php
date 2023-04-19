@@ -4,9 +4,9 @@ namespace Core;
 
 use Core\Middleware\Middleware;
 
-class Router
+class Router extends RoutesPermissions
 {
-    protected $routes = [];
+    public $routes = [];
 
     public function add($method, $uri, $controller)
     {
@@ -14,7 +14,7 @@ class Router
             'uri' => $uri,
             'controller' => $controller,
             'method' => $method,
-            'middleware' => null
+            'middleware' => []
         ];
 
         return $this;
@@ -45,33 +45,46 @@ class Router
         return $this->add('PUT', $uri, $controller);
     }
 
-    public function only($key)
+    public function only($key=[])
     {
-        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
-
+        foreach ($key as $middleware) {
+            $this->routes[array_key_last($this->routes)]['middleware'][] = $middleware;
+        }
         return $this;
     }
-
+   
+ 
     public function route($uri, $method)
-    {
+    {    
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                Middleware::resolve($route['middleware']);
-
+                foreach ($route['middleware'] as $val) {
+                    # code...
+                    Middleware::resolve($val);
+                }
+                // var_dump(Middleware::resolve($route['middleware']));
+                // if (isset($_SESSION['user']) && !(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
+                //     $this->abort(403);
+                // }else{
+                //     return require base_path('controllers/' . $route['controller']);
+                // }
                 return require base_path('controllers/' . $route['controller']);
+
+            }else{
+               
             }
         }
-
-        $this->abort();
+            $this->abort(404);
     }
 
 
-    protected function abort($code = 404)
+    public function abort($code = 404)
     {
         http_response_code($code);
 
-        require base_path("views/{$code}.php");
+        require base_path("views/pages/errors/{$code}.php");
 
         die();
     }
+
 }
