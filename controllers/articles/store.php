@@ -1,11 +1,12 @@
 <?php
 require "core/validation.php";
 $article = new Article;
-$errors="";
+$user = new User;
+$errors = "";
 $_SESSION['success_message'] = "";
 $_SESSION['error_message'] = "";
-if (isset($_POST['submit'])) {
-    $errors= validate_article();
+if (isset($_POST['submit']) && isset($_SESSION['user'])) {
+    $errors = validate_article();
     if ($errors == "") {
         $page = "articles";
         $article_title = $_POST['article_title'];
@@ -14,7 +15,10 @@ if (isset($_POST['submit'])) {
         $file_name = $_FILES["article_image"]["name"];
         $file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
         $object_key = uniqid() . "." . $file_extension;
-        $user_id = "1";
+        $email = $_SESSION['user']['email'];
+        $sql = "SELECT * FROM `users` WHERE `user_email` = '$email'";
+        $loggedInUser = $user->get_users_by_any_sql($sql)[0];
+        $user_id = intval($loggedInUser['id']);
         $article_image =  $object_key;
         $publishing_date = date("Y-m-d");
         $data = [
@@ -35,5 +39,5 @@ if (isset($_POST['submit'])) {
     }
     $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
     header('Location: ' . $redirect_url);
-    exit; 
+    exit;
 }
