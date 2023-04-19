@@ -18,7 +18,8 @@ class Middleware
         'admin' => Admin::class,
         'editor' => Editor::class,
         'user' => User::class,
-        'admin|editor' => AdminOrEditor::class
+        'admin|editor' => AdminOrEditor::class,
+        'remember'=>Remembered::class
     ];
 
     public static function resolve($key)

@@ -15,6 +15,7 @@ CREATE TABLE Users (
   user_mobile_number VARCHAR(15),
   user_username VARCHAR(50),
   user_password VARCHAR(255),
+  remember_me VARCHAR(255),
   subscription_date DATE,
   group_id INT,
   FOREIGN KEY (group_id) REFERENCES Groups(id)
