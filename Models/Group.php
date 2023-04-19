@@ -8,9 +8,9 @@ class Group
         $this->db = new MySQLHandler('groups');
     }
 
-    public function get_all_groups()
+    public static function get_all_groups()
     {
-        return $this->db->get_all_records();
+        return (new self)->db->get_all_records();
     }
 
     public function get_group_by_id($id)

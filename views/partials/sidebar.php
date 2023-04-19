@@ -11,10 +11,9 @@
         <!-- Sidebar user panel (optional) -->
         <?php
     if (isset($_SESSION['user'])) {
-      $user = new User;
       $email = $_SESSION['user']['email'];
       $sql = "SELECT * FROM `users` WHERE `user_email` = '$email'";
-      $loggedInUser = $user->get_users_by_any_sql($sql)[0];
+      $loggedInUser = User::get_users_by_any_sql($sql)[0];
       echo '<div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
       <img src="../views/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">

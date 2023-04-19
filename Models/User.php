@@ -9,9 +9,9 @@ class User
         $this->db = new MySQLHandler('users');
     }
 
-    public function get_all_users()
+    public static function get_all_users()
     {
-        return $this->db->get_all_records();
+        return (new self)->db->get_all_records();
     }
 
     public function get_user_by_id($id)
@@ -43,22 +43,24 @@ class User
         return $this->db->checkIdExistence($id);
     }
 
-    public function get_users_by_any_sql($sql)
+    public static function get_users_by_any_sql($sql)
     {
-        return $this->db->get_records_by_any_sql($sql);
+        return (new self)->db->get_records_by_any_sql($sql);
     }
+
     public static function update_user_remember_token($email, $token = NULL)
     {
         $sql = "UPDATE users SET remember_me =NULL WHERE user_email = '$email'";
         if ($token != NULL) {
             $sql = "UPDATE users SET remember_me ='$token' WHERE user_email = '$email'";
         }
-        $obj = new self;
-        return $obj->db->update_single_field_by_any_sql($sql);
+       
+        return (new self)->db->update_single_field_by_any_sql($sql);
     }
-    public function get_email_by_any_sql($sql)
+
+    public static function get_email_by_any_sql($sql)
     {
-        return $this->db->get_records_by_any_sql($sql);
+        return (new self)->db->get_records_by_any_sql($sql);
     }
   
 }

@@ -6,6 +6,7 @@
         echo '</div>';
         unset($_SESSION['success_message']);
     }
+    
     if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
         echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
         echo '<ul>';
@@ -109,5 +110,5 @@
     setTimeout(() => {
         const sucess = document.getElementById('alert-success');
         sucess.style.display = 'none';
-    }, 3000);
+    }, 6000);
 </script>

@@ -1,5 +1,9 @@
 <?php
 $page = "user_create";
-$group = new Group;
-$allGroups = $group->get_all_groups();
-require 'views/index.php';
+try {
+    $allGroups = Group::get_all_groups();
+    require 'views/index.php';
+} catch (\Throwable $th) {
+    write_to_log_file($th->getMessage(), $th->getFile(), $th->getLine());
+
+}
