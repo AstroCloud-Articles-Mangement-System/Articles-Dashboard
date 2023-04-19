@@ -13,7 +13,7 @@
     <div class="wave-2"></div>
     <div class="wave-1"></div>
     <div class="wave-message">
-        <p>Your're lost</p>
+        <p>Forbidden!</p>
         <p>Click on the island to return</p>
     </div>
 </div>

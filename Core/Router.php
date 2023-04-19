@@ -9,7 +9,7 @@ class Router
     public $routes = [];
         // Define the allowed roles for each route
     protected  $allowedRoles = [
-            '/' => [],
+            '/' => ['admin','editor','user'],
             '/users' => ['admin'],
             '/users/create' => ['admin'],
             '/users/edit' => ['admin'],
@@ -21,6 +21,7 @@ class Router
             '/articles/show' => ['admin', 'editor', 'user'],
             '/profile' => ['admin', 'editor', 'user'],
             '/login' => ['admin', 'editor', 'user'],
+            '/logout' => ['admin', 'editor', 'user'],
         ];
 
     public function add($method, $uri, $controller)
@@ -71,12 +72,12 @@ class Router
     {    
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                
-                if (!(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
-                    $this->abort(403);
-                }
                 Middleware::resolve($route['middleware']);
-                return require base_path('controllers/' . $route['controller']);
+                if (isset($_SESSION['user']) && !(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
+                    $this->abort(403);
+                }else{
+                    return require base_path('controllers/' . $route['controller']);
+                }
             }else{
                
             }
