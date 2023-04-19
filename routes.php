@@ -1,5 +1,5 @@
 <?php
-$router->get('/', 'home/index.php')->only('auth');
+$router->get('/', 'home/index.php');
 
 //Users
 if (isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin') {
