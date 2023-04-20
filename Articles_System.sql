@@ -12,7 +12,7 @@ CREATE TABLE Groups (
 CREATE TABLE Users (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   user_name VARCHAR(50),
-  user_email VARCHAR(50),
+  user_email VARCHAR(50) UNIQUE,
   user_mobile_number VARCHAR(15),
   user_username VARCHAR(50),
   user_password VARCHAR(255),
@@ -20,6 +20,7 @@ CREATE TABLE Users (
   deleted_at VARCHAR(255),
   subscription_date DATE,
   group_id INT,
+  remember_me varchar(255) accept null,
   FOREIGN KEY (group_id) REFERENCES Groups(id)
 );
 
