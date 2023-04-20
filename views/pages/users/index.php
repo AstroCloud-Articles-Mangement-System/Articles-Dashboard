@@ -1,3 +1,18 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Users</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/" class="text-info">Home</a></li>
+                    <li class="breadcrumb-item active">All Users</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="wrapper" style="z-index:5;">
     <?php
     if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
@@ -44,27 +59,32 @@
                                 </thead>
                                 <tbody class="text-center">
                                     <?php foreach ($allUsers as $user) { ?>
-                                        <tr>
-                                            <td><?php echo $user['id']; ?></td>
-                                            <td><?php echo $user['user_name']; ?></td>
-                                            <td><?php echo $user['user_email']; ?></td>
-                                            <td><?php echo '0' . $user['user_mobile_number']; ?></td>
-                                            <td><?php echo $user['user_username']; ?></td>
-                                            <td><?php echo $user['subscription_date']; ?></td>
-                                            <td><?php echo $user["group_name"]; ?></td>
-                                            <td class="d-flex justify-content-around">
-                                                <?php if (!($user['deleted_at'])) { ?>
-                                                    <a href="/users/edit?id=<?php echo $user['id']; ?>" class="btn btn-info bg-info btn-sm mr-1"><i class="fas fa-edit"></i></a>
-                                                    <form method="post" action="/users/delete?id=<?php echo $user['id']; ?>">
-                                                        <button type="button" data-toggle="modal" data-target="#deleteModel" onclick="UserdeletemodalShow(event)" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i>
-                                                        </button>
-                                                        <input type="hidden" name="_method" value="DELETE">
-                                                    </form>
-                                                <?php } else { ?>
-                                                    <a href="/users/restore?id=<?php echo $user['id']; ?>" class="btn btn-success btn-sm mr-1"><i class='fas fa-trash-restore-alt'></i></a>
-                                                <?php } ?>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td><?php echo $user['id']; ?></td>
+                                        <td><?php echo $user['user_name']; ?></td>
+                                        <td><?php echo $user['user_email']; ?></td>
+                                        <td><?php echo '0' . $user['user_mobile_number']; ?></td>
+                                        <td><?php echo $user['user_username']; ?></td>
+                                        <td><?php echo $user['subscription_date']; ?></td>
+                                        <td><?php echo $user["group_name"]; ?></td>
+                                        <td class="d-flex justify-content-around">
+                                            <?php if (!($user['deleted_at'])) { ?>
+                                            <a href="/users/edit?id=<?php echo $user['id']; ?>"
+                                                class="btn btn-info bg-info btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                                            <form method="post" action="/users/delete?id=<?php echo $user['id']; ?>">
+                                                <button type="button" data-toggle="modal" data-target="#deleteModel"
+                                                    onclick="UserdeletemodalShow(event)"
+                                                    class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i>
+                                                </button>
+                                                <input type="hidden" name="_method" value="DELETE">
+                                            </form>
+                                            <?php } else { ?>
+                                            <a href="/users/restore?id=<?php echo $user['id']; ?>"
+                                                class="btn btn-success btn-sm mr-1"><i
+                                                    class='fas fa-trash-restore-alt'></i></a>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>
@@ -77,7 +97,8 @@
     </section>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -99,27 +120,27 @@
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(function() {
-        $("#user-table").DataTable({
-            "responsive": true,
-            "autoWidth": true,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "ordering": true,
-            "info": true,
-        }).buttons().container().appendTo('#user-table_wrapper .col-md-6:eq(0)');
-    });
+$(function() {
+    $("#user-table").DataTable({
+        "responsive": true,
+        "autoWidth": true,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+    }).buttons().container().appendTo('#user-table_wrapper .col-md-6:eq(0)');
+});
 
-    function UserdeletemodalShow(event) {
-        let deleteBtnModal = document.querySelector("#delete-user");
-        deleteBtnModal.onclick = function() {
-            event.target.closest("form").submit();
-        }
+function UserdeletemodalShow(event) {
+    let deleteBtnModal = document.querySelector("#delete-user");
+    deleteBtnModal.onclick = function() {
+        event.target.closest("form").submit();
     }
-    setTimeout(() => {
-        const sucess = document.getElementById('alert-success');
-        sucess.style.display = 'none';
-    }, 6000);
+}
+setTimeout(() => {
+    const sucess = document.getElementById('alert-success');
+    sucess.style.display = 'none';
+}, 6000);
 </script>
