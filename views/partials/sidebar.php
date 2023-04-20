@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-        <div>
-            <img src="../views/dist/img/transparent-logo.gif" alt="Logo" class="img-circle" style="width:150px;">
+        <div class="sidebar-light-primary" style="border-radius: 50%;">
+            <img src=" ../views/dist/img/logo.gif" alt="Logo" class="img-circle" style="width:150px;">
         </div>
         <div class="col-12 font-weight-light text-center">Article System</div>
     </div>
