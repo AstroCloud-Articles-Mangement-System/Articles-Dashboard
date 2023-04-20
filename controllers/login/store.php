@@ -27,5 +27,5 @@ if ($form->validate($email, $password)) {
 
     $form->error('email', 'No matching account found for that email address and password.');
 }
-Session::flash('errors', $form->errors());
+Session::flash('error_message', $form->errors());
 require 'views/pages/login/login.php';

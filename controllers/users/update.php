@@ -1,9 +1,11 @@
 <?php
 require('Core/validation.php');
+
+use Core\Session;
+
 $user = new User;
 $errors;
-$_SESSION['success_message'] = "";
-$_SESSION['error_message'] = "";
+
 try {
     if (isset($_POST['_method']) && $_POST['_method'] === 'PUT') {
         $user_id = intval($_POST['user_id']);
@@ -21,15 +23,15 @@ try {
             try {
                 $user->update_user($user_id, $data);
                 $allUsers = User::get_all_users();
-                $_SESSION['success_message'] = "User " . $_POST['name'] . " Updated Successfully!!";
+                Session::flash('success_message', "User " . $_POST['name'] . " Updated Successfully!!");
             } catch (mysqli_sql_exception $exception) {
-                $_SESSION['error_message'] = "Error in Updating User";
+                Session::flash('error_message',  "Error in Updating User");
             }
         } else {
             $page = "user_edit";
             $user = $user->get_user_by_id($user_id);
             $allGroups = Group::get_all_groups();
-            $_SESSION['error_message'] = $errors;
+            Session::flash('error_message', $errors);
         }
         $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
         header('Location: ' . $redirect_url);

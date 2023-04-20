@@ -1,6 +1,8 @@
 <?php
-$_SESSION['error_message'] = "";
-$_SESSION['success_message'] = "";
+
+use Core\Session;
+
+
 $article = new Article;
 
 try {
@@ -16,14 +18,13 @@ try {
             $s3->deleteImage($image_key);
             //delete from db
             $article->delete_article($article_id);
-            $_SESSION['success_message'] = "";
-            $_SESSION['success_message'] = "This Article Deleted Successfully!!";
+            Session::flash('success_message', "This Article Deleted Successfully!!");
         } catch (mysqli_sql_exception $exception) {
-            $_SESSION['error_message'] = "Error in Deleting this Article.";
+            Session::flash('error_message', "Error in Deleting this Article.");
             write_to_log_file($exception->getMessage(), $exception->getFile(), $exception->getLine());
         }
     } elseif (isset($_GET['id']) && !$article->check_id_existence($_GET['id'])) {
-        $_SESSION['error_message'] = "You can't delete this article. This Article doesn't exist in DB.";
+        Session::flash('error_message', "You can't delete this article. This Article doesn't exist in DB.");
     }
     header("Location: " . $_SERVER['HTTP_REFERER']);
 } catch (\Throwable $th) {

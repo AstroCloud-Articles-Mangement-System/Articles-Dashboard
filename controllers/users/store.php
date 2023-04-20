@@ -1,9 +1,11 @@
 <?php
 require('Core/validation.php');
+
+use Core\Session;
+
 $user = new User;
 $errors;
-$_SESSION['success_message'] = "";
-$_SESSION['error_message'] = "";
+
 try {
     if (isset($_POST['submit'])) {
         $errors = validate_user();
@@ -13,7 +15,7 @@ try {
             $sql = "SELECT * FROM users WHERE user_email = '$email'";
             $email_exists = User::get_email_by_any_sql($sql);
             if ($email_exists) {
-                $_SESSION['error_message'] = "Email already exists, please enter another email address";
+                Session::flash('error_message', "Email already exists, please enter another email address");
                 $page = "userscreate";
                 $allGroups = Group::get_all_groups();
             } else {
@@ -35,13 +37,13 @@ try {
                     $group_id
                 ];
                 $user->create_user($data);
-                $_SESSION['success_message'] = "User " . $_POST['name'] . " Created Successfully!!";
+                Session::flash('success_message', "User " . $_POST['name'] . " Created Successfully!!");
                 $allUsers = User::get_all_users();
             }
         } else {
             $page = "userscreate";
             $allGroups = Group::get_all_groups();
-            $_SESSION['error_message'] = $errors;
+            Session::flash('error_message', $errors);
         }
         $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
         header('Location: ' . $redirect_url);
