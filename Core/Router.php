@@ -4,7 +4,7 @@ namespace Core;
 
 use Core\Middleware\Middleware;
 
-class Router  
+class Router
 {
     public $routes = [];
 
@@ -45,28 +45,27 @@ class Router
         return $this->add('PUT', $uri, $controller);
     }
 
-    public function only($key=[])
+    public function only($key = [])
     {
         foreach ($key as $middleware) {
             $this->routes[array_key_last($this->routes)]['middleware'][] = $middleware;
         }
         return $this;
     }
-   
- 
+
+
     public function route($uri, $method)
-    {    
+    {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 foreach ($route['middleware'] as $val) {
                     Middleware::resolve($val);
                 }
-                return require base_path('controllers/' . $route['controller']);
-            }else{
-               
+                return require base_path('Http/controllers/' . $route['controller']);
+            } else {
             }
         }
-            $this->abort(404);
+        $this->abort(404);
     }
 
 
@@ -76,5 +75,4 @@ class Router
         require base_path("views/pages/errors/{$code}.php");
         die();
     }
-
 }
