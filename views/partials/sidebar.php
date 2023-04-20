@@ -1,9 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-        <div>
-            <img src="../views/dist/img/astro_without_background.gif" alt="Logo" class="img-circle"
-                style="width:150px;">
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center my-3">
+        <div class="mb-3">
+            <img src=" ../views/dist/img/logo.gif" alt="Logo" class="img-circle" style="width:100px;">
         </div>
         <div class="col-12 font-weight-light text-center" style="font-family: 'Fraunces', serif; font-size:1.3rem">
             Article System</div>
