@@ -31,7 +31,7 @@
     <div class="my-4" style="z-index: 100;">
         <div class="col-12 d-flex justify-content-end">
             <div class="form-inline">
-                <form class='col-12' method="post">
+                <form class='col-12' method="post" action="groups/filter">
                     <div class="input-group" data-widget="group-search">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search"
                             name="searchOnGroup" id="searchOnGroup">
@@ -52,7 +52,7 @@
                 <div class=" card-body">
                     <div class="user-panel group-info d-flex mt-1">
                         <div class=" image">
-                            <img src=" views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
+                            <img src="../views/dist/img/group.png" class="img-circle elevation-2" alt="group Icon">
                         </div>
                         <div class="info">
                             <a href="/users?group_id=<?php echo $group['id']; ?>"
