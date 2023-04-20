@@ -14,12 +14,8 @@ class Authenticator
     }
     public function attempt($email, $password)
     {
-
-        $user = new User;
         $sql = "SELECT * FROM users WHERE user_email = '$email'";
-
-        $foundedUser = $user->get_users_by_any_sql($sql);
-
+        $foundedUser = User::get_users_by_any_sql($sql);
         if ($foundedUser) {
             if (password_verify($password, $foundedUser[0]['user_password'])) {
                 $this->login([
@@ -55,7 +51,7 @@ class Authenticator
     {
         $token = bin2hex(random_bytes(16)) . "|" . md5($email);
         setcookie('remember_me_token', $token, [
-            'expires' => time() + 48 * 3600, //2 days
+            'expires' => time() + __expire_date_cookie__, //2 days
             'httponly' => true //Httponly flag is a security measure that prevents client-side scripts from accessing the cookie value.
         ]);
         User::update_user_remember_token($email, $token);
@@ -64,7 +60,7 @@ class Authenticator
     public static function checkToken($token)
     {
         $sql = "SELECT user_email,group_id FROM users WHERE remember_me = '$token'";
-        $remembered_user = (new user)->get_users_by_any_sql($sql);
+        $remembered_user = User::get_users_by_any_sql($sql);
         if ($remembered_user) {
             $obj = new self;
             return ["email"=>$remembered_user[0]['user_email'],"role"=>$obj->get_role($remembered_user[0]['group_id'])];

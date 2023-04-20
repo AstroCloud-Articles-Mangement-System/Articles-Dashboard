@@ -16,7 +16,7 @@
         <div class="card-header bg-info">
             <h3 class="card-title">Create New Group</h3>
         </div>
-        <form action="/groups" method="post" id="vaildate_group_form" data-form-type="create">
+        <form action="/groups" method="POST" id="vaildate_group_form" data-form-type="create">
             <div class="card-body row">
                 <div class="form-group col-12">
                     <div class="input-group">

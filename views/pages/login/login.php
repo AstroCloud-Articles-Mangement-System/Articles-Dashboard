@@ -21,18 +21,17 @@
     <div class="login-box" style="margin-top:40%">
       <!-- /.login-logo -->
       <?php
-          if (isset($_SESSION['_flash']['errors'])) {
-            echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
-            echo '<ul>';
-            foreach($_SESSION['_flash']['errors'] as $error){
-              echo '<li>' . $error . '</li>';
-            }
-            echo '</ul>';
-            echo '</div>';
-            unset($_SESSION['_flash']['errors']);
-          
-          }
-          ?>
+      if (isset($_SESSION['error_message'])) {
+        echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
+        echo '<ul>';
+        foreach ($_SESSION['error_message'] as $error) {
+          echo '<li>' . $error . '</li>';
+        }
+        echo '</ul>';
+        echo '</div>';
+        unset($_SESSION['error_message']);
+      }
+      ?>
       <div class="card" style="z-index: 5;">
         <div class="card-body login-card-body">
           <p class="login-box-msg">Sign in to start your session</p>

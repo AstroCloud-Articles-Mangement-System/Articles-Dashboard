@@ -66,6 +66,7 @@ function validate_user()
 
     return $errors ?? "";
 }
+
 function validate_group()
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -91,7 +92,6 @@ function validate_group()
     }
     return $errors ?? "";
 }
-
 
 function validate_article()
 {

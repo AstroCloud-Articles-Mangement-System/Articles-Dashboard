@@ -7,9 +7,9 @@ class Article
     {
         $this->db = new MySQLHandler('articles');
     }
-    public function get_all_articles()
+    public static function get_all_articles()
     {
-        return $this->db->get_all_records();
+        return (new self)->db->get_all_records();
     }
     public function get_article_by_id($id)
     {
@@ -35,8 +35,8 @@ class Article
     {
         return $this->db->delete($id);
     }
-    public function get_article_by_any_sql($sql)
+    public static function get_article_by_any_sql($sql)
     {
-        return $this->db->get_records_by_any_sql($sql);
+        return (new self)->db->get_records_by_any_sql($sql);
     }
 }

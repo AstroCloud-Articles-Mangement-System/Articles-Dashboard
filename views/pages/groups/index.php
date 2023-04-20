@@ -123,5 +123,5 @@ function GroupdeletemodalShow(event) {
 setTimeout(() => {
     const sucess = document.getElementById('alert-success');
     sucess.style.display = 'none';
-}, 3000);
+}, 6000);
 </script>

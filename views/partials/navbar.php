@@ -22,10 +22,9 @@
                     <li class="nav-item dropdown">
                         <?php
                         if (isset($_SESSION['user'])) {
-                            $user = new User;
                             $email = $_SESSION['user']['email'];
                             $sql = "SELECT * FROM `users` WHERE `user_email` = '$email'";
-                            $loggedInUser = $user->get_users_by_any_sql($sql)[0];
+                            $loggedInUser = User::get_users_by_any_sql($sql)[0];
                             echo '
                             <a class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="far fa-user" style="margin-right: 5px;"> </i>

@@ -4,7 +4,7 @@ namespace Core;
 
 use Core\Middleware\Middleware;
 
-class Router extends RoutesPermissions
+class Router
 {
     public $routes = [];
 
@@ -45,46 +45,34 @@ class Router extends RoutesPermissions
         return $this->add('PUT', $uri, $controller);
     }
 
-    public function only($key=[])
+    public function only($key = [])
     {
         foreach ($key as $middleware) {
             $this->routes[array_key_last($this->routes)]['middleware'][] = $middleware;
         }
         return $this;
     }
-   
- 
+
+
     public function route($uri, $method)
-    {    
+    {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 foreach ($route['middleware'] as $val) {
-                    # code...
                     Middleware::resolve($val);
                 }
-                // var_dump(Middleware::resolve($route['middleware']));
-                // if (isset($_SESSION['user']) && !(in_array($_SESSION['user']['role'], $this->allowedRoles[$route['uri']]))) {
-                //     $this->abort(403);
-                // }else{
-                //     return require base_path('controllers/' . $route['controller']);
-                // }
-                return require base_path('controllers/' . $route['controller']);
-
-            }else{
-               
+                return require base_path('Http/controllers/' . $route['controller']);
+            } else {
             }
         }
-            $this->abort(404);
+        $this->abort(404);
     }
 
 
     public function abort($code = 404)
     {
         http_response_code($code);
-
         require base_path("views/pages/errors/{$code}.php");
-
         die();
     }
-
 }
