@@ -1,5 +1,6 @@
 <?php
-$group = new Group;
+require('Core/validation.php');
+$group = new Group();
 $errors;
 $_SESSION['success_message'] = "";
 $_SESSION['error_message'] = "";

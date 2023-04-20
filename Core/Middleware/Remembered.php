@@ -8,7 +8,7 @@ class Remembered
 {
     public function handle()
     {
-        if ($_COOKIE['remember_me_token']) {
+        if (isset($_COOKIE['remember_me_token'])) {
             $Auth_val=Authenticator::checkToken($_COOKIE['remember_me_token']);            
             $_SESSION['user'] = [
                 'email' => $Auth_val['email'],

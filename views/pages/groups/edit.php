@@ -24,7 +24,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class='fas fa-user-friends'></i></span>
                         </div>
-                        <?php if ($group[0]['group_name'] === 'Admin' || $group[0]['group_name'] === 'Editor') { ?>
+                        <?php if ($group[0]['group_name'] === 'Admins' || $group[0]['group_name'] === 'Editors') { ?>
                         <input type="text" id="name" name="group_name" class="form-control vaildate_input"
                             placeholder="Group Name" value="<?php echo $group[0]['group_name']; ?>" required readonly>
                         <?php } else { ?>
