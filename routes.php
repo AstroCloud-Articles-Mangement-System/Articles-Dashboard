@@ -1,5 +1,5 @@
 <?php
-$router->get('/', 'home/index.php');
+$router->get('/', 'home/index.php')->only(['remember','auth']);
 
 //Users 
 $router->get('/users', 'users/index.php')->only(['remember','auth','admin']);
@@ -12,7 +12,6 @@ $router->get('/users/restore', 'users/restore.php')->only(['remember','auth','ad
 
 //Groups
 $router->get('/groups', 'groups/index.php')->only(['remember','auth','admin']);
-//$router->post('/groups', 'groups/index.php')->only(['remember','auth','admin']);
 $router->get('/groups/create', 'groups/create.php')->only(['remember','auth','admin']);
 $router->post('/groups', 'groups/store.php')->only(['remember','auth','admin']);
 $router->get('/groups/edit', 'groups/edit.php')->only(['remember','auth','admin']);
@@ -27,7 +26,7 @@ $router->delete('/articles/delete', 'articles/delete.php')->only(['remember','au
 $router->post('/articles', 'articles/store.php')->only(['remember','auth','admin|editor']);
 $router->get('/articles/show', 'articles/show.php')->only(['remember','auth','admin|editor']);
 
-// //Profile
+//Profile
 $router->get('/profile', 'profile/index.php')->only(['auth']);
 
 //login 
