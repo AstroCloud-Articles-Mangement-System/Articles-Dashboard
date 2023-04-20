@@ -15,23 +15,19 @@
         <li class="nav-item">
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
                         <?php
                         if (isset($_SESSION['user'])) {
                             $email = $_SESSION['user']['email'];
                             $sql = "SELECT * FROM `users` WHERE `user_email` = '$email'";
                             $loggedInUser = User::get_users_by_any_sql($sql)[0];
                             echo '
-                            <a class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="far fa-user" style="margin-right: 5px;"> </i>
+                            <a class="nav-link text-capitalize" href="/profile">
+                            <img src="../views/dist/img/publisher.png" class="nav-icon img-circle mr-2 align-middle" style="width:30px;"/>
                                 ' . $loggedInUser["user_name"] . '
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                            <li><a class="dropdown-item" href="/logout">Log Out</a></li>
-                            </ul>';
+                            </a>';
                         } else {
-                            echo '<a class="nav-link text-capitalize" href="/login" style="margin-right:25px">Log In</a>';
+                            echo '<a class="nav-link text-capitalize" href="/login" style="margin-right:25px">LogIn</a>';
                         }
                         ?>
 
