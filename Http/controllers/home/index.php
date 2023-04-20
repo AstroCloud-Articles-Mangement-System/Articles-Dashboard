@@ -8,9 +8,6 @@ $users = $user->get_all_users();
 $groups = $group->get_all_groups();
 $articles = $article->get_all_articles();
 
-// var_dump(count($users), count($groups), count($articles));
-// die();
-
 //chart
 $sql = "SELECT groups.group_name, COUNT(*) AS num_users
         FROM `users`

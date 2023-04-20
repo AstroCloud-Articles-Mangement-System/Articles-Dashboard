@@ -1,9 +1,11 @@
 <?php
 require('Core/validation.php');
+
+use Core\Session;
+
 $group = new Group();
 $errors;
-$_SESSION['success_message'] = "";
-$_SESSION['error_message'] = "";
+
 try {
     if (isset($_POST['submit'])) {
         $errors = validate_group();
@@ -16,11 +18,11 @@ try {
                 $desc,
             ];
             $group->create_group($data);
-            $_SESSION['success_message'] = "Group " . $name . " Created Successfully!!";
+            Session::flash('success_message',   "Group " . $name . " Created Successfully!!");
             $allGroups = Group::get_all_groups();
         } else {
             $page = "groupcreate";
-            $_SESSION['error_message'] = $errors;
+            Session::flash('error_message', $errors);
         }
         $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
         header('Location: ' . $redirect_url);

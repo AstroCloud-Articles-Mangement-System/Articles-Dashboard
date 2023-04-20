@@ -1,4 +1,7 @@
 <?php
+
+use Core\Session;
+
 $groupData = new Group();
 $group_id = intval($_GET['id']);
 
@@ -8,7 +11,7 @@ try {
         $group = $groupData->get_group_by_id($group_id);
     } else {
         $page = "groups";
-        $_SESSION['error_message'] = "You Can't Edit Group does not exist in db";
+        Session::flash('error_message',  "You Can't Edit Group does not exist in db");
     }
     $allGroups = Group::get_all_groups();
     require 'views/index.php';

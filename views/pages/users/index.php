@@ -15,20 +15,20 @@
 </section>
 <div class="wrapper" style="z-index:5;">
     <?php
-  if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
-    echo '<div id="alert-success" class="alert alert-success" role="alert">';
-    echo $_SESSION['success_message'];
-    echo '</div>';
-    unset($_SESSION['success_message']);
-  }
-  if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
-    echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
-    echo $_SESSION['error_message'];
-    echo '</div>';
-    unset($_SESSION['error_message']);
-  }
-  ?>
-    <section class=" content container-fluid">
+    if (isset($_SESSION['success_message']) && $_SESSION['success_message'] != "") {
+        echo '<div id="alert-success" class="alert alert-success" role="alert">';
+        echo $_SESSION['success_message'];
+        echo '</div>';
+        unset($_SESSION['success_message']);
+    }
+    if (isset($_SESSION['error_message']) && $_SESSION['error_message'] != "") {
+        echo '<div id="alert-danger" class="alert alert-danger" role="alert">';
+        echo $_SESSION['error_message'];
+        echo '</div>';
+        unset($_SESSION['error_message']);
+    }
+    ?>
+    <section class="content container-fluid">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -63,12 +63,12 @@
                                         <td><?php echo $user['id']; ?></td>
                                         <td><?php echo $user['user_name']; ?></td>
                                         <td><?php echo $user['user_email']; ?></td>
-                                        <td><?php echo $user['user_mobile_number']; ?></td>
+                                        <td><?php echo '0' . $user['user_mobile_number']; ?></td>
                                         <td><?php echo $user['user_username']; ?></td>
                                         <td><?php echo $user['subscription_date']; ?></td>
                                         <td><?php echo $user["group_name"]; ?></td>
                                         <td class="d-flex justify-content-around">
-                                            <?php if(!($user['deleted_at'])) { ?>
+                                            <?php if (!($user['deleted_at'])) { ?>
                                             <a href="/users/edit?id=<?php echo $user['id']; ?>"
                                                 class="btn btn-info bg-info btn-sm mr-1"><i class="fas fa-edit"></i></a>
                                             <form method="post" action="/users/delete?id=<?php echo $user['id']; ?>">
@@ -78,11 +78,11 @@
                                                 </button>
                                                 <input type="hidden" name="_method" value="DELETE">
                                             </form>
-                                            <?php }else{?>
+                                            <?php } else { ?>
                                             <a href="/users/restore?id=<?php echo $user['id']; ?>"
                                                 class="btn btn-success btn-sm mr-1"><i
                                                     class='fas fa-trash-restore-alt'></i></a>
-                                            <?php }?>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                     <?php } ?>

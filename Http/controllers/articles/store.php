@@ -1,9 +1,11 @@
 <?php
 require "core/validation.php";
+
+use Core\Session;
+
 $article = new Article;
 $errors = "";
-$_SESSION['success_message'] = "";
-$_SESSION['error_message'] = "";
+
 try {
     if (isset($_POST['submit']) && isset($_SESSION['user'])) {
         $errors = validate_article();
@@ -31,11 +33,11 @@ try {
             ];
             $article->create_article($data);
             $file = new uploadImageInArticle($object_key);
-            $_SESSION['success_message'] = "article Created Successfully!!";
+            Session::flash('success_message', "article Created Successfully!!");
             $allArticles = Article::get_all_articles();
         } else {
             $page = "articleCreate";
-            $_SESSION['error_message'] = $errors;
+            Session::flash('error_message', $errors);
         }
         $redirect_url = dirname(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php');
         header('Location: ' . $redirect_url);

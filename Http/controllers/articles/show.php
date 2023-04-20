@@ -1,4 +1,7 @@
 <?php
+
+use Core\Session;
+
 require_once('Models/Article.php');
 $article = new Article;
 $article_id = intval($_GET['id']);
@@ -16,7 +19,7 @@ try {
     } else {
         $page = "articles";
         $allArticles = Article::get_all_articles();
-        $_SESSION['error_message'] = "The article does not exist in db";
+        Session::flash('error_message', "The article does not exist in db");
     }
     require 'views/index.php';
 } catch (\Throwable $th) {
