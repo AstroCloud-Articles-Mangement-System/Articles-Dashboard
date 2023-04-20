@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="./views/dist/img/fav-icon.png">
+    <link rel="icon" href="../views/dist/img/fav-icon.png">
     <title> Articles Management System</title>
 
     <link rel="stylesheet"
@@ -48,7 +48,7 @@
         rel="stylesheet">
 </head>
 
-<body class=" hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Preloader -->
         <?php include 'partials/preloader.php'; ?>

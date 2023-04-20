@@ -1,8 +1,8 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="stars main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div class=" col-12 d-flex flex-column justify-content-center align-items-center my-3">
         <div class="mb-3">
-            <img src=" ../views/dist/img/logo.gif" alt="Logo" class="img-circle" style="width:100px;">
+            <img src="../views/dist/img/logo.gif" alt="Logo" class="img-circle" style="width:100px;">
         </div>
         <div class="col-12 font-weight-light text-center" style="font-family: 'Fraunces', serif; font-size:1.3rem">
             Article System</div>
@@ -28,7 +28,7 @@
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') { ?>
                 <li class="nav-item">
                     <a href="/users" class="nav-link">
-                        <img src="./views/dist/img/icons/user-icon.png" class="nav-icon img-circle">
+                        <img src="../views/dist/img/icons/user-icon.png" class="nav-icon img-circle">
                         <p>
                             Users
                         </p>
@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/groups" class="nav-link">
-                        <img src="./views/dist/img/icons/group-icon.png" class="nav-icon img-circle">
+                        <img src="../views/dist/img/icons/group-icon.png" class="nav-icon img-circle">
                         <p>
                             Groups
                         </p>
@@ -44,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/articles" class="nav-link">
-                        <img src="./views/dist/img/icons/article-icon.png" class="nav-icon img-circle">
+                        <img src="../views/dist/img/icons/article-icon.png" class="nav-icon img-circle">
                         <p>
                             Articles
                         </p>
@@ -53,7 +53,7 @@
                 <?php } elseif (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'editor') { ?>
                 <li class="nav-item">
                     <a href="/articles" class="nav-link">
-                        <img src="./views/dist/img/icons/article-icon.png" class="nav-icon img-circle">
+                        <img src="../views/dist/img/icons/article-icon.png" class="nav-icon img-circle">
                         <p>
                             Articles
                         </p>

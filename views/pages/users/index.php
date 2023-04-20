@@ -13,7 +13,7 @@
     unset($_SESSION['error_message']);
   }
   ?>
-    <section class="content container-fluid">
+    <section class=" content container-fluid">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
