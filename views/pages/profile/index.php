@@ -54,7 +54,7 @@
                         <div class="tab-content">
                             <div class="active tab-pane" id="activity">
                                 <!-- Post -->
-                                <?php
+                                <?php if(!empty($user_articles)){
                                 foreach ($user_articles as $article) {
                                     echo '<div class="post">
                                     <div class="user-block">
@@ -65,7 +65,9 @@
                                     <p>' . $article['article_content'] . '</p>
                                 </div>';
                                 }
-                                ?>
+                            }else{
+                                echo '<div class="post">No Articles Published Yet!</div>';
+                            }?>
                             </div>
                         </div>
                     </div>
