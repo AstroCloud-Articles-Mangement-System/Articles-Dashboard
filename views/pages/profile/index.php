@@ -16,10 +16,10 @@
 </section>
 
 <!-- Main content -->
-<section class="content justify-space-between" style="z-index: 1000;">
+<section class="content my-4" style="z-index: 1000;">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row d-flex justify-content-center gap-2">
+            <div class="col-md-4 col-lg-3">
                 <!-- Profile Image -->
                 <div class="card card-info card-outline" style="z-index: 1000;">
                     <div class="card-body box-profile">
@@ -29,19 +29,16 @@
                         </div>
                         <h3 class="profile-username text-center text-capitalize">
                             <?php echo $loggedInUser['user_name']; ?></h3>
-                        <p class="text-muted text-center"><?php echo $user_group_name;?></p>
+                        <p class="text-muted text-center">Member in <b
+                                class="text-info"><?php echo $user_group_name;?></b> Group
+                        </p>
                         <div class="p-4">
-                            <strong><i class="fas fa-book mr-1"></i>About me</strong>
-                            <p class="text-muted">
-                                B.S. in Computer Science from the University of Tennessee at Knoxville
-                            </p>
-                            <hr>
                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
                             <p class="text-muted">Alexandria, Egypt</p>
-                            <hr>
+                            <hr class="bg-secondary">
                             <strong><i class="fas fa-phone mr-1"></i> Phone</strong>
-                            <p class="text-muted"><?php echo $loggedInUser['user_mobile_number']; ?></p>
-                            <hr>
+                            <p class="text-muted"><?php echo '0'.$loggedInUser['user_mobile_number']; ?></p>
+                            <hr class="bg-secondary">
                             <strong><i class="far fa-file-alt mr-1"></i> Email</strong>
                             <p class="text-muted"><?php echo $loggedInUser['user_email']; ?></p>
                         </div>
