@@ -37,8 +37,8 @@
     <div class="my-5 d-flex flex-wrap justify-content-center" style="z-index: 5;">
         <?php foreach ($allArticles as $article) { ?>
         <div class="d-block groupCard col-md-4 mb-2" style="z-index: 5;">
-            <div class="alert card p-0" style="height:530px;">
-                <div style="height:315px;">
+            <div class="alert card p-0" style="height:450px;">
+                <div style="height:200px;">
                     <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article['article_image']); ?>"
                         alt="Card image cap" style="max-height: 100%; max-width:100%;">
                 </div>
@@ -53,7 +53,7 @@
                     </div>
                     <hr class="border-info">
                     <span class="text-uppercase font-weight-bold font-italic text-secondary">Summary</span>
-                    <p class="d-block card-text text-secondary text-truncate--2 ">
+                    <p class="d-block card-text text-secondary text-truncate--2">
                         <?php echo $article['article_summary']; ?>...</p>
                 </div>
                 <div class="card-footer bg-transparent">
@@ -74,7 +74,7 @@
         <?php } ?>
         <!--Create New Article-->
         <div class="d-block col-md-4 mb-2" style="z-index: 5;">
-            <div class="alert card p-0" style="height:530px;">
+            <div class="alert card p-0" style="height:450px;">
                 <div class="card-body">
                     <div class="user-panel d-flex justify-content-center align-items-center h-100">
                         <div class="bg-info p-3 img-circle group-info">
