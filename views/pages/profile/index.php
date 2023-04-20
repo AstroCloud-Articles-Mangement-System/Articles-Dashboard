@@ -45,8 +45,6 @@
                             <strong><i class="far fa-file-alt mr-1"></i> Email</strong>
                             <p class="text-muted"><?php echo $loggedInUser['user_email']; ?></p>
                         </div>
-                        <a href="/users/edit?id=<?php echo $loggedInUser['id']; ?>"
-                            class="btn btn-info btn-block"><b>Edit</b></a>
                     </div>
                 </div>
             </div>
