@@ -1,13 +1,13 @@
-<div class="card article_section col-8  mx-auto">
+<div class="card article_section col-8 mx-auto">
     <div id="article_container">
-        <div class="article_container_img">
+        <div class="article_container_img col-4">
             <img class="card-img-top rounded" src="<?php echo (__imgUrl__ . $article_data[0]['article_image']); ?>"
-                alt="Card image cap" style="z-index: 10000;height: 100%; max-width:100%;">
+                alt="Card image cap" style="z-index: 10000;height: 100%;">
         </div>
         <div class="article_container_content overflow-auto">
-            <div clasas="the">
+            <div class="the">
                 <div class="line"></div>
-                <h4>the</h4>
+                <h2 style="font-family: 'Brush Script MT', cursive; font-size:2.3rem"> The </h2>
                 <div class="line"></div>
             </div>
             <h1 class="article_title">
