@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="views/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="views/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="views/dist/css/adminlte.min.css">
-    <style>
-    strong {
-        margin-right: 260px !important;
-    }
-    </style>
+
 </head>
 
 <body
