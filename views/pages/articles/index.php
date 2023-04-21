@@ -40,7 +40,7 @@
             <div class="alert card p-0" style="height:450px;">
                 <div style="height:200px;">
                     <img class="card-img-top rounded" src="<?php echo (__imgUrl__.$article['article_image']); ?>"
-                        alt="Card image cap" style="max-height: 100%; max-width:100%;">
+                        alt="Card image cap" style="z-index: 10000;height: 100%; width: 100%;object-fit:cover;object-position:50% 50%; display: block;">
                 </div>
                 <div class="card-body">
                     <div class="user-panel group-info mt-1">
