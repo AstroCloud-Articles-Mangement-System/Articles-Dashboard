@@ -10,7 +10,7 @@
     </div>
 
     <!-- Sidebar -->
-    <div class="sidebar my-2" style="height: 68vh;border-bottom:solid thin rgb(96, 96, 96);">
+    <div class="sidebar my-2" style="height: 65vh;border-bottom:solid thin rgb(96, 96, 96);">
         <!-- SidebarSearch Form -->
         <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
