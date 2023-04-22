@@ -1,0 +1,17 @@
+<?php
+define("URL_BASE","/PHP-Project/");
+define("__HOST__", "localhost");
+define("__USER__", "User");
+define("__PASS__", "Password");
+define("__DB__", "Database_Name");
+define("__RECORDS_PER_PAGE__", 20);
+define("__KEY__","Key_Number");
+define("__SECRET__","Secret_Key_Number");
+define("__REGION__","Region");
+define("__VERSION__","latest");
+define("__Debug__Mode__", 0);
+define("__expire_date_cookie__",48 * 3600);
+define("__LOG_FILE_PATH__","exceptions.log");
+define("MAX_NAME_LENGTH", 100);
+define("__imgUrl__", "https://articlesysbucket.s3.Region.amazonaws.com/");
+?>
