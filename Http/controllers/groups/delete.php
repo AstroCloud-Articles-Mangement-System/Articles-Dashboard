@@ -10,13 +10,18 @@ try {
         $groupType = 'ordinary';
         try {
             $group = $group->delete_group($group_id);
-            Session::flash('success_message', "This group Removed Successfully!!");
+            if(!empty($group)){
+                Session::flash('success_message', "This group Removed Successfully!!");
+            }else{
+                Session::flash('error_message',  "You Can't Delete this Group, Delete Participated Users First");
+            }
+            
         } catch (mysqli_sql_exception $exception) {
-            Session::flash('error_message',  "You can't delete this group, delete related articles first");
+            Session::flash('error_message',  "You Can't Delete this Group, Delete Participated Users First");
             write_to_log_file($exception->getMessage(), $exception->getFile(), $exception->getLine());
         }
     } else {
-        Session::flash('error_message',  "You can't delete Admins & Editors groups and the groups that don't exist in db");
+        Session::flash('error_message',  "You Can't Delete Admins & Editors groups and the groups that don't exist in db");
     }
     header("Location: " . $_SERVER['HTTP_REFERER']);
 } catch (\Throwable $th) {

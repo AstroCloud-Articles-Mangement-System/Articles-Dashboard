@@ -35,7 +35,11 @@ class User
 
     public function delete_user($id)
     {
-        return $this->db->soft_delete($id);
+        $sql = "SELECT * FROM `Articles` WHERE user_id = '". $id . "'";
+        if(!($this->db->get_records_by_any_sql($sql))){
+            return $this->db->soft_delete($id);
+        }
+        
     }
 
     public function restore_user($id)
