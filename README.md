@@ -24,7 +24,7 @@ We Hope That You are enjoying Watching Our Demo Video
 
 ## INSTALLATION
 <pre>
-git clone 
+git clone https://github.com/AstroCloud-Articles-Mangement-System/AstroCloud
 </pre>
 
 <pre>
