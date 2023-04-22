@@ -12,7 +12,7 @@ This is an admin panel designed specifically for article websites, allowing user
 - Users page for adding, editing, and deleting users.
 - Articles page accessible only by `admins` and `editors`.
 - Chart showing the number of `users`,`groups`,`Articles`, and another showing the number of `users` in each `group`.
-- Upload Images to AWS S3.
+- Upload Images using Amazon S3.
 - soft delete.
 - Remember Me.
 - profile Page.
@@ -24,7 +24,7 @@ We Hope That You are enjoying Watching Our Demo Video
 
 ## INSTALLATION
 <pre>
-git clone https://github.com/Hager-Abd-El-Galil/PHP-Project
+git clone https://github.com/Hager-Abd-El-Galil/AstroCloud-Articles-Management-System
 </pre>
 
 <pre>
