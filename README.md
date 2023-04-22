@@ -24,7 +24,7 @@ We Hope That You are enjoying Watching Our Demo Video
 
 ## INSTALLATION
 <pre>
-git clone https://github.com/Hager-Abd-El-Galil/AstroCloud-Articles-Management-System
+git clone 
 </pre>
 
 <pre>
