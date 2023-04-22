@@ -33,7 +33,10 @@ class Group
 
     public function delete_group($id)
     {
-        return $this->db->soft_delete($id);
+        $sql = "SELECT * FROM `Users` WHERE group_id = '". $id . "'";
+        if(!($this->db->get_records_by_any_sql($sql))) {
+            return $this->db->soft_delete($id);
+        }
     }
 
     public function restore_group($id)
