@@ -66,15 +66,7 @@ class uploadImageInArticle
             if ($this->fileType($_FILES["article_image"]["type"], "image") && $this->fileSize($_FILES["article_image"]["size"])) {
                 $this->set_credentials(__KEY__, __SECRET__, __REGION__, __VERSION__);
                 try {
-                    $result = $this->upload($object_key);
-                    header('Content-Disposition: inline');
-                    $object_url = $result['ObjectURL'];
-                    $object_key = ltrim(parse_url($object_url)['path'], '/');
-                    $bucket = 'articlesysbucket';
-                    $url = $this->_s3->getObjectUrl($bucket, $object_key);
-                    echo $url;
-                    echo "File Uploaded successfully ^_^";
-                    echo "<img src='{$url}' />";
+                    $this->upload($object_key);
                 } catch (Aws\S3\Exception\S3Exception $e) {
                     echo $e->getMessage();
                     echo "Can't Upload this file.";

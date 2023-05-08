@@ -9,11 +9,14 @@ class Remembered
     public function handle()
     {
         if (isset($_COOKIE['remember_me_token'])) {
-            $Auth_val=Authenticator::checkToken($_COOKIE['remember_me_token']);            
-            $_SESSION['user'] = [
-                'email' => $Auth_val['email'],
-                'role' => $Auth_val['role'],
-            ];
+            $Auth_val=Authenticator::checkToken($_COOKIE['remember_me_token']);
+            if($Auth_val)
+            {
+                $_SESSION['user'] = [
+                    'email' => $Auth_val['email'],
+                    'role' => $Auth_val['role'],
+                ];
+            }          
         }
     }
 }
